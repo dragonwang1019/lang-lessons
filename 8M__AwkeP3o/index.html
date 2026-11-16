@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="soft">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="我的語言課">
+<meta name="theme-color" content="#FFF8F4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FFF8F4">
+<title>How to Talk About Jobs and Work in French (A1) | Learn French with Podcast | Easy French | Ep. 01</title>
+<script>try{var t=localStorage.getItem('lk.theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<style>
+:root{
+  --bg:#FFF8F4; --bg-soft:#FFFDFB; --card:#FFFFFF; --line:#F5E1E8;
+  --fg:#432F37; --dim:#957D86;
+  --rose:#EF6A8B; --rose-d:#D94F72; --lav:#9B6BD6; --peach:#FF9466;
+  --mint:#43BE9B; --mint-d:#1F7A5F; --bad:#D9737A;
+  --shadow:0 3px 14px rgba(214,124,147,.10);
+  --shadow-lg:0 6px 22px rgba(190,120,140,.16);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--fg);line-height:1.7;
+  font-family:"Hiragino Maru Gothic ProN","Yuanti TC","PingFang TC",-apple-system,
+    BlinkMacSystemFont,"Noto Sans TC",system-ui,sans-serif;
+  -webkit-text-size-adjust:100%}
+body{padding-bottom:calc(82px + env(safe-area-inset-bottom));overflow-x:hidden}
+
+/* 標題列：暖色漸層，柔和陰影 */
+header{position:sticky;top:0;z-index:20;
+  background:linear-gradient(160deg,#FFE6EE 0%,#FFF1E2 100%);
+  padding:11px 15px 10px;border-radius:0 0 20px 20px;
+  box-shadow:0 3px 16px rgba(214,140,160,.14)}
+h1{font-size:15.5px;margin:0 0 5px;font-weight:700;letter-spacing:.01em;color:#5A3242;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta{font-size:11.5px;color:#9C6E7E;display:flex;gap:6px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.8);border:1px solid #F9DBE5;border-radius:999px;
+  padding:1.5px 9px;font-size:11px;color:#8A5A6B}
+
+#stage{position:relative;background:#FBF3F5}
+#stage iframe,#stage video{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+
+/* 底部導覽：浮起來的白色藥丸 */
+nav{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));
+  z-index:30;display:flex;gap:5px;padding:6px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-lg)}
+/* color 不要放進 transition：過渡中途會出現「白字白底」的隱形按鈕 */
+nav button{flex:1;min-height:44px;font:inherit;font-size:13.5px;font-weight:600;
+  color:#A98D98;background:transparent;border:none;border-radius:999px;
+  transition:background .18s,box-shadow .18s}
+nav button.on{color:#fff;background:linear-gradient(135deg,#FF8FA8,#EF6A8B);
+  box-shadow:0 3px 10px rgba(239,106,139,.34)}
+
+.bar{display:flex;gap:7px;padding:10px 14px;flex-wrap:wrap;background:var(--bg-soft);
+  border-bottom:1px solid var(--line)}
+button{font:inherit;font-size:12.5px;color:#6E4B58;background:#fff;
+  border:1px solid #F3D9E3;border-radius:999px;padding:8px 13px;min-height:36px;
+  cursor:pointer;box-shadow:0 1px 4px rgba(214,124,147,.07);
+  transition:transform .15s,box-shadow .15s}
+button:active{transform:scale(.97)}
+button.on{background:linear-gradient(135deg,#FFA9BE,#FFC49B);color:#fff;border-color:transparent;
+  font-weight:700;box-shadow:0 3px 10px rgba(239,106,139,.26)}
+button.wide{width:100%;min-height:46px;font-size:14px}
+section{display:none}
+section.show{display:block}
+
+/* 逐句 */
+#viewT{padding:16px 14px 28vh;line-break:strict;word-break:normal;overflow-wrap:break-word;max-width:100%}
+.seg{margin:0 0 10px;padding:11px 13px;border-radius:16px;border:1px solid transparent;
+  transition:background .18s,border-color .18s,box-shadow .18s;
+  font-size:17px;line-height:2.3}
+.seg.active{background:#FFF1F6;border-color:#FBD9E4;box-shadow:0 2px 12px rgba(239,106,139,.09)}
+.seg .time{font-size:10.5px;color:#C7A6B1;font-variant-numeric:tabular-nums;
+  cursor:pointer;user-select:none}
+.seg .time:hover{color:var(--rose)}
+/* 必須是 inline：日文沒有空白，inline-block 的詞串會變成不可斷行的原子區塊 → 整句溢出畫面 */
+.tok{display:inline;padding:1px 0;border-radius:6px;cursor:pointer;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.tok:hover{background:#FFE9F1}
+.tok.hot{background:#FFC8D9;color:#7A2340}
+ruby{ruby-position:over}
+rt{font-size:.5em;color:var(--lav);letter-spacing:.02em;font-weight:600;line-height:1.1}
+.tok.hot rt{color:#7A2340}
+.tok.course{background:rgba(255,148,102,.15);box-shadow:inset 0 -2px 0 var(--peach)}
+.tok.saved{box-shadow:inset 0 -2px 0 var(--mint)}
+body.nofuri rt{display:none}
+body.nofuri .seg{line-height:1.85}
+
+/* 詞卡 */
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;
+  border-radius:26px 26px 0 0;padding:16px 18px 22px;
+  transform:translateY(105%);transition:transform .24s cubic-bezier(.2,.9,.3,1);
+  box-shadow:0 -12px 40px rgba(190,120,140,.24);max-height:74vh;overflow:auto}
+#sheet.open{transform:translateY(0)}
+#sheet .w{font-size:26px;font-weight:700;color:#4A2F38;letter-spacing:.01em}
+#sheet .rd{color:var(--lav);font-size:14.5px;margin-top:2px;font-weight:600}
+#sheet .gl{color:var(--fg);font-size:15px;margin-top:7px}
+#sheet .ctx{color:var(--dim);font-size:12.5px;margin:10px 0 14px;
+  border-left:3px solid #FBD9E4;padding-left:10px;line-height:1.9}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+
+/* 測驗 */
+#viewQ{padding:16px 14px}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:18px 16px;box-shadow:var(--shadow)}
+.qtop{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+  margin-bottom:13px}
+.qtype{color:var(--rose);font-weight:700;letter-spacing:.08em}
+.qstem{font-size:19.5px;line-height:2;margin-bottom:16px;word-break:break-word;color:#4A2F38}
+.qstem .blank{color:var(--rose-d);font-weight:700;letter-spacing:.05em}
+.qstem small{display:block;color:var(--dim);font-size:12.5px;margin-top:9px;line-height:1.6}
+.opt{display:block;width:100%;text-align:left;margin-bottom:9px;font-size:15.5px;
+  padding:13px 15px;min-height:48px;border-radius:15px;background:#FFF9FB;
+  border:1px solid #F6DDE5;color:#4A2F38;box-shadow:none}
+.opt:hover{background:#FFF0F6}
+.opt.correct{background:#E9FBF4;border-color:#7DDBBE;color:var(--mint-d);font-weight:600}
+.opt.wrong{background:#FFF0EE;border-color:#F7A99C;color:#C0392B}
+.feed{margin-top:13px;font-size:13.5px;min-height:22px;line-height:1.9}
+.feed.ok{color:var(--mint-d)}.feed.ng{color:#C0392B}
+.empty{color:var(--dim);font-size:13.5px;text-align:center;padding:30px 10px;line-height:2}
+
+/* 生詞本 */
+#viewW{padding:16px 14px}
+.wstat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.wstat div{background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:11px 4px;text-align:center;min-width:0;box-shadow:0 2px 8px rgba(214,124,147,.06)}
+.wstat b{display:block;font-size:20px;line-height:1.25;color:#4A2F38}
+.wstat span{font-size:10.5px;color:var(--dim)}
+.vitem{display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:11px 13px;border:1px solid var(--line);border-radius:16px;margin-bottom:8px;
+  background:#fff;box-shadow:0 2px 8px rgba(214,124,147,.06)}
+.vitem .vt{font-size:16.5px;color:#4A2F38}
+.vitem .vt small{color:var(--lav);font-size:11.5px;margin-left:6px;font-weight:600}
+.vitem .vg{color:var(--dim);font-size:11.5px;display:block;margin-top:3px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px;
+  vertical-align:middle}
+.d0{background:#E4CFD7}.d1{background:#C9A6F0}.d2{background:#7DDBBE}.d3{background:#FF8FA8}
+.vitem .del{color:var(--bad);font-size:12px;padding:7px 9px;cursor:pointer;
+  background:transparent;border:none;box-shadow:none}
+a{color:var(--rose-d);font-weight:600}
+.tip{font-size:11.5px;color:var(--dim);padding:0 14px 10px;line-height:1.9}
+/* 影片嵌不進去時的溫柔提示卡 */
+.fb{margin:12px;padding:16px 15px;border-radius:18px;background:#FFF2F6;
+  border:1px dashed #F7C9D8;color:#8A5A6B;font-size:13px;line-height:2;text-align:center}
+.fb b{display:block;color:#5A3242;font-size:14px;margin-bottom:4px}
+.fb a{display:inline-block;margin:6px 0 2px}
+
+/* ── 導讀 ───────────────────────────────────────────── */
+#viewG{padding:16px 14px 20vh}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:18px 16px 20px;box-shadow:var(--shadow)}
+.gtop{display:flex;justify-content:space-between;font-size:11.5px;color:var(--dim);
+  letter-spacing:.06em;margin-bottom:12px}
+.gzh{font-size:15px;line-height:1.75;color:var(--dim);margin:8px 0 2px;letter-spacing:.2px}
+.gzh:empty{display:none}
+body.nozh .gzh{display:none}
+.segzh{display:block;font-size:12.5px;line-height:1.6;color:var(--dim);margin-top:1px;opacity:.9}
+body.nozh .segzh{display:none}
+html[data-theme="cool"] .gzh,html[data-theme="cool"] .segzh{color:#93A6C4}
+.gtext{font-size:21px;line-height:2.35;min-height:4.6em;color:#3A2630;margin-bottom:14px}
+.gwords{display:flex;flex-wrap:wrap;gap:7px;min-height:34px;margin-bottom:14px}
+.gw{background:rgba(255,148,102,.14);border:1px solid #FFD9C6;border-radius:999px;
+  padding:5px 11px;font-size:12.5px;color:#B3521F;line-height:1.5}
+.gw b{font-weight:700;font-size:13.5px}
+.gw small{color:var(--lav);margin-left:5px}
+.gw i{font-style:normal;opacity:.8;margin-left:6px}
+.gbar{height:6px;background:#F7E4EA;border-radius:99px;overflow:hidden}
+.gbar i{display:block;height:100%;width:0;border-radius:99px;
+  background:linear-gradient(90deg,#FFB3C4,var(--rose));transition:width .25s}
+.gtip{font-size:11.5px;color:var(--dim);line-height:1.9;margin:14px 0 0}
+
+/* ── 酷炫主題（深色 HUD）────────────────────────────── */
+html[data-theme="cool"]{
+  --bg:#0B0E14;--bg-soft:#0F141C;--card:#111823;--line:#233043;
+  --fg:#E6F1FF;--dim:#7E8FA6;
+  --rose:#00E5A0;--rose-d:#00C48C;--lav:#6EE7FF;--peach:#FFB020;
+  --mint:#00E5A0;--mint-d:#00E5A0;--bad:#FF5C7A;
+  --shadow:0 0 0 1px #1E2A3A,0 8px 24px rgba(0,0,0,.55);
+  --shadow-lg:0 0 0 1px #263648,0 14px 44px rgba(0,0,0,.7);
+}
+html[data-theme="cool"] body{background:#0B0E14;
+  background-image:linear-gradient(rgba(0,229,160,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,160,.045) 1px,transparent 1px);
+  background-size:26px 26px,26px 26px}
+html[data-theme="cool"] header{background:#0F141C;border-radius:0;
+  border-bottom:1px solid #233043;box-shadow:none}
+html[data-theme="cool"] h1{color:#E6F1FF;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+  font-size:14px;letter-spacing:.02em}
+html[data-theme="cool"] .meta{color:#5B6C82}
+html[data-theme="cool"] .pill{background:#0B0E14;border:1px solid #233043;border-radius:3px;
+  color:#8FA6BF;letter-spacing:.06em}
+html[data-theme="cool"] #stage{background:#07090D}
+html[data-theme="cool"] .bar{background:#0F141C;border-bottom:1px solid #233043}
+html[data-theme="cool"] button{border-radius:4px;background:#0F1721;border:1px solid #2A3A4D;
+  color:#9FB4CC;box-shadow:none;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+  font-size:11.5px;letter-spacing:.04em}
+html[data-theme="cool"] button.on{background:#00E5A0;color:#04120C;border-color:#00E5A0;
+  font-weight:800;box-shadow:0 0 14px rgba(0,229,160,.4)}
+html[data-theme="cool"] nav{left:10px;right:10px;border-radius:6px;background:#0F141C;
+  border:1px solid #233043;box-shadow:0 10px 30px rgba(0,0,0,.7)}
+html[data-theme="cool"] nav button{border-radius:4px;font-size:11.5px;letter-spacing:.06em}
+html[data-theme="cool"] nav button.on{background:linear-gradient(135deg,#00E5A0,#22D3EE);
+  color:#04120C;box-shadow:0 0 16px rgba(0,229,160,.45)}
+html[data-theme="cool"] .seg{border-radius:4px;font-size:17px;color:#DEEAF8}
+html[data-theme="cool"] .seg.active{background:#0E1A22;border-color:#1E3A44;
+  box-shadow:inset 3px 0 0 #00E5A0}
+html[data-theme="cool"] .seg .time{color:#4E6279}
+html[data-theme="cool"] rt{color:#6EE7FF}
+html[data-theme="cool"] .tok.hot{background:#00E5A0;color:#04120C}
+html[data-theme="cool"] .tok.hot rt{color:#04120C}
+html[data-theme="cool"] .tok.course{background:rgba(255,176,32,.13);
+  box-shadow:inset 0 -2px 0 #FFB020}
+html[data-theme="cool"] .tok.saved{box-shadow:inset 0 -2px 0 #00E5A0}
+html[data-theme="cool"] .gcard,html[data-theme="cool"] .qcard{border-radius:6px;
+  background:#0F1721;border:1px solid #233043}
+html[data-theme="cool"] .gtext{color:#E6F1FF;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+  font-size:19px;line-height:2.1}
+html[data-theme="cool"] .gbar{background:#16212E}
+html[data-theme="cool"] .gbar i{background:linear-gradient(90deg,#00E5A0,#22D3EE)}
+html[data-theme="cool"] .gw{background:rgba(255,176,32,.12);border-color:#4A3A18;
+  border-radius:3px;color:#FFC55A}
+html[data-theme="cool"] .gw small{color:#6EE7FF}
+html[data-theme="cool"] .qtype{color:#00E5A0}
+html[data-theme="cool"] .qstem{color:#E6F1FF}
+html[data-theme="cool"] .opt{border-radius:4px;background:#0C141D;border:1px solid #233043;
+  color:#CFE0F0}
+html[data-theme="cool"] .opt:hover{background:#12202C}
+html[data-theme="cool"] .opt.correct{background:rgba(0,229,160,.14);border-color:#00E5A0;
+  color:#00E5A0}
+html[data-theme="cool"] .opt.wrong{background:rgba(255,92,122,.13);border-color:#FF5C7A;
+  color:#FF8FA3}
+html[data-theme="cool"] .wstat div,html[data-theme="cool"] .vitem{border-radius:4px;
+  background:#0F1721;border:1px solid #1E2A3A;box-shadow:none}
+html[data-theme="cool"] .wstat b,html[data-theme="cool"] .vitem .vt{color:#E6F1FF;
+  font-family:ui-monospace,"SF Mono",Menlo,monospace}
+html[data-theme="cool"] .vitem .vt small{color:#6EE7FF}
+html[data-theme="cool"] .d0{background:#3C4C60}html[data-theme="cool"] .d1{background:#FFB020}
+html[data-theme="cool"] .d2{background:#00E5A0}html[data-theme="cool"] .d3{background:#22D3EE}
+html[data-theme="cool"] #sheet{background:#0F1721;border-top:1px solid #233043;border-radius:6px 6px 0 0}
+html[data-theme="cool"] #sheet .w{color:#E6F1FF;font-family:ui-monospace,Menlo,monospace}
+html[data-theme="cool"] #sheet .gl{color:#CFE0F0}
+html[data-theme="cool"] #sheet .ctx{border-left-color:#233043;color:#7E8FA6}
+html[data-theme="cool"] .fb{background:#141C12;border-color:#2F4A2A;color:#9FD08A}
+html[data-theme="cool"] .fb b{color:#C7E9B4}
+html[data-theme="cool"] .tip,html[data-theme="cool"] .gtip,html[data-theme="cool"] .empty{color:#7E8FA6}
+
+
+/* ── 易用性：頁標題、設定面板、篩選 chips、搜尋、跳句 ───────── */
+.crumb{display:inline-block;margin-bottom:6px;font-size:13px;color:var(--dim);text-decoration:none}
+.crumb:hover{color:var(--rose-d)}
+.ph{font-size:15px;margin:2px 0 10px;color:var(--fg);font-weight:800;letter-spacing:.3px}
+.ph small{font-weight:500;font-size:12px;color:var(--dim);margin-left:6px}
+.ph .langtag{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;
+  background:var(--rose);color:#fff;font-size:11px;font-weight:700;vertical-align:2px}
+.cfg{display:flex;flex-direction:column;gap:9px;margin-bottom:14px;padding:12px 12px 10px;
+  background:var(--card);border:1px solid var(--line);border-radius:16px}
+.cfgrow{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.cfgl{font-size:12px;color:var(--dim);min-width:32px;font-weight:700}
+.chips{display:flex;gap:7px;flex-wrap:wrap;flex:1}
+.chip{padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);
+  color:var(--fg);font-size:13px;font-weight:600;cursor:pointer;min-height:34px}
+.chip.on{background:var(--rose);border-color:var(--rose);color:#fff;box-shadow:0 3px 10px rgba(239,106,139,.3)}
+.chip:active{transform:scale(.96)}
+.chip b{font-weight:800}
+.search{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);
+  background:var(--bg);color:var(--fg);font-size:14px;font-family:inherit;margin:0 0 10px}
+.jumpwrap{display:flex;align-items:center;gap:8px;margin-top:12px}
+.jump{flex:1;padding:9px 10px;border-radius:12px;border:1px solid var(--line);background:var(--bg);
+  color:var(--fg);font-size:13px;font-family:inherit;max-width:100%}
+html[data-theme="cool"] .cfg{border-radius:6px;background:#0F151F;border-color:#22303F}
+html[data-theme="cool"] .chip{border-radius:4px;background:#0B1119;color:#CFE0F0;border-color:#22303F}
+html[data-theme="cool"] .chip.on{background:#00E5A0;border-color:#00E5A0;color:#04140E;box-shadow:0 0 14px rgba(0,229,160,.35)}
+html[data-theme="cool"] .search,html[data-theme="cool"] .jump{border-radius:4px;background:#0B1119;color:#E6F1FF;border-color:#22303F}
+html[data-theme="cool"] .ph{color:#E6F1FF}
+html[data-theme="cool"] .ph .langtag{background:#00E5A0;color:#04140E;border-radius:3px}
+
+/* ── 動態層（來自 motionsites.ai 的動態網站美學）─────────
+   原則：動效只做在容器與轉場上，閱讀中的文字不動；
+   一律用 Web Animations API 進場，不用 opacity:0 起始，避免 JS 掛掉時內容隱形。 */
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;
+  display:none;opacity:.55}
+#aurora{position:fixed;inset:-10% -10% auto -10%;height:340px;z-index:0;
+  pointer-events:none;display:none;filter:blur(46px);opacity:.55}
+#aurora i{position:absolute;display:block;width:220px;height:220px;border-radius:50%}
+#aurora i:nth-child(1){left:6%;top:6%;background:#00E5A0;animation:drift 17s ease-in-out infinite}
+#aurora i:nth-child(2){left:52%;top:-8%;background:#22D3EE;animation:drift 21s ease-in-out infinite reverse}
+#aurora i:nth-child(3){right:4%;top:22%;background:#7C5CFF;animation:drift 25s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate3d(0,0,0) scale(1)}
+  33%{transform:translate3d(34px,22px,0) scale(1.14)}
+  66%{transform:translate3d(-22px,10px,0) scale(.92)}}
+html[data-theme="cool"] #fx,html[data-theme="cool"] #aurora{display:block}
+/* 只讓內容層浮在粒子之上；nav 必須保持 fixed（寫進來會把導覽列改成相對定位而滾走） */
+html[data-theme="cool"] header,html[data-theme="cool"] #stage,
+html[data-theme="cool"] section,html[data-theme="cool"] .bar{position:relative;z-index:1}
+html[data-theme="cool"] nav{z-index:30}
+html[data-theme="cool"] header{background:rgba(15,20,28,.86);backdrop-filter:blur(14px)}
+/* 酷炫版的控制項回饋 */
+html[data-theme="cool"] button:hover{color:#00E5A0;border-color:#00E5A0;
+  box-shadow:0 0 0 1px rgba(0,229,160,.35),0 0 16px rgba(0,229,160,.22)}
+html[data-theme="cool"] nav button.on{animation:pulseGlow 3.2s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 16px rgba(0,229,160,.45)}
+  50%{box-shadow:0 0 26px rgba(34,211,238,.6)}}
+html[data-theme="cool"] .gbar i{background-size:200% 100%;
+  background-image:linear-gradient(90deg,#00E5A0,#22D3EE,#00E5A0);animation:sweep 2.4s linear infinite}
+@keyframes sweep{to{background-position:-200% 0}}
+/* 柔和版只留極輕的呼吸感 */
+html[data-theme="soft"] .gbar i{background-image:linear-gradient(90deg,#FFB3C4,#EF6A8B,#FFB3C4);
+  background-size:200% 100%;animation:sweep 3.6s linear infinite}
+@media (prefers-reduced-motion:reduce){
+  #fx,#aurora{display:none !important}
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<header>
+  <a class="crumb" href="../index.html">← 課程列表</a>
+  <a class="crumb" href="../study/index.html" style="margin-left:14px">📅 每日練習</a>
+  <a class="crumb" href="../speak/index.html" style="margin-left:14px">🎧 聽說起步</a>
+  <a class="crumb" href="../dialog/index.html" style="margin-left:14px">🎭 情境對話</a>
+  <h1><span style="opacity:.75">🌸</span> How to Talk About Jobs and Work in French (A1) | Learn French with Podcast | Easy French | Ep. 01</h1>
+  <div class="meta">
+    <span class="pill">法語</span>
+    <span class="pill">7:38</span>
+    <span class="pill">55 句</span>
+    <span class="pill" id="duepill" style="color:var(--rose-d)">待複習 0</span>
+    <span class="pill" style="color:var(--hot)">本課生詞 81 個</span>
+  </div>
+</header>
+
+<div id="stage"></div>
+
+<div class="bar">
+  <button id="furi" class="on">讀音</button>
+  <button id="slow">慢速 0.75×</button>
+  <button id="rep">重播本句</button>
+  <button id="theme">🎨 酷炫版</button>
+</div>
+
+<section id="viewG" class="show">
+  <h2 class="ph">導讀<small>一句一句跟著讀</small></h2>
+  <div class="gcard">
+    <div class="gtop"><span id="gidx">1 / 1</span><span id="gtime">0:00</span></div>
+    <div class="gtext" id="gtext"></div>
+    <div class="gzh" id="gzh"></div>
+    <div class="gwords" id="gwords"></div>
+    <div class="gbar"><i id="gprog"></i></div>
+    <div class="row" style="margin-top:14px">
+      <button id="gplay">▶ 聽這句</button>
+      <button id="gspeed">慢速</button>
+      <button id="gauto">自動播放</button>
+      <button id="gzhBtn">中文 ON</button>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <button id="gprev">← 上一句</button>
+      <button id="gnext">下一句 →</button>
+    </div>
+    <div class="jumpwrap"><span class="cfgl">跳到</span><select id="gjump" class="jump"></select></div>
+    <p class="gtip">一句一句來：先聽 → 看讀音 → 認重點詞 → 下一句。<br>聽不懂就按「慢速」，或點句子裡的詞查釋義。</p>
+  </div>
+</section>
+
+<section id="viewT"></section>
+
+<section id="viewQ">
+  <h2 class="ph">測驗<small>自己選題型、範圍、題數</small></h2>
+  <div class="cfg" id="qcfg">
+    <div class="cfgrow"><span class="cfgl">題型</span>
+      <div class="chips" id="ckind">
+        <button class="chip on" data-k="all">全部</button>
+        <button class="chip" data-k="read">讀音</button>
+        <button class="chip" data-k="mean">詞義</button>
+        <button class="chip" data-k="listen">聽力</button>
+        <button class="chip" data-k="cloze">克漏字</button>
+      </div>
+    </div>
+    <div class="cfgrow"><span class="cfgl">範圍</span>
+      <div class="chips" id="cscope">
+        <button class="chip on" data-s="lesson">本課全部</button>
+        <button class="chip" data-s="saved">我收藏的</button>
+        <button class="chip" data-s="due">今天到期</button>
+      </div>
+    </div>
+    <div class="cfgrow"><span class="cfgl">題數</span>
+      <div class="chips" id="cnum">
+        <button class="chip on" data-n="10">10 題</button>
+        <button class="chip" data-n="20">20 題</button>
+        <button class="chip" data-n="0">全部</button>
+      </div>
+    </div>
+  </div>
+  <div class="qcard">
+    <div class="qtop"><span class="qtype" id="qtype">—</span><span id="qprog"></span></div>
+    <div class="qstem" id="qstem"></div>
+    <div id="opts"></div>
+    <div class="feed" id="qfeed"></div>
+    <div class="row" style="margin-top:12px">
+      <button id="qnext" class="wide" style="display:none">下一題</button>
+      <button id="qstart" class="wide">開始練習 · <b id="qpool">0</b> 個詞</button>
+    </div>
+    <p class="tip" id="qhint" style="display:none;margin-top:8px"></p>
+    <div class="empty" id="qempty" style="display:none">🌸 今天沒有要複習的詞<br>去「逐句」頁點幾個詞放進生詞本，明天會自動排進來</div>
+  </div>
+</section>
+
+<section id="viewW">
+  <h2 class="ph">生詞本<span class="langtag" id="wlang">—</span><small>只顯示這個語言</small></h2>
+  <div class="wstat" id="wstat"></div>
+  <div class="chips" id="wfilter" style="margin-bottom:10px">
+    <button class="chip on" data-f="all">全部</button>
+    <button class="chip" data-f="new">還沒練</button>
+    <button class="chip" data-f="due">待複習</button>
+    <button class="chip" data-f="mast">已掌握</button>
+  </div>
+  <input id="wsearch" class="search" placeholder="搜尋詞或中文意思…">
+  <div id="vlist"></div>
+  <div class="row" style="margin-top:12px">
+    <button id="csv">匯出 CSV（Anki）</button>
+    <button id="json">備份 JSON</button>
+    <button id="clr" style="color:var(--rose-d)">清空</button>
+  </div>
+</section>
+
+<nav>
+  <button id="tabG" class="on">導讀</button>
+  <button id="tabT">逐句</button>
+  <button id="tabQ">測驗</button>
+  <button id="tabW">生詞</button>
+</nav>
+
+<div id="sheet">
+  <div class="w" id="sw"></div>
+  <div class="rd" id="srd"></div>
+  <div class="gl" id="sgl"></div>
+  <div class="ctx" id="sctx"></div>
+  <div class="row">
+    <button id="save" style="background:linear-gradient(135deg,#FF9DB4,#EF6A8B);color:#fff;border-color:transparent;font-weight:700">加入生詞</button>
+    <button id="say" style="display:none">🔊 發音</button>
+    <button id="dict">查辭典</button>
+    <button id="close">關閉</button>
+  </div>
+</div>
+
+<script id="data" type="application/json">{"vid": "8M__AwkeP3o", "kind": "youtube", "media": "", "lang": "fr", "dict": "https://www.wordreference.com/fren/{w}", "origin": "ASR large-v3", "segments": [{"t0": 0.05, "t1": 2.43, "text": "Bienvenue à Simply French Podcast.", "words": [{"w": "Bienvenue", "t0": 0.05, "t1": 0.79}, {"w": "à", "t0": 0.79, "t1": 1.05}, {"w": "Simply", "t0": 1.05, "t1": 1.45}, {"w": "French", "t0": 1.45, "t1": 1.83}, {"w": "Podcast.", "t0": 1.83, "t1": 2.43}], "tokens": [{"s": "Bienvenue", "r": "", "b": "bienvenue", "g": "", "c": false, "fn": false, "t0": 0.05, "t1": 0.76, "content": true}, {"s": "à", "r": "", "b": "à", "g": "", "c": false, "fn": false, "t0": 0.76, "t1": 0.84, "content": true}, {"s": "Simply", "r": "", "b": "simply", "g": "", "c": false, "fn": false, "t0": 0.84, "t1": 1.32, "content": true}, {"s": "French", "r": "", "b": "french", "g": "", "c": false, "fn": false, "t0": 1.32, "t1": 1.8, "content": true}, {"s": "Podcast", "r": "", "b": "podcast", "g": "", "c": false, "fn": false, "t0": 1.8, "t1": 2.35, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 2.35, "t1": 2.43, "content": false}], "zh": "歡迎來到 Simply French Podcast。"}, {"t0": 7.0, "t1": 8.86, "text": "La la la la la.", "words": [{"w": "La", "t0": 7.0, "t1": 7.38}, {"w": "la", "t0": 7.38, "t1": 7.6}, {"w": "la", "t0": 7.6, "t1": 8.1}, {"w": "la", "t0": 8.1, "t1": 8.46}, {"w": "la.", "t0": 8.46, "t1": 8.86}], "tokens": [{"s": "La", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 7.0, "t1": 7.34, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 7.34, "t1": 7.68, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 7.68, "t1": 8.01, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 8.01, "t1": 8.35, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 8.35, "t1": 8.69, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 8.69, "t1": 8.86, "content": false}], "zh": "啦啦啦啦啦。"}, {"t0": 10.42, "t1": 15.5, "text": "Bonjour à tous. Bienvenue sur notre podcast. Je suis Victor.", "words": [{"w": "Bonjour", "t0": 10.42, "t1": 11.18}, {"w": "à", "t0": 11.18, "t1": 11.42}, {"w": "tous.", "t0": 11.42, "t1": 11.62}, {"w": "Bienvenue", "t0": 12.06, "t1": 12.82}, {"w": "sur", "t0": 12.82, "t1": 13.04}, {"w": "notre", "t0": 13.04, "t1": 13.24}, {"w": "podcast.", "t0": 13.24, "t1": 13.7}, {"w": "Je", "t0": 14.12, "t1": 14.64}, {"w": "suis", "t0": 14.64, "t1": 14.92}, {"w": "Victor.", "t0": 14.92, "t1": 15.5}], "tokens": [{"s": "Bonjour", "r": "", "b": "bonjour", "g": "", "c": false, "fn": false, "t0": 10.42, "t1": 11.12, "content": true}, {"s": "à", "r": "", "b": "à", "g": "", "c": false, "fn": false, "t0": 11.12, "t1": 11.22, "content": true}, {"s": "tous", "r": "", "b": "tous", "g": "", "c": false, "fn": false, "t0": 11.22, "t1": 11.62, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 11.62, "t1": 11.71, "content": false}, {"s": "Bienvenue", "r": "", "b": "bienvenue", "g": "", "c": false, "fn": false, "t0": 11.71, "t1": 12.61, "content": true}, {"s": "sur", "r": "", "b": "sur", "g": "", "c": false, "fn": false, "t0": 12.61, "t1": 12.91, "content": true}, {"s": "notre", "r": "", "b": "notre", "g": "", "c": false, "fn": false, "t0": 12.91, "t1": 13.41, "content": true}, {"s": "podcast", "r": "", "b": "podcast", "g": "", "c": false, "fn": false, "t0": 13.41, "t1": 14.11, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 14.11, "t1": 14.21, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 14.21, "t1": 14.4, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 14.4, "t1": 14.8, "content": true}, {"s": "Victor", "r": "", "b": "victor", "g": "", "c": false, "fn": false, "t0": 14.8, "t1": 15.4, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 15.4, "t1": 15.5, "content": false}], "zh": "大家好，歡迎來到我們的播客。我是 Victor。"}, {"t0": 17.16, "t1": 18.36, "text": "Bonjour Amélie.", "words": [{"w": "Bonjour", "t0": 17.16, "t1": 17.92}, {"w": "Amélie.", "t0": 17.92, "t1": 18.36}], "tokens": [{"s": "Bonjour", "r": "", "b": "bonjour", "g": "", "c": false, "fn": false, "t0": 17.16, "t1": 17.76, "content": true}, {"s": "Amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 17.76, "t1": 18.27, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 18.27, "t1": 18.36, "content": false}], "zh": "你好，Amélie。"}, {"t0": 18.84, "t1": 22.18, "text": "Bonjour Victor. Bonjour tout le monde. Comment ça va ?", "words": [{"w": "Bonjour", "t0": 18.84, "t1": 19.22}, {"w": "Victor.", "t0": 19.22, "t1": 19.64}, {"w": "Bonjour", "t0": 19.78, "t1": 20.42}, {"w": "tout", "t0": 20.42, "t1": 20.68}, {"w": "le", "t0": 20.68, "t1": 20.82}, {"w": "monde.", "t0": 20.82, "t1": 21.12}, {"w": "Comment", "t0": 21.16, "t1": 21.52}, {"w": "ça", "t0": 21.52, "t1": 21.68}, {"w": "va", "t0": 21.68, "t1": 21.84}, {"w": "?", "t0": 21.84, "t1": 22.18}], "tokens": [{"s": "Bonjour", "r": "", "b": "bonjour", "g": "", "c": false, "fn": false, "t0": 18.84, "t1": 19.36, "content": true}, {"s": "Victor", "r": "", "b": "victor", "g": "", "c": false, "fn": false, "t0": 19.36, "t1": 19.8, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 19.8, "t1": 19.88, "content": false}, {"s": "Bonjour", "r": "", "b": "bonjour", "g": "", "c": false, "fn": false, "t0": 19.88, "t1": 20.4, "content": true}, {"s": "tout", "r": "", "b": "tout", "g": "", "c": false, "fn": false, "t0": 20.4, "t1": 20.7, "content": true}, {"s": "le", "r": "", "b": "le", "g": "", "c": false, "fn": true, "t0": 20.7, "t1": 20.84, "content": true}, {"s": "monde", "r": "", "b": "monde", "g": "", "c": false, "fn": false, "t0": 20.84, "t1": 21.22, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 21.22, "t1": 21.29, "content": false}, {"s": "Comment", "r": "", "b": "comment", "g": "", "c": false, "fn": false, "t0": 21.29, "t1": 21.81, "content": true}, {"s": "ça", "r": "", "b": "ça", "g": "", "c": false, "fn": false, "t0": 21.81, "t1": 21.96, "content": true}, {"s": "va", "r": "", "b": "va", "g": "", "c": false, "fn": false, "t0": 21.96, "t1": 22.11, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 22.11, "t1": 22.18, "content": false}], "zh": "你好 Victor，大家好。你們好嗎？"}, {"t0": 22.52, "t1": 29.72, "text": "Ça va bien, merci. Aujourd'hui, Amélie, on parle du travail. Le travail.", "words": [{"w": "Ça", "t0": 22.52, "t1": 22.9}, {"w": "va", "t0": 22.9, "t1": 23.06}, {"w": "bien,", "t0": 23.06, "t1": 23.3}, {"w": "merci.", "t0": 23.34, "t1": 23.64}, {"w": "Aujourd", "t0": 24.08, "t1": 24.84}, {"w": "'hui,", "t0": 24.84, "t1": 25.22}, {"w": "Amélie,", "t0": 25.22, "t1": 25.94}, {"w": "on", "t0": 26.04, "t1": 26.66}, {"w": "parle", "t0": 26.66, "t1": 27.02}, {"w": "du", "t0": 27.02, "t1": 27.58}, {"w": "travail.", "t0": 27.58, "t1": 27.96}, {"w": "Le", "t0": 28.28, "t1": 29.04}, {"w": "travail.", "t0": 29.04, "t1": 29.72}], "tokens": [{"s": "Ça", "r": "", "b": "ça", "g": "", "c": false, "fn": false, "t0": 22.52, "t1": 22.76, "content": true}, {"s": "va", "r": "", "b": "va", "g": "", "c": false, "fn": false, "t0": 22.76, "t1": 22.99, "content": true}, {"s": "bien", "r": "", "b": "bien", "g": "", "c": false, "fn": false, "t0": 22.99, "t1": 23.46, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 23.46, "t1": 23.58, "content": false}, {"s": "merci", "r": "", "b": "merci", "g": "", "c": false, "fn": false, "t0": 23.58, "t1": 24.17, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 24.17, "t1": 24.29, "content": false}, {"s": "Aujourd'hui", "r": "", "b": "aujourd'hui", "g": "", "c": false, "fn": false, "t0": 24.29, "t1": 25.59, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 25.59, "t1": 25.71, "content": false}, {"s": "Amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 25.71, "t1": 26.42, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 26.42, "t1": 26.53, "content": false}, {"s": "on", "r": "", "b": "on", "g": "", "c": false, "fn": true, "t0": 26.53, "t1": 26.77, "content": true}, {"s": "parle", "r": "", "b": "parle", "g": "", "c": false, "fn": false, "t0": 26.77, "t1": 27.36, "content": true}, {"s": "du", "r": "", "b": "du", "g": "", "c": false, "fn": true, "t0": 27.36, "t1": 27.6, "content": true}, {"s": "travail", "r": "", "b": "travail", "g": "工作", "c": true, "fn": false, "t0": 27.6, "t1": 28.42, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 28.42, "t1": 28.54, "content": false}, {"s": "Le", "r": "", "b": "le", "g": "", "c": false, "fn": true, "t0": 28.54, "t1": 28.78, "content": true}, {"s": "travail", "r": "", "b": "travail", "g": "工作", "c": true, "fn": false, "t0": 28.78, "t1": 29.6, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 29.6, "t1": 29.72, "content": false}], "zh": "我很好，謝謝。今天，Amélie，我們來談談工作。工作。"}, {"t0": 29.72, "t1": 42.02, "text": "C'est un sujet important. Amélie, la question est « Qu'est-ce que tu fais dans la vie ? »", "words": [{"w": "C", "t0": 29.72, "t1": 30.5}, {"w": "'est", "t0": 30.5, "t1": 31.22}, {"w": "un", "t0": 31.22, "t1": 31.34}, {"w": "sujet", "t0": 31.34, "t1": 31.68}, {"w": "important.", "t0": 31.68, "t1": 32.16}, {"w": "Amélie,", "t0": 35.54, "t1": 36.22}, {"w": "la", "t0": 36.32, "t1": 37.02}, {"w": "question", "t0": 37.02, "t1": 37.4}, {"w": "est", "t0": 37.4, "t1": 37.88}, {"w": "«", "t0": 37.88, "t1": 38.96}, {"w": "Qu", "t0": 38.96, "t1": 39.16}, {"w": "'est", "t0": 39.16, "t1": 39.3}, {"w": "-ce", "t0": 39.3, "t1": 39.38}, {"w": "que", "t0": 39.38, "t1": 39.6}, {"w": "tu", "t0": 39.6, "t1": 39.74}, {"w": "fais", "t0": 39.74, "t1": 40.08}, {"w": "dans", "t0": 40.08, "t1": 40.58}, {"w": "la", "t0": 40.58, "t1": 40.72}, {"w": "vie", "t0": 40.72, "t1": 41.0}, {"w": "?", "t0": 41.0, "t1": 41.16}, {"w": "»", "t0": 41.16, "t1": 42.02}], "tokens": [{"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 29.72, "t1": 30.57, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 30.57, "t1": 30.92, "content": true}, {"s": "sujet", "r": "", "b": "sujet", "g": "", "c": false, "fn": false, "t0": 30.92, "t1": 31.77, "content": true}, {"s": "important", "r": "", "b": "important", "g": "", "c": false, "fn": false, "t0": 31.77, "t1": 33.31, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 33.31, "t1": 33.48, "content": false}, {"s": "Amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 33.48, "t1": 34.5, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 34.5, "t1": 34.67, "content": false}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 34.67, "t1": 35.02, "content": true}, {"s": "question", "r": "", "b": "question", "g": "問題", "c": true, "fn": false, "t0": 35.02, "t1": 36.38, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 36.38, "t1": 36.9, "content": true}, {"s": "«", "r": "", "b": "«", "g": "", "c": false, "fn": true, "t0": 36.9, "t1": 37.07, "content": false}, {"s": "Qu'est-ce", "r": "", "b": "qu'est-ce", "g": "", "c": false, "fn": false, "t0": 37.07, "t1": 38.6, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 38.6, "t1": 39.12, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 39.12, "t1": 39.46, "content": true}, {"s": "fais", "r": "", "b": "fais", "g": "", "c": false, "fn": false, "t0": 39.46, "t1": 40.14, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 40.14, "t1": 40.82, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 40.82, "t1": 41.17, "content": true}, {"s": "vie", "r": "", "b": "vie", "g": "生活、人生", "c": true, "fn": false, "t0": 41.17, "t1": 41.68, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 41.68, "t1": 41.85, "content": false}, {"s": "»", "r": "", "b": "»", "g": "", "c": false, "fn": true, "t0": 41.85, "t1": 42.02, "content": false}], "zh": "這是個重要話題。Amélie，問題是「你從事什麼工作？」"}, {"t0": 42.42, "t1": 49.42, "text": "Je répète. « Qu'est-ce que tu fais dans la vie ? »", "words": [{"w": "Je", "t0": 42.42, "t1": 42.76}, {"w": "répète.", "t0": 42.76, "t1": 43.22}, {"w": "«", "t0": 43.42, "t1": 44.1}, {"w": "Qu", "t0": 44.1, "t1": 44.48}, {"w": "'est", "t0": 44.48, "t1": 44.58}, {"w": "-ce", "t0": 44.58, "t1": 45.02}, {"w": "que", "t0": 45.02, "t1": 45.28}, {"w": "tu", "t0": 45.28, "t1": 45.78}, {"w": "fais", "t0": 45.78, "t1": 46.28}, {"w": "dans", "t0": 46.28, "t1": 47.1}, {"w": "la", "t0": 47.1, "t1": 47.7}, {"w": "vie", "t0": 47.7, "t1": 48.38}, {"w": "?", "t0": 48.38, "t1": 48.58}, {"w": "»", "t0": 48.58, "t1": 49.42}], "tokens": [{"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 42.42, "t1": 42.78, "content": true}, {"s": "répète", "r": "", "b": "répète", "g": "", "c": false, "fn": false, "t0": 42.78, "t1": 43.86, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 43.86, "t1": 44.04, "content": false}, {"s": "«", "r": "", "b": "«", "g": "", "c": false, "fn": true, "t0": 44.04, "t1": 44.21, "content": false}, {"s": "Qu'est-ce", "r": "", "b": "qu'est-ce", "g": "", "c": false, "fn": false, "t0": 44.21, "t1": 45.83, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 45.83, "t1": 46.37, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 46.37, "t1": 46.73, "content": true}, {"s": "fais", "r": "", "b": "fais", "g": "", "c": false, "fn": false, "t0": 46.73, "t1": 47.45, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 47.45, "t1": 48.16, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 48.16, "t1": 48.52, "content": true}, {"s": "vie", "r": "", "b": "vie", "g": "生活、人生", "c": true, "fn": false, "t0": 48.52, "t1": 49.06, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 49.06, "t1": 49.24, "content": false}, {"s": "»", "r": "", "b": "»", "g": "", "c": false, "fn": true, "t0": 49.24, "t1": 49.42, "content": false}], "zh": "我重複一遍。「你從事什麼工作？」"}, {"t0": 49.42, "t1": 53.72, "text": "« Qu'est-ce que je fais dans la vie ? » C'est une bonne question.", "words": [{"w": "«", "t0": 49.42, "t1": 49.82}, {"w": "Qu", "t0": 49.82, "t1": 50.1}, {"w": "'est", "t0": 50.1, "t1": 50.22}, {"w": "-ce", "t0": 50.22, "t1": 50.34}, {"w": "que", "t0": 50.34, "t1": 50.44}, {"w": "je", "t0": 50.44, "t1": 50.66}, {"w": "fais", "t0": 50.66, "t1": 51.12}, {"w": "dans", "t0": 51.12, "t1": 51.4}, {"w": "la", "t0": 51.4, "t1": 51.64}, {"w": "vie", "t0": 51.64, "t1": 52.14}, {"w": "?", "t0": 52.14, "t1": 52.38}, {"w": "»", "t0": 52.38, "t1": 52.66}, {"w": "C", "t0": 52.66, "t1": 52.8}, {"w": "'est", "t0": 52.8, "t1": 52.88}, {"w": "une", "t0": 52.88, "t1": 53.02}, {"w": "bonne", "t0": 53.02, "t1": 53.32}, {"w": "question.", "t0": 53.32, "t1": 53.72}], "tokens": [{"s": "«", "r": "", "b": "«", "g": "", "c": false, "fn": true, "t0": 49.42, "t1": 49.5, "content": false}, {"s": "Qu'est-ce", "r": "", "b": "qu'est-ce", "g": "", "c": false, "fn": false, "t0": 49.5, "t1": 50.25, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 50.25, "t1": 50.5, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 50.5, "t1": 50.66, "content": true}, {"s": "fais", "r": "", "b": "fais", "g": "", "c": false, "fn": false, "t0": 50.66, "t1": 50.99, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 50.99, "t1": 51.32, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 51.32, "t1": 51.49, "content": true}, {"s": "vie", "r": "", "b": "vie", "g": "生活、人生", "c": true, "fn": false, "t0": 51.49, "t1": 51.74, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 51.74, "t1": 51.82, "content": false}, {"s": "»", "r": "", "b": "»", "g": "", "c": false, "fn": true, "t0": 51.82, "t1": 51.9, "content": false}, {"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 51.9, "t1": 52.31, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 52.31, "t1": 52.56, "content": true}, {"s": "bonne", "r": "", "b": "bonne", "g": "", "c": false, "fn": false, "t0": 52.56, "t1": 52.98, "content": true}, {"s": "question", "r": "", "b": "question", "g": "問題", "c": true, "fn": false, "t0": 52.98, "t1": 53.64, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 53.64, "t1": 53.72, "content": false}], "zh": "「我從事什麼工作？」這是個好問題。"}, {"t0": 54.58, "t1": 56.5, "text": "Je suis graphiste.", "words": [{"w": "Je", "t0": 54.58, "t1": 54.92}, {"w": "suis", "t0": 54.92, "t1": 55.36}, {"w": "graphiste.", "t0": 55.36, "t1": 56.5}], "tokens": [{"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 54.58, "t1": 54.82, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 54.82, "t1": 55.3, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 55.3, "t1": 56.38, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 56.38, "t1": 56.5, "content": false}], "zh": "我是平面設計師。"}, {"t0": 56.5, "t1": 68.6, "text": "je suis graphiste graphiste c'est un mot intéressant tu es graphiste je suis", "words": [{"w": "je", "t0": 56.5, "t1": 57.08}, {"w": "suis", "t0": 57.08, "t1": 57.76}, {"w": "graphiste", "t0": 57.76, "t1": 58.42}, {"w": "graphiste", "t0": 58.42, "t1": 60.5}, {"w": "c", "t0": 60.5, "t1": 60.86}, {"w": "'est", "t0": 60.86, "t1": 61.94}, {"w": "un", "t0": 61.94, "t1": 62.04}, {"w": "mot", "t0": 62.04, "t1": 62.2}, {"w": "intéressant", "t0": 62.2, "t1": 62.76}, {"w": "tu", "t0": 62.76, "t1": 63.72}, {"w": "es", "t0": 63.72, "t1": 63.92}, {"w": "graphiste", "t0": 63.92, "t1": 64.72}, {"w": "je", "t0": 64.72, "t1": 65.88}, {"w": "suis", "t0": 68.32, "t1": 68.6}], "tokens": [{"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 56.5, "t1": 56.88, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 56.88, "t1": 57.63, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 57.63, "t1": 59.34, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 59.34, "t1": 61.04, "content": true}, {"s": "c'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 61.04, "t1": 61.98, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 61.98, "t1": 62.36, "content": true}, {"s": "mot", "r": "", "b": "mot", "g": "", "c": false, "fn": false, "t0": 62.36, "t1": 62.93, "content": true}, {"s": "intéressant", "r": "", "b": "intéressant", "g": "有趣的", "c": true, "fn": false, "t0": 62.93, "t1": 65.01, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 65.01, "t1": 65.39, "content": true}, {"s": "es", "r": "", "b": "es", "g": "", "c": false, "fn": false, "t0": 65.39, "t1": 65.76, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 65.76, "t1": 67.47, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 67.47, "t1": 67.84, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 67.84, "t1": 68.6, "content": true}], "zh": "我是平面設計師，平面設計師是個有趣的詞，你是平面設計師，我是"}, {"t0": 68.6, "t1": 79.38, "text": "professeur je suis professeur professeur à victor et professeur c'est super un", "words": [{"w": "professeur", "t0": 68.6, "t1": 69.48}, {"w": "je", "t0": 69.48, "t1": 70.6}, {"w": "suis", "t0": 70.6, "t1": 70.86}, {"w": "professeur", "t0": 70.86, "t1": 72.24}, {"w": "professeur", "t0": 72.24, "t1": 74.44}, {"w": "à", "t0": 74.44, "t1": 74.8}, {"w": "victor", "t0": 74.8, "t1": 76.12}, {"w": "et", "t0": 76.12, "t1": 76.36}, {"w": "professeur", "t0": 76.36, "t1": 77.26}, {"w": "c", "t0": 77.26, "t1": 77.5}, {"w": "'est", "t0": 77.5, "t1": 77.96}, {"w": "super", "t0": 77.96, "t1": 78.24}, {"w": "un", "t0": 78.24, "t1": 79.38}], "tokens": [{"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 68.6, "t1": 70.21, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 70.21, "t1": 70.53, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 70.53, "t1": 71.17, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 71.17, "t1": 72.78, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 72.78, "t1": 74.39, "content": true}, {"s": "à", "r": "", "b": "à", "g": "", "c": false, "fn": false, "t0": 74.39, "t1": 74.55, "content": true}, {"s": "victor", "r": "", "b": "victor", "g": "", "c": false, "fn": false, "t0": 74.55, "t1": 75.52, "content": true}, {"s": "et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 75.52, "t1": 75.84, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 75.84, "t1": 77.45, "content": true}, {"s": "c'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 77.45, "t1": 78.25, "content": true}, {"s": "super", "r": "", "b": "super", "g": "", "c": false, "fn": false, "t0": 78.25, "t1": 79.06, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 79.06, "t1": 79.38, "content": true}], "zh": "老師，我是老師，老師對 Victor 來說，老師很棒，一"}, {"t0": 81.87, "t1": 94.12, "text": "professeur oui je suis professeur alors amélie est ce que je suis graphiste non", "words": [{"w": "professeur", "t0": 81.87, "t1": 82.79}, {"w": "oui", "t0": 82.79, "t1": 83.47}, {"w": "je", "t0": 83.47, "t1": 84.23}, {"w": "suis", "t0": 84.23, "t1": 84.53}, {"w": "professeur", "t0": 84.53, "t1": 85.39}, {"w": "alors", "t0": 88.46, "t1": 89.38}, {"w": "amélie", "t0": 89.38, "t1": 90.02}, {"w": "est", "t0": 90.02, "t1": 90.46}, {"w": "ce", "t0": 90.46, "t1": 91.04}, {"w": "que", "t0": 91.04, "t1": 91.16}, {"w": "je", "t0": 91.16, "t1": 91.28}, {"w": "suis", "t0": 91.28, "t1": 91.5}, {"w": "graphiste", "t0": 91.5, "t1": 92.08}, {"w": "non", "t0": 92.08, "t1": 94.12}], "tokens": [{"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 81.87, "t1": 83.73, "content": true}, {"s": "oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 83.73, "t1": 84.28, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 84.28, "t1": 84.65, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 84.65, "t1": 85.4, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 85.4, "t1": 87.25, "content": true}, {"s": "alors", "r": "", "b": "alors", "g": "", "c": false, "fn": false, "t0": 87.25, "t1": 88.18, "content": true}, {"s": "amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 88.18, "t1": 89.29, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 89.29, "t1": 89.85, "content": true}, {"s": "ce", "r": "", "b": "ce", "g": "", "c": false, "fn": true, "t0": 89.85, "t1": 90.22, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 90.22, "t1": 90.78, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 90.78, "t1": 91.15, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 91.15, "t1": 91.89, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 91.89, "t1": 93.56, "content": true}, {"s": "non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 93.56, "t1": 94.12, "content": true}], "zh": "教授對，我是教授。那麼，Amélie，我是插畫家嗎？不是。"}, {"t0": 94.12, "t1": 98.78, "text": "Non, tu n'es pas graphiste. Victor n'est pas graphiste.", "words": [{"w": "Non,", "t0": 94.12, "t1": 94.3}, {"w": "tu", "t0": 94.32, "t1": 94.92}, {"w": "n", "t0": 94.92, "t1": 95.08}, {"w": "'es", "t0": 95.08, "t1": 95.2}, {"w": "pas", "t0": 95.2, "t1": 95.38}, {"w": "graphiste.", "t0": 95.38, "t1": 96.02}, {"w": "Victor", "t0": 96.8, "t1": 97.32}, {"w": "n", "t0": 97.32, "t1": 97.76}, {"w": "'est", "t0": 97.76, "t1": 97.92}, {"w": "pas", "t0": 97.92, "t1": 98.14}, {"w": "graphiste.", "t0": 98.14, "t1": 98.78}], "tokens": [{"s": "Non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 94.12, "t1": 94.42, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 94.42, "t1": 94.52, "content": false}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 94.52, "t1": 94.71, "content": true}, {"s": "n'es", "r": "", "b": "n'es", "g": "", "c": false, "fn": false, "t0": 94.71, "t1": 95.11, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 95.11, "t1": 95.41, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 95.41, "t1": 96.3, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 96.3, "t1": 96.4, "content": false}, {"s": "Victor", "r": "", "b": "victor", "g": "", "c": false, "fn": false, "t0": 96.4, "t1": 97.0, "content": true}, {"s": "n'est", "r": "", "b": "n'est", "g": "", "c": false, "fn": false, "t0": 97.0, "t1": 97.49, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 97.49, "t1": 97.79, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 97.79, "t1": 98.68, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 98.68, "t1": 98.78, "content": false}], "zh": "不，你不是插畫家。Victor 也不是插畫家。"}, {"t0": 99.24, "t1": 107.22, "text": "C'est correct. Je ne suis pas graphiste. Je suis professeur. Et toi, est-ce que tu es professeur ?", "words": [{"w": "C", "t0": 99.24, "t1": 99.76}, {"w": "'est", "t0": 99.76, "t1": 99.88}, {"w": "correct.", "t0": 99.88, "t1": 100.1}, {"w": "Je", "t0": 100.64, "t1": 101.16}, {"w": "ne", "t0": 101.16, "t1": 101.26}, {"w": "suis", "t0": 101.26, "t1": 101.44}, {"w": "pas", "t0": 101.44, "t1": 101.62}, {"w": "graphiste.", "t0": 101.62, "t1": 102.34}, {"w": "Je", "t0": 102.46, "t1": 102.98}, {"w": "suis", "t0": 102.98, "t1": 103.16}, {"w": "professeur.", "t0": 103.16, "t1": 104.06}, {"w": "Et", "t0": 104.36, "t1": 104.88}, {"w": "toi,", "t0": 104.88, "t1": 105.1}, {"w": "est", "t0": 105.2, "t1": 105.94}, {"w": "-ce", "t0": 105.94, "t1": 106.02}, {"w": "que", "t0": 106.02, "t1": 106.06}, {"w": "tu", "t0": 106.06, "t1": 106.22}, {"w": "es", "t0": 106.22, "t1": 106.34}, {"w": "professeur", "t0": 106.34, "t1": 106.96}, {"w": "?", "t0": 106.96, "t1": 107.22}], "tokens": [{"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 99.24, "t1": 99.73, "content": true}, {"s": "correct", "r": "", "b": "correct", "g": "", "c": false, "fn": false, "t0": 99.73, "t1": 100.42, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 100.42, "t1": 100.52, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 100.52, "t1": 100.72, "content": true}, {"s": "ne", "r": "", "b": "ne", "g": "", "c": false, "fn": true, "t0": 100.72, "t1": 100.91, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 100.91, "t1": 101.31, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 101.31, "t1": 101.6, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 101.6, "t1": 102.49, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 102.49, "t1": 102.59, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 102.59, "t1": 102.79, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 102.79, "t1": 103.18, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 103.18, "t1": 104.17, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 104.17, "t1": 104.26, "content": false}, {"s": "Et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 104.26, "t1": 104.46, "content": true}, {"s": "toi", "r": "", "b": "toi", "g": "", "c": false, "fn": false, "t0": 104.46, "t1": 104.76, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 104.76, "t1": 104.86, "content": false}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 104.86, "t1": 105.45, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 105.45, "t1": 105.74, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 105.74, "t1": 105.94, "content": true}, {"s": "es", "r": "", "b": "es", "g": "", "c": false, "fn": false, "t0": 105.94, "t1": 106.14, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 106.14, "t1": 107.12, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 107.12, "t1": 107.22, "content": false}], "zh": "沒錯。我不是插畫家，我是教授。你呢，你是教授嗎？"}, {"t0": 108.32, "t1": 114.24, "text": "Non, je ne suis pas professeur. Je suis graphiste. J'aime les couleurs.", "words": [{"w": "Non,", "t0": 108.32, "t1": 108.84}, {"w": "je", "t0": 108.84, "t1": 109.36}, {"w": "ne", "t0": 109.36, "t1": 109.5}, {"w": "suis", "t0": 109.5, "t1": 109.76}, {"w": "pas", "t0": 109.76, "t1": 109.94}, {"w": "professeur.", "t0": 109.94, "t1": 110.78}, {"w": "Je", "t0": 111.04, "t1": 111.56}, {"w": "suis", "t0": 111.56, "t1": 111.84}, {"w": "graphiste.", "t0": 111.84, "t1": 112.54}, {"w": "J", "t0": 112.68, "t1": 113.16}, {"w": "'aime", "t0": 113.16, "t1": 113.4}, {"w": "les", "t0": 113.4, "t1": 113.62}, {"w": "couleurs.", "t0": 113.62, "t1": 114.24}], "tokens": [{"s": "Non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 108.32, "t1": 108.62, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 108.62, "t1": 108.71, "content": false}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 108.71, "t1": 108.91, "content": true}, {"s": "ne", "r": "", "b": "ne", "g": "", "c": false, "fn": true, "t0": 108.91, "t1": 109.11, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 109.11, "t1": 109.5, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 109.5, "t1": 109.8, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 109.8, "t1": 110.79, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 110.79, "t1": 110.89, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 110.89, "t1": 111.08, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 111.08, "t1": 111.48, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 111.48, "t1": 112.37, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 112.37, "t1": 112.46, "content": false}, {"s": "J'aime", "r": "", "b": "j'aime", "g": "", "c": false, "fn": false, "t0": 112.46, "t1": 113.06, "content": true}, {"s": "les", "r": "", "b": "les", "g": "", "c": false, "fn": true, "t0": 113.06, "t1": 113.35, "content": true}, {"s": "couleurs", "r": "", "b": "couleurs", "g": "", "c": false, "fn": false, "t0": 113.35, "t1": 114.14, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 114.14, "t1": 114.24, "content": false}], "zh": "不，我不是教授。我是插畫家。我喜歡顏色。"}, {"t0": 115.48, "t1": 122.94, "text": "Très bien. Parlons d'une autre personne. Parlons de Pierre. Pierre est docteur.", "words": [{"w": "Très", "t0": 115.48, "t1": 116.0}, {"w": "bien.", "t0": 116.0, "t1": 116.14}, {"w": "Parlons", "t0": 116.98, "t1": 117.5}, {"w": "d", "t0": 117.5, "t1": 117.6}, {"w": "'une", "t0": 117.6, "t1": 117.7}, {"w": "autre", "t0": 117.7, "t1": 117.92}, {"w": "personne.", "t0": 117.92, "t1": 118.34}, {"w": "Parlons", "t0": 118.98, "t1": 119.5}, {"w": "de", "t0": 119.5, "t1": 119.72}, {"w": "Pierre.", "t0": 119.72, "t1": 120.3}, {"w": "Pierre", "t0": 121.38, "t1": 121.9}, {"w": "est", "t0": 121.9, "t1": 122.3}, {"w": "docteur.", "t0": 122.3, "t1": 122.94}], "tokens": [{"s": "Très", "r": "", "b": "très", "g": "", "c": false, "fn": false, "t0": 115.48, "t1": 115.92, "content": true}, {"s": "bien", "r": "", "b": "bien", "g": "", "c": false, "fn": false, "t0": 115.92, "t1": 116.36, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 116.36, "t1": 116.47, "content": false}, {"s": "Parlons", "r": "", "b": "parlons", "g": "", "c": false, "fn": false, "t0": 116.47, "t1": 117.24, "content": true}, {"s": "d'une", "r": "", "b": "d'une", "g": "", "c": false, "fn": false, "t0": 117.24, "t1": 117.78, "content": true}, {"s": "autre", "r": "", "b": "autre", "g": "", "c": false, "fn": false, "t0": 117.78, "t1": 118.33, "content": true}, {"s": "personne", "r": "", "b": "personne", "g": "", "c": false, "fn": false, "t0": 118.33, "t1": 119.21, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 119.21, "t1": 119.32, "content": false}, {"s": "Parlons", "r": "", "b": "parlons", "g": "", "c": false, "fn": false, "t0": 119.32, "t1": 120.09, "content": true}, {"s": "de", "r": "", "b": "de", "g": "", "c": false, "fn": true, "t0": 120.09, "t1": 120.31, "content": true}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 120.31, "t1": 120.97, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 120.97, "t1": 121.08, "content": false}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 121.08, "t1": 121.73, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 121.73, "t1": 122.06, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 122.06, "t1": 122.83, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 122.83, "t1": 122.94, "content": false}], "zh": "很好。我們來聊聊另一個人。聊聊 Pierre 吧。Pierre 是醫生。"}, {"t0": 122.94, "t1": 138.0, "text": "pierre est docteur d'accord un docteur oui alors la question amélie est ce que pierre est professeur", "words": [{"w": "pierre", "t0": 122.94, "t1": 124.38}, {"w": "est", "t0": 124.38, "t1": 124.62}, {"w": "docteur", "t0": 124.62, "t1": 125.28}, {"w": "d", "t0": 125.28, "t1": 125.52}, {"w": "'accord", "t0": 125.52, "t1": 126.32}, {"w": "un", "t0": 126.32, "t1": 127.78}, {"w": "docteur", "t0": 127.78, "t1": 131.62}, {"w": "oui", "t0": 131.62, "t1": 132.44}, {"w": "alors", "t0": 132.44, "t1": 133.34}, {"w": "la", "t0": 133.34, "t1": 134.02}, {"w": "question", "t0": 134.02, "t1": 134.32}, {"w": "amélie", "t0": 134.32, "t1": 135.0}, {"w": "est", "t0": 135.0, "t1": 136.12}, {"w": "ce", "t0": 136.12, "t1": 136.22}, {"w": "que", "t0": 136.22, "t1": 136.3}, {"w": "pierre", "t0": 136.3, "t1": 136.8}, {"w": "est", "t0": 136.8, "t1": 136.98}, {"w": "professeur", "t0": 136.98, "t1": 138.0}], "tokens": [{"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 122.94, "t1": 124.02, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 124.02, "t1": 124.55, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 124.55, "t1": 125.81, "content": true}, {"s": "d'accord", "r": "", "b": "d'accord", "g": "", "c": false, "fn": false, "t0": 125.81, "t1": 127.24, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 127.24, "t1": 127.6, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 127.6, "t1": 128.86, "content": true}, {"s": "oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 128.86, "t1": 129.39, "content": true}, {"s": "alors", "r": "", "b": "alors", "g": "", "c": false, "fn": false, "t0": 129.39, "t1": 130.29, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 130.29, "t1": 130.65, "content": true}, {"s": "question", "r": "", "b": "question", "g": "問題", "c": true, "fn": false, "t0": 130.65, "t1": 132.08, "content": true}, {"s": "amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 132.08, "t1": 133.16, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 133.16, "t1": 133.7, "content": true}, {"s": "ce", "r": "", "b": "ce", "g": "", "c": false, "fn": true, "t0": 133.7, "t1": 134.06, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 134.06, "t1": 134.59, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 134.59, "t1": 135.67, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 135.67, "t1": 136.21, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 136.21, "t1": 138.0, "content": true}], "zh": "Pierre 是醫生，好的，醫生對。那麼問題來了，Amélie，Pierre 是教授嗎？"}, {"t0": 138.0, "t1": 147.7, "text": "non pierre n'est pas professeur est ce que pierre est graphiste non pierre n'est pas graphiste il", "words": [{"w": "non", "t0": 138.0, "t1": 139.3}, {"w": "pierre", "t0": 139.3, "t1": 140.6}, {"w": "n", "t0": 140.6, "t1": 140.7}, {"w": "'est", "t0": 140.7, "t1": 140.78}, {"w": "pas", "t0": 140.78, "t1": 140.9}, {"w": "professeur", "t0": 140.9, "t1": 141.66}, {"w": "est", "t0": 141.66, "t1": 142.88}, {"w": "ce", "t0": 142.88, "t1": 143.06}, {"w": "que", "t0": 143.06, "t1": 143.16}, {"w": "pierre", "t0": 143.16, "t1": 143.7}, {"w": "est", "t0": 143.7, "t1": 143.84}, {"w": "graphiste", "t0": 143.84, "t1": 144.62}, {"w": "non", "t0": 144.62, "t1": 145.64}, {"w": "pierre", "t0": 145.64, "t1": 146.38}, {"w": "n", "t0": 146.38, "t1": 146.48}, {"w": "'est", "t0": 146.48, "t1": 146.52}, {"w": "pas", "t0": 146.52, "t1": 146.62}, {"w": "graphiste", "t0": 146.62, "t1": 147.1}, {"w": "il", "t0": 147.1, "t1": 147.7}], "tokens": [{"s": "non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 138.0, "t1": 138.36, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 138.36, "t1": 139.08, "content": true}, {"s": "n'est", "r": "", "b": "n'est", "g": "", "c": false, "fn": false, "t0": 139.08, "t1": 139.68, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 139.68, "t1": 140.04, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 140.04, "t1": 141.23, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 141.23, "t1": 141.59, "content": true}, {"s": "ce", "r": "", "b": "ce", "g": "", "c": false, "fn": true, "t0": 141.59, "t1": 141.83, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 141.83, "t1": 142.19, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 142.19, "t1": 142.91, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 142.91, "t1": 143.27, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 143.27, "t1": 144.35, "content": true}, {"s": "non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 144.35, "t1": 144.71, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 144.71, "t1": 145.42, "content": true}, {"s": "n'est", "r": "", "b": "n'est", "g": "", "c": false, "fn": false, "t0": 145.42, "t1": 146.02, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 146.02, "t1": 146.38, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 146.38, "t1": 147.46, "content": true}, {"s": "il", "r": "", "b": "il", "g": "", "c": false, "fn": true, "t0": 147.46, "t1": 147.7, "content": true}], "zh": "不，Pierre 不是教授。Pierre 是插畫家嗎？不，Pierre 不是插畫家，他是"}, {"t0": 147.7, "t1": 159.32, "text": "est docteur. Excellent. Pierre est docteur. Et maintenant, parlons de Marie. Marie est boulangère.", "words": [{"w": "est", "t0": 147.7, "t1": 147.78}, {"w": "docteur.", "t0": 147.78, "t1": 148.36}, {"w": "Excellent.", "t0": 148.78, "t1": 149.86}, {"w": "Pierre", "t0": 150.24, "t1": 151.32}, {"w": "est", "t0": 151.32, "t1": 151.86}, {"w": "docteur.", "t0": 151.86, "t1": 152.78}, {"w": "Et", "t0": 153.52, "t1": 154.6}, {"w": "maintenant,", "t0": 154.6, "t1": 154.96}, {"w": "parlons", "t0": 155.1, "t1": 156.2}, {"w": "de", "t0": 156.2, "t1": 156.42}, {"w": "Marie.", "t0": 156.42, "t1": 156.76}, {"w": "Marie", "t0": 157.12, "t1": 158.2}, {"w": "est", "t0": 158.2, "t1": 158.54}, {"w": "boulangère.", "t0": 158.54, "t1": 159.32}], "tokens": [{"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 147.7, "t1": 148.11, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 148.11, "t1": 149.07, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 149.07, "t1": 149.2, "content": false}, {"s": "Excellent", "r": "", "b": "excellent", "g": "", "c": false, "fn": false, "t0": 149.2, "t1": 150.43, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 150.43, "t1": 150.57, "content": false}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 150.57, "t1": 151.39, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 151.39, "t1": 151.8, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 151.8, "t1": 152.76, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 152.76, "t1": 152.89, "content": false}, {"s": "Et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 152.89, "t1": 153.17, "content": true}, {"s": "maintenant", "r": "", "b": "maintenant", "g": "", "c": false, "fn": false, "t0": 153.17, "t1": 154.54, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 154.54, "t1": 154.67, "content": false}, {"s": "parlons", "r": "", "b": "parlons", "g": "", "c": false, "fn": false, "t0": 154.67, "t1": 155.63, "content": true}, {"s": "de", "r": "", "b": "de", "g": "", "c": false, "fn": true, "t0": 155.63, "t1": 155.9, "content": true}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 155.9, "t1": 156.59, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 156.59, "t1": 156.72, "content": false}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 156.72, "t1": 157.41, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 157.41, "t1": 157.82, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 157.82, "t1": 159.18, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 159.18, "t1": 159.32, "content": false}], "zh": "醫生。太棒了。Pierre 是醫生。現在，我們來聊聊 Marie。Marie 是麵包師。"}, {"t0": 159.98, "t1": 173.58, "text": "Emphasizing the word boulangère. Une boulangère. J'adore le pain. Marie est boulangère. Oui. Alors", "words": [{"w": "Emphasizing", "t0": 159.98, "t1": 161.06}, {"w": "the", "t0": 161.06, "t1": 161.2}, {"w": "word", "t0": 161.2, "t1": 161.44}, {"w": "boulangère.", "t0": 161.44, "t1": 162.8}, {"w": "Une", "t0": 163.58, "t1": 164.66}, {"w": "boulangère.", "t0": 164.66, "t1": 165.66}, {"w": "J", "t0": 165.66, "t1": 166.66}, {"w": "'adore", "t0": 166.66, "t1": 166.86}, {"w": "le", "t0": 166.86, "t1": 167.16}, {"w": "pain.", "t0": 167.16, "t1": 167.34}, {"w": "Marie", "t0": 167.92, "t1": 169.0}, {"w": "est", "t0": 169.0, "t1": 170.9}, {"w": "boulangère.", "t0": 170.9, "t1": 171.48}, {"w": "Oui.", "t0": 171.66, "t1": 172.38}, {"w": "Alors", "t0": 172.52, "t1": 173.58}], "tokens": [{"s": "Emphasizing", "r": "", "b": "emphasizing", "g": "", "c": false, "fn": false, "t0": 159.98, "t1": 161.74, "content": true}, {"s": "the", "r": "", "b": "the", "g": "", "c": false, "fn": true, "t0": 161.74, "t1": 162.22, "content": true}, {"s": "word", "r": "", "b": "word", "g": "", "c": false, "fn": false, "t0": 162.22, "t1": 162.86, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 162.86, "t1": 164.46, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 164.46, "t1": 164.62, "content": false}, {"s": "Une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 164.62, "t1": 165.1, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 165.1, "t1": 166.7, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 166.7, "t1": 166.86, "content": false}, {"s": "J'adore", "r": "", "b": "j'adore", "g": "", "c": false, "fn": false, "t0": 166.86, "t1": 167.98, "content": true}, {"s": "le", "r": "", "b": "le", "g": "", "c": false, "fn": true, "t0": 167.98, "t1": 168.3, "content": true}, {"s": "pain", "r": "", "b": "pain", "g": "", "c": false, "fn": false, "t0": 168.3, "t1": 168.94, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 168.94, "t1": 169.1, "content": false}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 169.1, "t1": 169.9, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 169.9, "t1": 170.38, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 170.38, "t1": 171.98, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 171.98, "t1": 172.14, "content": false}, {"s": "Oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 172.14, "t1": 172.62, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 172.62, "t1": 172.78, "content": false}, {"s": "Alors", "r": "", "b": "alors", "g": "", "c": false, "fn": false, "t0": 172.78, "t1": 173.58, "content": true}], "zh": "強調一下「麵包師」這個詞。一位女麵包師。我超愛麵包。Marie 是女麵包師。對。那麼，"}, {"t0": 173.58, "t1": 189.1, "text": "amélie faisons un résumé moi victor je suis tu es professeur toi amélie tu es je suis graphiste", "words": [{"w": "amélie", "t0": 173.58, "t1": 174.42}, {"w": "faisons", "t0": 174.42, "t1": 175.54}, {"w": "un", "t0": 175.54, "t1": 175.72}, {"w": "résumé", "t0": 175.72, "t1": 176.2}, {"w": "moi", "t0": 176.2, "t1": 178.16}, {"w": "victor", "t0": 178.16, "t1": 179.54}, {"w": "je", "t0": 179.54, "t1": 180.4}, {"w": "suis", "t0": 180.4, "t1": 180.74}, {"w": "tu", "t0": 180.74, "t1": 181.88}, {"w": "es", "t0": 181.88, "t1": 182.08}, {"w": "professeur", "t0": 182.08, "t1": 183.16}, {"w": "toi", "t0": 183.16, "t1": 184.74}, {"w": "amélie", "t0": 184.74, "t1": 185.9}, {"w": "tu", "t0": 185.9, "t1": 186.68}, {"w": "es", "t0": 186.68, "t1": 186.84}, {"w": "je", "t0": 186.84, "t1": 187.66}, {"w": "suis", "t0": 187.66, "t1": 188.04}, {"w": "graphiste", "t0": 188.04, "t1": 189.1}], "tokens": [{"s": "amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 173.58, "t1": 174.77, "content": true}, {"s": "faisons", "r": "", "b": "faisons", "g": "", "c": false, "fn": false, "t0": 174.77, "t1": 176.17, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 176.17, "t1": 176.56, "content": true}, {"s": "résumé", "r": "", "b": "résumé", "g": "", "c": false, "fn": false, "t0": 176.56, "t1": 177.76, "content": true}, {"s": "moi", "r": "", "b": "moi", "g": "", "c": false, "fn": false, "t0": 177.76, "t1": 178.36, "content": true}, {"s": "victor", "r": "", "b": "victor", "g": "", "c": false, "fn": false, "t0": 178.36, "t1": 179.55, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 179.55, "t1": 179.95, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 179.95, "t1": 180.74, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 180.74, "t1": 181.14, "content": true}, {"s": "es", "r": "", "b": "es", "g": "", "c": false, "fn": false, "t0": 181.14, "t1": 181.54, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 181.54, "t1": 183.53, "content": true}, {"s": "toi", "r": "", "b": "toi", "g": "", "c": false, "fn": false, "t0": 183.53, "t1": 184.13, "content": true}, {"s": "amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 184.13, "t1": 185.32, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 185.32, "t1": 185.72, "content": true}, {"s": "es", "r": "", "b": "es", "g": "", "c": false, "fn": false, "t0": 185.72, "t1": 186.12, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 186.12, "t1": 186.51, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 186.51, "t1": 187.31, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 187.31, "t1": 189.1, "content": true}], "zh": "Amélie，我們來總結一下。我，Victor，我是你，教授。你，Amélie，你是我是插畫家。"}, {"t0": 189.1, "t1": 201.82, "text": "pierre est pierre est docteur et marie est marie est boulangère parfait c'est parfait", "words": [{"w": "pierre", "t0": 189.1, "t1": 191.42}, {"w": "est", "t0": 191.42, "t1": 191.62}, {"w": "pierre", "t0": 191.62, "t1": 193.12}, {"w": "est", "t0": 193.12, "t1": 193.36}, {"w": "docteur", "t0": 193.36, "t1": 194.5}, {"w": "et", "t0": 194.5, "t1": 195.94}, {"w": "marie", "t0": 195.94, "t1": 196.56}, {"w": "est", "t0": 196.56, "t1": 196.92}, {"w": "marie", "t0": 196.92, "t1": 198.08}, {"w": "est", "t0": 198.08, "t1": 198.36}, {"w": "boulangère", "t0": 198.36, "t1": 199.14}, {"w": "parfait", "t0": 199.14, "t1": 200.8}, {"w": "c", "t0": 200.8, "t1": 201.42}, {"w": "'est", "t0": 201.42, "t1": 201.54}, {"w": "parfait", "t0": 201.54, "t1": 201.82}], "tokens": [{"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 189.1, "t1": 190.16, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 190.16, "t1": 190.69, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 190.69, "t1": 191.75, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 191.75, "t1": 192.28, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 192.28, "t1": 193.52, "content": true}, {"s": "et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 193.52, "t1": 193.87, "content": true}, {"s": "marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 193.87, "t1": 194.75, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 194.75, "t1": 195.28, "content": true}, {"s": "marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 195.28, "t1": 196.17, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 196.17, "t1": 196.7, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 196.7, "t1": 198.46, "content": true}, {"s": "parfait", "r": "", "b": "parfait", "g": "完美的", "c": true, "fn": false, "t0": 198.46, "t1": 199.7, "content": true}, {"s": "c'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 199.7, "t1": 200.58, "content": true}, {"s": "parfait", "r": "", "b": "parfait", "g": "完美的", "c": true, "fn": false, "t0": 200.58, "t1": 201.82, "content": true}], "zh": "Pierre 是，Pierre 是醫生。而 Marie 是，Marie 是女麵包師。完美，太完美了。"}, {"t0": 201.82, "t1": 211.92, "text": "Quatre personnes, quatre professions. Professeur, graphiste, docteur, boulangère. C'est simple.", "words": [{"w": "Quatre", "t0": 201.82, "t1": 202.7}, {"w": "personnes,", "t0": 202.7, "t1": 203.16}, {"w": "quatre", "t0": 203.46, "t1": 203.96}, {"w": "professions.", "t0": 203.96, "t1": 204.5}, {"w": "Professeur,", "t0": 205.42, "t1": 206.28}, {"w": "graphiste,", "t0": 206.3, "t1": 207.42}, {"w": "docteur,", "t0": 207.72, "t1": 209.06}, {"w": "boulangère.", "t0": 209.1, "t1": 210.5}, {"w": "C", "t0": 210.74, "t1": 211.58}, {"w": "'est", "t0": 211.58, "t1": 211.68}, {"w": "simple.", "t0": 211.68, "t1": 211.92}], "tokens": [{"s": "Quatre", "r": "", "b": "quatre", "g": "", "c": false, "fn": false, "t0": 201.82, "t1": 202.52, "content": true}, {"s": "personnes", "r": "", "b": "personnes", "g": "", "c": false, "fn": false, "t0": 202.52, "t1": 203.58, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 203.58, "t1": 203.7, "content": false}, {"s": "quatre", "r": "", "b": "quatre", "g": "", "c": false, "fn": false, "t0": 203.7, "t1": 204.4, "content": true}, {"s": "professions", "r": "", "b": "professions", "g": "", "c": false, "fn": false, "t0": 204.4, "t1": 205.7, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 205.7, "t1": 205.81, "content": false}, {"s": "Professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 205.81, "t1": 206.99, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 206.99, "t1": 207.1, "content": false}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 207.1, "t1": 208.16, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 208.16, "t1": 208.28, "content": false}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 208.28, "t1": 209.1, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 209.1, "t1": 209.22, "content": false}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 209.22, "t1": 210.39, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 210.39, "t1": 210.51, "content": false}, {"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 210.51, "t1": 211.1, "content": true}, {"s": "simple", "r": "", "b": "simple", "g": "", "c": false, "fn": false, "t0": 211.1, "t1": 211.8, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 211.8, "t1": 211.92, "content": false}], "zh": "四個人，四種職業。教授、插畫家、醫生、女麵包師。很簡單。"}, {"t0": 215.47, "t1": 226.82, "text": "Maintenant, deuxième partie. La question est « Où est-ce que tu travailles ? »", "words": [{"w": "Maintenant,", "t0": 215.47, "t1": 215.9}, {"w": "deuxième", "t0": 216.14, "t1": 216.98}, {"w": "partie.", "t0": 216.98, "t1": 217.38}, {"w": "La", "t0": 217.8, "t1": 218.66}, {"w": "question", "t0": 218.66, "t1": 219.02}, {"w": "est", "t0": 219.02, "t1": 219.48}, {"w": "«", "t0": 219.48, "t1": 220.46}, {"w": "Où", "t0": 223.44, "t1": 223.64}, {"w": "est", "t0": 223.64, "t1": 224.1}, {"w": "-ce", "t0": 224.1, "t1": 224.46}, {"w": "que", "t0": 224.46, "t1": 224.6}, {"w": "tu", "t0": 224.6, "t1": 224.84}, {"w": "travailles", "t0": 224.84, "t1": 225.72}, {"w": "?", "t0": 225.72, "t1": 225.96}, {"w": "»", "t0": 225.96, "t1": 226.82}], "tokens": [{"s": "Maintenant", "r": "", "b": "maintenant", "g": "", "c": false, "fn": false, "t0": 215.47, "t1": 217.22, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 217.22, "t1": 217.39, "content": false}, {"s": "deuxième", "r": "", "b": "deuxième", "g": "", "c": false, "fn": false, "t0": 217.39, "t1": 218.79, "content": true}, {"s": "partie", "r": "", "b": "partie", "g": "", "c": false, "fn": false, "t0": 218.79, "t1": 219.84, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 219.84, "t1": 220.01, "content": false}, {"s": "La", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 220.01, "t1": 220.36, "content": true}, {"s": "question", "r": "", "b": "question", "g": "問題", "c": true, "fn": false, "t0": 220.36, "t1": 221.76, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 221.76, "t1": 222.28, "content": true}, {"s": "«", "r": "", "b": "«", "g": "", "c": false, "fn": true, "t0": 222.28, "t1": 222.45, "content": false}, {"s": "Où", "r": "", "b": "où", "g": "", "c": false, "fn": false, "t0": 222.45, "t1": 222.8, "content": true}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 222.8, "t1": 223.85, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 223.85, "t1": 224.38, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 224.38, "t1": 224.72, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 224.72, "t1": 226.47, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 226.47, "t1": 226.65, "content": false}, {"s": "»", "r": "", "b": "»", "g": "", "c": false, "fn": true, "t0": 226.65, "t1": 226.82, "content": false}], "zh": "現在，第二部分。問題來了：「你在哪裡工作？」"}, {"t0": 227.11, "t1": 232.72, "text": "Je répète « Où est-ce que tu travailles ? »", "words": [{"w": "Je", "t0": 227.11, "t1": 227.54}, {"w": "répète", "t0": 227.54, "t1": 228.0}, {"w": "«", "t0": 228.0, "t1": 228.32}, {"w": "Où", "t0": 228.32, "t1": 229.14}, {"w": "est", "t0": 229.14, "t1": 229.98}, {"w": "-ce", "t0": 229.98, "t1": 230.38}, {"w": "que", "t0": 230.38, "t1": 230.56}, {"w": "tu", "t0": 230.56, "t1": 231.12}, {"w": "travailles", "t0": 231.12, "t1": 232.26}, {"w": "?", "t0": 232.26, "t1": 232.42}, {"w": "»", "t0": 232.42, "t1": 232.72}], "tokens": [{"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 227.11, "t1": 227.44, "content": true}, {"s": "répète", "r": "", "b": "répète", "g": "", "c": false, "fn": false, "t0": 227.44, "t1": 228.43, "content": true}, {"s": "«", "r": "", "b": "«", "g": "", "c": false, "fn": true, "t0": 228.43, "t1": 228.59, "content": false}, {"s": "Où", "r": "", "b": "où", "g": "", "c": false, "fn": false, "t0": 228.59, "t1": 228.93, "content": true}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 228.93, "t1": 229.92, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 229.92, "t1": 230.41, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 230.41, "t1": 230.74, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 230.74, "t1": 232.39, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 232.39, "t1": 232.56, "content": false}, {"s": "»", "r": "", "b": "»", "g": "", "c": false, "fn": true, "t0": 232.56, "t1": 232.72, "content": false}], "zh": "我重複一遍：「你在哪裡工作？」"}, {"t0": 234.16, "t1": 236.16, "text": "Où est-ce que je travaille ?", "words": [{"w": "Où", "t0": 234.16, "t1": 234.56}, {"w": "est", "t0": 234.56, "t1": 234.66}, {"w": "-ce", "t0": 234.66, "t1": 234.96}, {"w": "que", "t0": 234.96, "t1": 235.08}, {"w": "je", "t0": 235.08, "t1": 235.26}, {"w": "travaille", "t0": 235.26, "t1": 235.76}, {"w": "?", "t0": 235.76, "t1": 236.16}], "tokens": [{"s": "Où", "r": "", "b": "où", "g": "", "c": false, "fn": false, "t0": 234.16, "t1": 234.33, "content": true}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 234.33, "t1": 234.86, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 234.86, "t1": 235.12, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 235.12, "t1": 235.29, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 235.29, "t1": 236.07, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 236.07, "t1": 236.16, "content": false}], "zh": "我在哪裡工作？"}, {"t0": 236.9, "t1": 243.38, "text": "Je suis graphiste. Je travaille dans un bureau.", "words": [{"w": "Je", "t0": 236.9, "t1": 237.56}, {"w": "suis", "t0": 237.56, "t1": 238.74}, {"w": "graphiste.", "t0": 238.74, "t1": 239.86}, {"w": "Je", "t0": 240.34, "t1": 241.08}, {"w": "travaille", "t0": 241.08, "t1": 241.64}, {"w": "dans", "t0": 241.64, "t1": 242.36}, {"w": "un", "t0": 242.36, "t1": 242.72}, {"w": "bureau.", "t0": 242.72, "t1": 243.38}], "tokens": [{"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 236.9, "t1": 237.22, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 237.22, "t1": 237.87, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 237.87, "t1": 239.33, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 239.33, "t1": 239.49, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 239.49, "t1": 239.82, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 239.82, "t1": 241.27, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 241.27, "t1": 241.92, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 241.92, "t1": 242.25, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 242.25, "t1": 243.22, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 243.22, "t1": 243.38, "content": false}], "zh": "我是平面設計師。我在辦公室工作。"}, {"t0": 244.11, "t1": 244.86, "text": "Un bureau.", "words": [{"w": "Un", "t0": 244.11, "t1": 244.48}, {"w": "bureau.", "t0": 244.48, "t1": 244.86}], "tokens": [{"s": "Un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 244.11, "t1": 244.28, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 244.28, "t1": 244.78, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 244.78, "t1": 244.86, "content": false}], "zh": "辦公室。"}, {"t0": 245.35, "t1": 249.6, "text": "D'accord. Tu travailles dans un bureau. C'est logique.", "words": [{"w": "D", "t0": 245.35, "t1": 245.72}, {"w": "'accord.", "t0": 245.72, "t1": 245.9}, {"w": "Tu", "t0": 246.26, "t1": 247.0}, {"w": "travailles", "t0": 247.0, "t1": 247.48}, {"w": "dans", "t0": 247.48, "t1": 247.72}, {"w": "un", "t0": 247.72, "t1": 248.0}, {"w": "bureau.", "t0": 248.0, "t1": 248.32}, {"w": "C", "t0": 248.56, "t1": 249.2}, {"w": "'est", "t0": 249.2, "t1": 249.3}, {"w": "logique.", "t0": 249.3, "t1": 249.6}], "tokens": [{"s": "D'accord", "r": "", "b": "d'accord", "g": "", "c": false, "fn": false, "t0": 245.35, "t1": 246.07, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 246.07, "t1": 246.16, "content": false}, {"s": "Tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 246.16, "t1": 246.34, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 246.34, "t1": 247.25, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 247.25, "t1": 247.61, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 247.61, "t1": 247.79, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 247.79, "t1": 248.33, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 248.33, "t1": 248.42, "content": false}, {"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 248.42, "t1": 248.88, "content": true}, {"s": "logique", "r": "", "b": "logique", "g": "", "c": false, "fn": false, "t0": 248.88, "t1": 249.51, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 249.51, "t1": 249.6, "content": false}], "zh": "好的。你在辦公室工作。這很合理。"}, {"t0": 250.54, "t1": 255.36, "text": "Moi, je suis professeur. Je travaille dans une école.", "words": [{"w": "Moi,", "t0": 250.54, "t1": 251.28}, {"w": "je", "t0": 251.28, "t1": 252.02}, {"w": "suis", "t0": 252.02, "t1": 252.3}, {"w": "professeur.", "t0": 252.3, "t1": 253.16}, {"w": "Je", "t0": 253.34, "t1": 254.08}, {"w": "travaille", "t0": 254.08, "t1": 254.4}, {"w": "dans", "t0": 254.4, "t1": 254.82}, {"w": "une", "t0": 254.82, "t1": 255.0}, {"w": "école.", "t0": 255.0, "t1": 255.36}], "tokens": [{"s": "Moi", "r": "", "b": "moi", "g": "", "c": false, "fn": false, "t0": 250.54, "t1": 250.86, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 250.86, "t1": 250.97, "content": false}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 250.97, "t1": 251.18, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 251.18, "t1": 251.61, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 251.61, "t1": 252.68, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 252.68, "t1": 252.79, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 252.79, "t1": 253.0, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 253.0, "t1": 253.97, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 253.97, "t1": 254.4, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 254.4, "t1": 254.72, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 254.72, "t1": 255.25, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 255.25, "t1": 255.36, "content": false}], "zh": "我呢，我是老師。我在學校工作。"}, {"t0": 256.16, "t1": 260.54, "text": "Une école ? Oui ! Un professeur travaille dans une école.", "words": [{"w": "Une", "t0": 256.16, "t1": 256.9}, {"w": "école", "t0": 256.9, "t1": 257.22}, {"w": "?", "t0": 257.22, "t1": 257.38}, {"w": "Oui", "t0": 257.38, "t1": 257.8}, {"w": "!", "t0": 257.8, "t1": 258.2}, {"w": "Un", "t0": 258.2, "t1": 258.82}, {"w": "professeur", "t0": 258.82, "t1": 259.46}, {"w": "travaille", "t0": 259.46, "t1": 259.76}, {"w": "dans", "t0": 259.76, "t1": 260.02}, {"w": "une", "t0": 260.02, "t1": 260.16}, {"w": "école.", "t0": 260.16, "t1": 260.54}], "tokens": [{"s": "Une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 256.16, "t1": 256.44, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 256.44, "t1": 256.91, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 256.91, "t1": 257.0, "content": false}, {"s": "Oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 257.0, "t1": 257.28, "content": true}, {"s": "!", "r": "", "b": "!", "g": "", "c": false, "fn": true, "t0": 257.28, "t1": 257.37, "content": false}, {"s": "Un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 257.37, "t1": 257.56, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 257.56, "t1": 258.49, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 258.49, "t1": 259.33, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 259.33, "t1": 259.7, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 259.7, "t1": 259.98, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 259.98, "t1": 260.45, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 260.45, "t1": 260.54, "content": false}], "zh": "學校？對！老師就是在學校工作。"}, {"t0": 264.84, "t1": 272.08, "text": "Exactement ! Je travaille dans une école. Alors, Amélie, est-ce que je travaille dans un bureau ?", "words": [{"w": "Exactement", "t0": 264.84, "t1": 265.34}, {"w": "!", "t0": 265.34, "t1": 265.44}, {"w": "Je", "t0": 265.44, "t1": 266.22}, {"w": "travaille", "t0": 266.22, "t1": 266.58}, {"w": "dans", "t0": 266.58, "t1": 266.84}, {"w": "une", "t0": 266.84, "t1": 267.04}, {"w": "école.", "t0": 267.04, "t1": 267.38}, {"w": "Alors,", "t0": 268.04, "t1": 268.54}, {"w": "Amélie,", "t0": 268.72, "t1": 269.64}, {"w": "est", "t0": 269.76, "t1": 270.48}, {"w": "-ce", "t0": 270.48, "t1": 270.56}, {"w": "que", "t0": 270.56, "t1": 270.62}, {"w": "je", "t0": 270.62, "t1": 270.76}, {"w": "travaille", "t0": 270.76, "t1": 271.06}, {"w": "dans", "t0": 271.06, "t1": 271.28}, {"w": "un", "t0": 271.28, "t1": 271.42}, {"w": "bureau", "t0": 271.42, "t1": 271.64}, {"w": "?", "t0": 271.64, "t1": 272.08}], "tokens": [{"s": "Exactement", "r": "", "b": "exactement", "g": "", "c": false, "fn": false, "t0": 264.84, "t1": 265.73, "content": true}, {"s": "!", "r": "", "b": "!", "g": "", "c": false, "fn": true, "t0": 265.73, "t1": 265.82, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 265.82, "t1": 266.0, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 266.0, "t1": 266.81, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 266.81, "t1": 267.16, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 267.16, "t1": 267.43, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 267.43, "t1": 267.88, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 267.88, "t1": 267.97, "content": false}, {"s": "Alors", "r": "", "b": "alors", "g": "", "c": false, "fn": false, "t0": 267.97, "t1": 268.42, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 268.42, "t1": 268.5, "content": false}, {"s": "Amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 268.5, "t1": 269.04, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 269.04, "t1": 269.13, "content": false}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 269.13, "t1": 269.67, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 269.67, "t1": 269.93, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 269.93, "t1": 270.11, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 270.11, "t1": 270.92, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 270.92, "t1": 271.28, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 271.28, "t1": 271.45, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 271.45, "t1": 271.99, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 271.99, "t1": 272.08, "content": false}], "zh": "沒錯！我在學校工作。那麼，Amélie，我是在辦公室工作嗎？"}, {"t0": 273.39, "t1": 278.17, "text": "Non, tu ne travailles pas dans un bureau. Tu travailles dans une école.", "words": [{"w": "Non,", "t0": 273.39, "t1": 274.13}, {"w": "tu", "t0": 274.15, "t1": 274.67}, {"w": "ne", "t0": 274.67, "t1": 274.79}, {"w": "travailles", "t0": 274.79, "t1": 275.23}, {"w": "pas", "t0": 275.23, "t1": 275.39}, {"w": "dans", "t0": 275.39, "t1": 275.55}, {"w": "un", "t0": 275.55, "t1": 275.71}, {"w": "bureau.", "t0": 275.71, "t1": 275.97}, {"w": "Tu", "t0": 276.49, "t1": 276.99}, {"w": "travailles", "t0": 276.99, "t1": 277.51}, {"w": "dans", "t0": 277.51, "t1": 277.63}, {"w": "une", "t0": 277.63, "t1": 277.81}, {"w": "école.", "t0": 277.81, "t1": 278.17}], "tokens": [{"s": "Non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 273.39, "t1": 273.63, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 273.63, "t1": 273.71, "content": false}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 273.71, "t1": 273.88, "content": true}, {"s": "ne", "r": "", "b": "ne", "g": "", "c": false, "fn": true, "t0": 273.88, "t1": 274.04, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 274.04, "t1": 274.85, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 274.85, "t1": 275.09, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 275.09, "t1": 275.42, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 275.42, "t1": 275.58, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 275.58, "t1": 276.06, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 276.06, "t1": 276.14, "content": false}, {"s": "Tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 276.14, "t1": 276.31, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 276.31, "t1": 277.12, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 277.12, "t1": 277.44, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 277.44, "t1": 277.68, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 277.68, "t1": 278.09, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 278.09, "t1": 278.17, "content": false}], "zh": "不，你不在辦公室工作。你在學校工作。"}, {"t0": 279.53, "t1": 284.43, "text": "C'est correct ! Et toi, est-ce que tu travailles dans une école ?", "words": [{"w": "C", "t0": 279.53, "t1": 280.03}, {"w": "'est", "t0": 280.03, "t1": 280.19}, {"w": "correct", "t0": 280.19, "t1": 280.37}, {"w": "!", "t0": 280.37, "t1": 280.69}, {"w": "Et", "t0": 280.69, "t1": 281.57}, {"w": "toi,", "t0": 281.57, "t1": 281.73}, {"w": "est", "t0": 281.85, "t1": 282.79}, {"w": "-ce", "t0": 282.79, "t1": 282.85}, {"w": "que", "t0": 282.85, "t1": 282.93}, {"w": "tu", "t0": 282.93, "t1": 283.01}, {"w": "travailles", "t0": 283.01, "t1": 283.39}, {"w": "dans", "t0": 283.39, "t1": 283.49}, {"w": "une", "t0": 283.49, "t1": 283.63}, {"w": "école", "t0": 283.63, "t1": 283.95}, {"w": "?", "t0": 283.95, "t1": 284.43}], "tokens": [{"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 279.53, "t1": 279.99, "content": true}, {"s": "correct", "r": "", "b": "correct", "g": "", "c": false, "fn": false, "t0": 279.99, "t1": 280.64, "content": true}, {"s": "!", "r": "", "b": "!", "g": "", "c": false, "fn": true, "t0": 280.64, "t1": 280.73, "content": false}, {"s": "Et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 280.73, "t1": 280.92, "content": true}, {"s": "toi", "r": "", "b": "toi", "g": "", "c": false, "fn": false, "t0": 280.92, "t1": 281.19, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 281.19, "t1": 281.29, "content": false}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 281.29, "t1": 281.84, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 281.84, "t1": 282.12, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 282.12, "t1": 282.3, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 282.3, "t1": 283.23, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 283.23, "t1": 283.6, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 283.6, "t1": 283.88, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 283.88, "t1": 284.34, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 284.34, "t1": 284.43, "content": false}], "zh": "正確！那你呢，你在學校工作嗎？"}, {"t0": 285.68, "t1": 290.14, "text": "Non, je ne travaille pas dans une école. Je travaille dans un bureau.", "words": [{"w": "Non,", "t0": 285.68, "t1": 286.36}, {"w": "je", "t0": 286.36, "t1": 286.88}, {"w": "ne", "t0": 286.88, "t1": 287.04}, {"w": "travaille", "t0": 287.04, "t1": 287.38}, {"w": "pas", "t0": 287.38, "t1": 287.58}, {"w": "dans", "t0": 287.58, "t1": 287.72}, {"w": "une", "t0": 287.72, "t1": 287.86}, {"w": "école.", "t0": 287.86, "t1": 288.22}, {"w": "Je", "t0": 288.46, "t1": 288.96}, {"w": "travaille", "t0": 288.96, "t1": 289.38}, {"w": "dans", "t0": 289.38, "t1": 289.7}, {"w": "un", "t0": 289.7, "t1": 289.92}, {"w": "bureau.", "t0": 289.92, "t1": 290.14}], "tokens": [{"s": "Non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 285.68, "t1": 285.91, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 285.91, "t1": 285.99, "content": false}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 285.99, "t1": 286.15, "content": true}, {"s": "ne", "r": "", "b": "ne", "g": "", "c": false, "fn": true, "t0": 286.15, "t1": 286.31, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 286.31, "t1": 287.01, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 287.01, "t1": 287.24, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 287.24, "t1": 287.56, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 287.56, "t1": 287.79, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 287.79, "t1": 288.18, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 288.18, "t1": 288.26, "content": false}, {"s": "Je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 288.26, "t1": 288.42, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 288.42, "t1": 289.12, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 289.12, "t1": 289.44, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 289.44, "t1": 289.59, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 289.59, "t1": 290.06, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 290.06, "t1": 290.14, "content": false}], "zh": "不，我不在學校工作。我在辦公室工作。"}, {"t0": 291.1, "t1": 294.56, "text": "Parfait ! Maintenant, parlons de", "words": [{"w": "Parfait", "t0": 291.1, "t1": 291.6}, {"w": "!", "t0": 291.6, "t1": 291.84}, {"w": "Maintenant,", "t0": 291.84, "t1": 293.16}, {"w": "parlons", "t0": 293.38, "t1": 294.3}, {"w": "de", "t0": 294.3, "t1": 294.56}], "tokens": [{"s": "Parfait", "r": "", "b": "parfait", "g": "完美的", "c": true, "fn": false, "t0": 291.1, "t1": 291.97, "content": true}, {"s": "!", "r": "", "b": "!", "g": "", "c": false, "fn": true, "t0": 291.97, "t1": 292.09, "content": false}, {"s": "Maintenant", "r": "", "b": "maintenant", "g": "", "c": false, "fn": false, "t0": 292.09, "t1": 293.32, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 293.32, "t1": 293.45, "content": false}, {"s": "parlons", "r": "", "b": "parlons", "g": "", "c": false, "fn": false, "t0": 293.45, "t1": 294.31, "content": true}, {"s": "de", "r": "", "b": "de", "g": "", "c": false, "fn": true, "t0": 294.31, "t1": 294.56, "content": true}], "zh": "太好了！現在，我們來談談"}, {"t0": 294.56, "t1": 305.6, "text": "Pierre. Pierre est docteur. Où est-ce que Pierre travaille ? Un docteur travaille dans un hôpital.", "words": [{"w": "Pierre.", "t0": 294.56, "t1": 295.02}, {"w": "Pierre", "t0": 295.42, "t1": 296.06}, {"w": "est", "t0": 296.06, "t1": 296.22}, {"w": "docteur.", "t0": 296.22, "t1": 296.78}, {"w": "Où", "t0": 297.14, "t1": 297.78}, {"w": "est", "t0": 297.78, "t1": 297.98}, {"w": "-ce", "t0": 297.98, "t1": 298.2}, {"w": "que", "t0": 298.2, "t1": 298.3}, {"w": "Pierre", "t0": 298.3, "t1": 298.58}, {"w": "travaille", "t0": 298.58, "t1": 299.08}, {"w": "?", "t0": 299.08, "t1": 299.52}, {"w": "Un", "t0": 299.52, "t1": 300.5}, {"w": "docteur", "t0": 300.5, "t1": 301.64}, {"w": "travaille", "t0": 301.64, "t1": 303.92}, {"w": "dans", "t0": 303.92, "t1": 304.86}, {"w": "un", "t0": 304.86, "t1": 305.12}, {"w": "hôpital.", "t0": 305.12, "t1": 305.6}], "tokens": [{"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 294.56, "t1": 295.36, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 295.36, "t1": 295.49, "content": false}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 295.49, "t1": 296.29, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 296.29, "t1": 296.69, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 296.69, "t1": 297.62, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 297.62, "t1": 297.75, "content": false}, {"s": "Où", "r": "", "b": "où", "g": "", "c": false, "fn": false, "t0": 297.75, "t1": 298.02, "content": true}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 298.02, "t1": 298.82, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 298.82, "t1": 299.22, "content": true}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 299.22, "t1": 300.01, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 300.01, "t1": 301.21, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 301.21, "t1": 301.34, "content": false}, {"s": "Un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 301.34, "t1": 301.61, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 301.61, "t1": 302.54, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 302.54, "t1": 303.74, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 303.74, "t1": 304.27, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 304.27, "t1": 304.54, "content": true}, {"s": "hôpital", "r": "", "b": "hôpital", "g": "醫院", "c": true, "fn": false, "t0": 304.54, "t1": 305.47, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 305.47, "t1": 305.6, "content": false}], "zh": "皮埃爾。皮埃爾是醫生。皮埃爾在哪裡工作？醫生在醫院工作。"}, {"t0": 306.52, "t1": 313.88, "text": "Oui, très très bien. Pierre travaille dans un hôpital. Alors, Amélie, est-ce que Pierre", "words": [{"w": "Oui,", "t0": 306.52, "t1": 306.84}, {"w": "très", "t0": 306.94, "t1": 307.46}, {"w": "très", "t0": 307.46, "t1": 307.7}, {"w": "bien.", "t0": 307.7, "t1": 307.88}, {"w": "Pierre", "t0": 308.24, "t1": 308.88}, {"w": "travaille", "t0": 308.88, "t1": 309.42}, {"w": "dans", "t0": 309.42, "t1": 309.9}, {"w": "un", "t0": 309.9, "t1": 310.16}, {"w": "hôpital.", "t0": 310.16, "t1": 310.72}, {"w": "Alors,", "t0": 310.94, "t1": 311.58}, {"w": "Amélie,", "t0": 311.78, "t1": 312.52}, {"w": "est", "t0": 312.64, "t1": 313.48}, {"w": "-ce", "t0": 313.48, "t1": 313.58}, {"w": "que", "t0": 313.58, "t1": 313.64}, {"w": "Pierre", "t0": 313.64, "t1": 313.88}], "tokens": [{"s": "Oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 306.52, "t1": 306.82, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 306.82, "t1": 306.92, "content": false}, {"s": "très", "r": "", "b": "très", "g": "", "c": false, "fn": false, "t0": 306.92, "t1": 307.32, "content": true}, {"s": "très", "r": "", "b": "très", "g": "", "c": false, "fn": false, "t0": 307.32, "t1": 307.71, "content": true}, {"s": "bien", "r": "", "b": "bien", "g": "", "c": false, "fn": false, "t0": 307.71, "t1": 308.11, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 308.11, "t1": 308.21, "content": false}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 308.21, "t1": 308.81, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 308.81, "t1": 309.7, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 309.7, "t1": 310.1, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 310.1, "t1": 310.3, "content": true}, {"s": "hôpital", "r": "", "b": "hôpital", "g": "醫院", "c": true, "fn": false, "t0": 310.3, "t1": 311.0, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 311.0, "t1": 311.1, "content": false}, {"s": "Alors", "r": "", "b": "alors", "g": "", "c": false, "fn": false, "t0": 311.1, "t1": 311.59, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 311.59, "t1": 311.69, "content": false}, {"s": "Amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 311.69, "t1": 312.29, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 312.29, "t1": 312.39, "content": false}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 312.39, "t1": 312.98, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 312.98, "t1": 313.28, "content": true}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 313.28, "t1": 313.88, "content": true}], "zh": "對，非常非常好。皮埃爾在醫院工作。那麼，阿梅麗，皮埃爾"}, {"t0": 313.88, "t1": 324.54, "text": "travaille dans une école ? Non, Pierre ne travaille pas dans une école. Est-ce que", "words": [{"w": "travaille", "t0": 313.88, "t1": 314.24}, {"w": "dans", "t0": 314.24, "t1": 314.46}, {"w": "une", "t0": 314.46, "t1": 314.6}, {"w": "école", "t0": 314.6, "t1": 314.92}, {"w": "?", "t0": 314.92, "t1": 315.44}, {"w": "Non,", "t0": 315.44, "t1": 316.6}, {"w": "Pierre", "t0": 316.64, "t1": 317.7}, {"w": "ne", "t0": 317.7, "t1": 317.92}, {"w": "travaille", "t0": 317.92, "t1": 318.22}, {"w": "pas", "t0": 318.22, "t1": 318.46}, {"w": "dans", "t0": 318.46, "t1": 318.64}, {"w": "une", "t0": 318.64, "t1": 318.78}, {"w": "école.", "t0": 318.78, "t1": 319.14}, {"w": "Est", "t0": 319.58, "t1": 320.0}, {"w": "-ce", "t0": 320.0, "t1": 324.54}, {"w": "que", "t0": 324.54, "t1": 324.54}], "tokens": [{"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 313.88, "t1": 315.29, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 315.29, "t1": 315.92, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 315.92, "t1": 316.39, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 316.39, "t1": 317.17, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 317.17, "t1": 317.33, "content": false}, {"s": "Non", "r": "", "b": "non", "g": "", "c": false, "fn": false, "t0": 317.33, "t1": 317.8, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 317.8, "t1": 317.96, "content": false}, {"s": "Pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 317.96, "t1": 318.9, "content": true}, {"s": "ne", "r": "", "b": "ne", "g": "", "c": false, "fn": true, "t0": 318.9, "t1": 319.21, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 319.21, "t1": 320.62, "content": true}, {"s": "pas", "r": "", "b": "pas", "g": "", "c": false, "fn": true, "t0": 320.62, "t1": 321.09, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 321.09, "t1": 321.72, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 321.72, "t1": 322.19, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 322.19, "t1": 322.97, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 322.97, "t1": 323.13, "content": false}, {"s": "Est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 323.13, "t1": 324.07, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 324.07, "t1": 324.54, "content": true}], "zh": "在學校工作嗎？不，皮埃爾不在學校工作。皮埃爾"}, {"t0": 324.54, "t1": 333.16, "text": "travaille à l'hôpital. Excellent. Et maintenant, Marie. Marie est boulangère. Où est-ce que Marie", "words": [{"w": "travaille", "t0": 324.54, "t1": 324.84}, {"w": "à", "t0": 324.84, "t1": 325.1}, {"w": "l", "t0": 325.1, "t1": 325.24}, {"w": "'hôpital.", "t0": 325.24, "t1": 325.56}, {"w": "Excellent.", "t0": 326.26, "t1": 326.94}, {"w": "Et", "t0": 327.4, "t1": 328.08}, {"w": "maintenant,", "t0": 328.08, "t1": 328.36}, {"w": "Marie.", "t0": 328.6, "t1": 329.3}, {"w": "Marie", "t0": 329.76, "t1": 330.44}, {"w": "est", "t0": 330.44, "t1": 330.84}, {"w": "boulangère.", "t0": 330.84, "t1": 331.56}, {"w": "Où", "t0": 331.82, "t1": 332.44}, {"w": "est", "t0": 332.44, "t1": 332.58}, {"w": "-ce", "t0": 332.58, "t1": 332.78}, {"w": "que", "t0": 332.78, "t1": 332.88}, {"w": "Marie", "t0": 332.88, "t1": 333.16}], "tokens": [{"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 324.54, "t1": 325.46, "content": true}, {"s": "à", "r": "", "b": "à", "g": "", "c": false, "fn": false, "t0": 325.46, "t1": 325.57, "content": true}, {"s": "l'hôpital", "r": "", "b": "l'hôpital", "g": "", "c": false, "fn": false, "t0": 325.57, "t1": 326.49, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 326.49, "t1": 326.59, "content": false}, {"s": "Excellent", "r": "", "b": "excellent", "g": "", "c": false, "fn": false, "t0": 326.59, "t1": 327.52, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 327.52, "t1": 327.62, "content": false}, {"s": "Et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 327.62, "t1": 327.82, "content": true}, {"s": "maintenant", "r": "", "b": "maintenant", "g": "", "c": false, "fn": false, "t0": 327.82, "t1": 328.85, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 328.85, "t1": 328.95, "content": false}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 328.95, "t1": 329.47, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 329.47, "t1": 329.57, "content": false}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 329.57, "t1": 330.08, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 330.08, "t1": 330.39, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 330.39, "t1": 331.42, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 331.42, "t1": 331.52, "content": false}, {"s": "Où", "r": "", "b": "où", "g": "", "c": false, "fn": false, "t0": 331.52, "t1": 331.72, "content": true}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 331.72, "t1": 332.34, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 332.34, "t1": 332.65, "content": true}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 332.65, "t1": 333.16, "content": true}], "zh": "在醫院工作。太棒了。現在，瑪麗。瑪麗是麵包師。瑪麗"}, {"t0": 333.16, "t1": 341.28, "text": "travaille ? C'est facile. Marie travaille dans une boulangerie avec le bon pain et les croissants.", "words": [{"w": "travaille", "t0": 333.16, "t1": 333.76}, {"w": "?", "t0": 333.76, "t1": 334.36}, {"w": "C", "t0": 334.36, "t1": 335.7}, {"w": "'est", "t0": 335.7, "t1": 335.94}, {"w": "facile.", "t0": 335.94, "t1": 336.3}, {"w": "Marie", "t0": 336.74, "t1": 337.42}, {"w": "travaille", "t0": 337.42, "t1": 337.84}, {"w": "dans", "t0": 337.84, "t1": 338.16}, {"w": "une", "t0": 338.16, "t1": 338.36}, {"w": "boulangerie", "t0": 338.36, "t1": 338.98}, {"w": "avec", "t0": 338.98, "t1": 339.48}, {"w": "le", "t0": 339.48, "t1": 339.96}, {"w": "bon", "t0": 339.96, "t1": 340.14}, {"w": "pain", "t0": 340.14, "t1": 340.4}, {"w": "et", "t0": 340.4, "t1": 340.68}, {"w": "les", "t0": 340.68, "t1": 340.8}, {"w": "croissants.", "t0": 340.8, "t1": 341.28}], "tokens": [{"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 333.16, "t1": 334.04, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 334.04, "t1": 334.14, "content": false}, {"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 334.14, "t1": 334.63, "content": true}, {"s": "facile", "r": "", "b": "facile", "g": "容易的", "c": true, "fn": false, "t0": 334.63, "t1": 335.21, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 335.21, "t1": 335.31, "content": false}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 335.31, "t1": 335.8, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 335.8, "t1": 336.68, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 336.68, "t1": 337.07, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 337.07, "t1": 337.37, "content": true}, {"s": "boulangerie", "r": "", "b": "boulangerie", "g": "麵包店", "c": true, "fn": false, "t0": 337.37, "t1": 338.44, "content": true}, {"s": "avec", "r": "", "b": "avec", "g": "", "c": false, "fn": false, "t0": 338.44, "t1": 338.83, "content": true}, {"s": "le", "r": "", "b": "le", "g": "", "c": false, "fn": true, "t0": 338.83, "t1": 339.03, "content": true}, {"s": "bon", "r": "", "b": "bon", "g": "", "c": false, "fn": false, "t0": 339.03, "t1": 339.32, "content": true}, {"s": "pain", "r": "", "b": "pain", "g": "", "c": false, "fn": false, "t0": 339.32, "t1": 339.71, "content": true}, {"s": "et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 339.71, "t1": 339.91, "content": true}, {"s": "les", "r": "", "b": "les", "g": "", "c": false, "fn": true, "t0": 339.91, "t1": 340.2, "content": true}, {"s": "croissants", "r": "", "b": "croissants", "g": "", "c": false, "fn": false, "t0": 340.2, "t1": 341.18, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 341.18, "t1": 341.28, "content": false}], "zh": "在哪裡工作？這很簡單。瑪麗在麵包店工作，那裡有好吃的面包和可頌。"}, {"t0": 343.5, "t1": 352.68, "text": "Oui, Marie travaille dans une boulangerie. Faisons un grand résumé, Amélie. C'est important. D'accord,", "words": [{"w": "Oui,", "t0": 343.5, "t1": 344.18}, {"w": "Marie", "t0": 344.18, "t1": 344.86}, {"w": "travaille", "t0": 344.86, "t1": 345.38}, {"w": "dans", "t0": 345.38, "t1": 345.78}, {"w": "une", "t0": 345.78, "t1": 346.02}, {"w": "boulangerie.", "t0": 346.02, "t1": 346.78}, {"w": "Faisons", "t0": 347.56, "t1": 348.24}, {"w": "un", "t0": 348.24, "t1": 348.56}, {"w": "grand", "t0": 348.56, "t1": 348.88}, {"w": "résumé,", "t0": 348.88, "t1": 349.44}, {"w": "Amélie.", "t0": 349.46, "t1": 350.06}, {"w": "C", "t0": 350.18, "t1": 350.76}, {"w": "'est", "t0": 350.76, "t1": 350.86}, {"w": "important.", "t0": 350.86, "t1": 351.08}, {"w": "D", "t0": 351.82, "t1": 352.5}, {"w": "'accord,", "t0": 352.5, "t1": 352.68}], "tokens": [{"s": "Oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 343.5, "t1": 343.81, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 343.81, "t1": 343.91, "content": false}, {"s": "Marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 343.91, "t1": 344.43, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 344.43, "t1": 345.36, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 345.36, "t1": 345.77, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 345.77, "t1": 346.08, "content": true}, {"s": "boulangerie", "r": "", "b": "boulangerie", "g": "麵包店", "c": true, "fn": false, "t0": 346.08, "t1": 347.21, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 347.21, "t1": 347.32, "content": false}, {"s": "Faisons", "r": "", "b": "faisons", "g": "", "c": false, "fn": false, "t0": 347.32, "t1": 348.04, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 348.04, "t1": 348.24, "content": true}, {"s": "grand", "r": "", "b": "grand", "g": "", "c": false, "fn": false, "t0": 348.24, "t1": 348.76, "content": true}, {"s": "résumé", "r": "", "b": "résumé", "g": "", "c": false, "fn": false, "t0": 348.76, "t1": 349.38, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 349.38, "t1": 349.48, "content": false}, {"s": "Amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 349.48, "t1": 350.1, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 350.1, "t1": 350.2, "content": false}, {"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 350.2, "t1": 350.72, "content": true}, {"s": "important", "r": "", "b": "important", "g": "", "c": false, "fn": false, "t0": 350.72, "t1": 351.65, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 351.65, "t1": 351.75, "content": false}, {"s": "D'accord", "r": "", "b": "d'accord", "g": "", "c": false, "fn": false, "t0": 351.75, "t1": 352.58, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 352.58, "t1": 352.68, "content": false}], "zh": "對，瑪麗在麵包店工作。讓我們做個大總結，阿梅麗。這很重要。好的，"}, {"t0": 352.68, "t1": 362.16, "text": "un grand résumé je suis professeur je travaille dans une école toi amélie tu", "words": [{"w": "un", "t0": 352.68, "t1": 352.88}, {"w": "grand", "t0": 352.88, "t1": 353.54}, {"w": "résumé", "t0": 353.54, "t1": 354.02}, {"w": "je", "t0": 354.02, "t1": 355.12}, {"w": "suis", "t0": 355.12, "t1": 355.46}, {"w": "professeur", "t0": 355.46, "t1": 356.54}, {"w": "je", "t0": 356.54, "t1": 357.22}, {"w": "travaille", "t0": 357.22, "t1": 357.56}, {"w": "dans", "t0": 357.56, "t1": 357.96}, {"w": "une", "t0": 357.96, "t1": 358.2}, {"w": "école", "t0": 358.2, "t1": 358.96}, {"w": "toi", "t0": 358.96, "t1": 360.58}, {"w": "amélie", "t0": 360.58, "t1": 361.74}, {"w": "tu", "t0": 361.74, "t1": 362.16}], "tokens": [{"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 352.68, "t1": 352.98, "content": true}, {"s": "grand", "r": "", "b": "grand", "g": "", "c": false, "fn": false, "t0": 352.98, "t1": 353.73, "content": true}, {"s": "résumé", "r": "", "b": "résumé", "g": "", "c": false, "fn": false, "t0": 353.73, "t1": 354.64, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 354.64, "t1": 354.94, "content": true}, {"s": "suis", "r": "", "b": "suis", "g": "", "c": false, "fn": false, "t0": 354.94, "t1": 355.54, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 355.54, "t1": 357.04, "content": true}, {"s": "je", "r": "", "b": "je", "g": "", "c": false, "fn": true, "t0": 357.04, "t1": 357.34, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 357.34, "t1": 358.7, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 358.7, "t1": 359.3, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 359.3, "t1": 359.75, "content": true}, {"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 359.75, "t1": 360.5, "content": true}, {"s": "toi", "r": "", "b": "toi", "g": "", "c": false, "fn": false, "t0": 360.5, "t1": 360.96, "content": true}, {"s": "amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 360.96, "t1": 361.86, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 361.86, "t1": 362.16, "content": true}], "zh": "大總結：我是老師，我在學校工作；你，阿梅麗，你是平面設計師，你在"}, {"t0": 362.16, "t1": 373.16, "text": "es graphiste tu travailles dans un dans un bureau pierre est pierre est docteur", "words": [{"w": "es", "t0": 362.16, "t1": 362.66}, {"w": "graphiste", "t0": 362.66, "t1": 363.44}, {"w": "tu", "t0": 363.44, "t1": 364.32}, {"w": "travailles", "t0": 364.32, "t1": 364.78}, {"w": "dans", "t0": 364.78, "t1": 364.92}, {"w": "un", "t0": 364.92, "t1": 365.16}, {"w": "dans", "t0": 365.16, "t1": 366.54}, {"w": "un", "t0": 366.54, "t1": 366.82}, {"w": "bureau", "t0": 366.82, "t1": 367.04}, {"w": "pierre", "t0": 367.04, "t1": 368.7}, {"w": "est", "t0": 368.7, "t1": 369.04}, {"w": "pierre", "t0": 369.04, "t1": 370.96}, {"w": "est", "t0": 370.96, "t1": 371.46}, {"w": "docteur", "t0": 371.46, "t1": 373.16}], "tokens": [{"s": "es", "r": "", "b": "es", "g": "", "c": false, "fn": false, "t0": 362.16, "t1": 362.49, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 362.49, "t1": 363.99, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 363.99, "t1": 364.33, "content": true}, {"s": "travailles", "r": "", "b": "travailles", "g": "", "c": false, "fn": false, "t0": 364.33, "t1": 365.99, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 365.99, "t1": 366.66, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 366.66, "t1": 366.99, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 366.99, "t1": 367.66, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 367.66, "t1": 367.99, "content": true}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 367.99, "t1": 368.99, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 368.99, "t1": 369.99, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 369.99, "t1": 370.49, "content": true}, {"s": "pierre", "r": "", "b": "pierre", "g": "", "c": false, "fn": false, "t0": 370.49, "t1": 371.49, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 371.49, "t1": 371.99, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 371.99, "t1": 373.16, "content": true}], "zh": "辦公室工作；皮埃爾是醫生，"}, {"t0": 373.16, "t1": 381.66, "text": "il travaille dans un il travaille dans un hôpital marie est boulangère elle", "words": [{"w": "il", "t0": 373.16, "t1": 374.18}, {"w": "travaille", "t0": 374.18, "t1": 374.5}, {"w": "dans", "t0": 374.5, "t1": 374.84}, {"w": "un", "t0": 374.84, "t1": 375.12}, {"w": "il", "t0": 375.12, "t1": 376.5}, {"w": "travaille", "t0": 376.5, "t1": 376.86}, {"w": "dans", "t0": 376.86, "t1": 377.28}, {"w": "un", "t0": 377.28, "t1": 377.5}, {"w": "hôpital", "t0": 377.5, "t1": 377.94}, {"w": "marie", "t0": 377.94, "t1": 379.86}, {"w": "est", "t0": 379.86, "t1": 380.04}, {"w": "boulangère", "t0": 380.04, "t1": 380.64}, {"w": "elle", "t0": 380.64, "t1": 381.66}], "tokens": [{"s": "il", "r": "", "b": "il", "g": "", "c": false, "fn": true, "t0": 373.16, "t1": 373.43, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 373.43, "t1": 374.64, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 374.64, "t1": 375.18, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 375.18, "t1": 375.45, "content": true}, {"s": "il", "r": "", "b": "il", "g": "", "c": false, "fn": true, "t0": 375.45, "t1": 375.72, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 375.72, "t1": 376.94, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 376.94, "t1": 377.48, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 377.48, "t1": 377.75, "content": true}, {"s": "hôpital", "r": "", "b": "hôpital", "g": "醫院", "c": true, "fn": false, "t0": 377.75, "t1": 378.69, "content": true}, {"s": "marie", "r": "", "b": "marie", "g": "", "c": false, "fn": false, "t0": 378.69, "t1": 379.37, "content": true}, {"s": "est", "r": "", "b": "est", "g": "", "c": false, "fn": true, "t0": 379.37, "t1": 379.77, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 379.77, "t1": 381.12, "content": true}, {"s": "elle", "r": "", "b": "elle", "g": "", "c": false, "fn": true, "t0": 381.12, "t1": 381.66, "content": true}], "zh": "他在醫院工作；瑪麗是麵包師，她"}, {"t0": 381.66, "t1": 388.8, "text": "travaille dans une elle travaille dans une boulangerie parfait fantastique tu", "words": [{"w": "travaille", "t0": 381.66, "t1": 381.82}, {"w": "dans", "t0": 381.82, "t1": 382.22}, {"w": "une", "t0": 382.22, "t1": 382.5}, {"w": "elle", "t0": 382.5, "t1": 383.68}, {"w": "travaille", "t0": 383.68, "t1": 384.06}, {"w": "dans", "t0": 384.06, "t1": 384.48}, {"w": "une", "t0": 384.48, "t1": 384.68}, {"w": "boulangerie", "t0": 384.68, "t1": 385.3}, {"w": "parfait", "t0": 385.3, "t1": 387.0}, {"w": "fantastique", "t0": 387.0, "t1": 387.9}, {"w": "tu", "t0": 387.9, "t1": 388.8}], "tokens": [{"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 381.66, "t1": 382.62, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 382.62, "t1": 383.05, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 383.05, "t1": 383.37, "content": true}, {"s": "elle", "r": "", "b": "elle", "g": "", "c": false, "fn": true, "t0": 383.37, "t1": 383.79, "content": true}, {"s": "travaille", "r": "", "b": "travaille", "g": "", "c": false, "fn": false, "t0": 383.79, "t1": 384.75, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 384.75, "t1": 385.18, "content": true}, {"s": "une", "r": "", "b": "une", "g": "", "c": false, "fn": true, "t0": 385.18, "t1": 385.5, "content": true}, {"s": "boulangerie", "r": "", "b": "boulangerie", "g": "麵包店", "c": true, "fn": false, "t0": 385.5, "t1": 386.67, "content": true}, {"s": "parfait", "r": "", "b": "parfait", "g": "完美的", "c": true, "fn": false, "t0": 386.67, "t1": 387.41, "content": true}, {"s": "fantastique", "r": "", "b": "fantastique", "g": "", "c": false, "fn": false, "t0": 387.41, "t1": 388.59, "content": true}, {"s": "tu", "r": "", "b": "tu", "g": "", "c": false, "fn": true, "t0": 388.59, "t1": 388.8, "content": true}], "zh": "在麵包店工作。完美，太棒了。你"}, {"t0": 388.8, "t1": 395.64, "text": "vois amélie en répétant tout devient très facile oui c'est vrai la répétition", "words": [{"w": "vois", "t0": 388.8, "t1": 388.96}, {"w": "amélie", "t0": 388.96, "t1": 389.36}, {"w": "en", "t0": 389.36, "t1": 389.82}, {"w": "répétant", "t0": 389.82, "t1": 390.68}, {"w": "tout", "t0": 390.68, "t1": 391.22}, {"w": "devient", "t0": 391.22, "t1": 391.52}, {"w": "très", "t0": 391.52, "t1": 391.9}, {"w": "facile", "t0": 391.9, "t1": 392.34}, {"w": "oui", "t0": 392.34, "t1": 393.88}, {"w": "c", "t0": 393.88, "t1": 394.08}, {"w": "'est", "t0": 394.08, "t1": 394.18}, {"w": "vrai", "t0": 394.18, "t1": 394.3}, {"w": "la", "t0": 394.3, "t1": 395.04}, {"w": "répétition", "t0": 395.04, "t1": 395.64}], "tokens": [{"s": "vois", "r": "", "b": "vois", "g": "", "c": false, "fn": false, "t0": 388.8, "t1": 389.22, "content": true}, {"s": "amélie", "r": "", "b": "amélie", "g": "", "c": false, "fn": false, "t0": 389.22, "t1": 389.85, "content": true}, {"s": "en", "r": "", "b": "en", "g": "", "c": false, "fn": true, "t0": 389.85, "t1": 390.06, "content": true}, {"s": "répétant", "r": "", "b": "répétant", "g": "", "c": false, "fn": false, "t0": 390.06, "t1": 390.9, "content": true}, {"s": "tout", "r": "", "b": "tout", "g": "", "c": false, "fn": false, "t0": 390.9, "t1": 391.33, "content": true}, {"s": "devient", "r": "", "b": "devient", "g": "", "c": false, "fn": false, "t0": 391.33, "t1": 392.06, "content": true}, {"s": "très", "r": "", "b": "très", "g": "", "c": false, "fn": false, "t0": 392.06, "t1": 392.48, "content": true}, {"s": "facile", "r": "", "b": "facile", "g": "容易的", "c": true, "fn": false, "t0": 392.48, "t1": 393.11, "content": true}, {"s": "oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 393.11, "t1": 393.43, "content": true}, {"s": "c'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 393.43, "t1": 393.96, "content": true}, {"s": "vrai", "r": "", "b": "vrai", "g": "", "c": false, "fn": false, "t0": 393.96, "t1": 394.38, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 394.38, "t1": 394.59, "content": true}, {"s": "répétition", "r": "", "b": "répétition", "g": "", "c": false, "fn": false, "t0": 394.59, "t1": 395.64, "content": true}], "zh": "看，阿梅麗，重複一遍就變得很簡單。對，確實如此，重複"}, {"t0": 395.64, "t1": 405.8, "text": "c'est la clé et voilà pour aujourd'hui nous avons parlé du travail nous avons", "words": [{"w": "c", "t0": 395.64, "t1": 395.82}, {"w": "'est", "t0": 395.82, "t1": 396.0}, {"w": "la", "t0": 396.0, "t1": 396.04}, {"w": "clé", "t0": 396.04, "t1": 396.38}, {"w": "et", "t0": 396.38, "t1": 397.28}, {"w": "voilà", "t0": 401.18, "t1": 401.46}, {"w": "pour", "t0": 401.46, "t1": 401.78}, {"w": "aujourd", "t0": 401.78, "t1": 402.0}, {"w": "'hui", "t0": 402.0, "t1": 402.24}, {"w": "nous", "t0": 402.24, "t1": 403.12}, {"w": "avons", "t0": 403.12, "t1": 403.32}, {"w": "parlé", "t0": 403.32, "t1": 403.66}, {"w": "du", "t0": 403.66, "t1": 403.9}, {"w": "travail", "t0": 403.9, "t1": 404.24}, {"w": "nous", "t0": 404.24, "t1": 405.54}, {"w": "avons", "t0": 405.54, "t1": 405.8}], "tokens": [{"s": "c'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 395.64, "t1": 396.43, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 396.43, "t1": 396.75, "content": true}, {"s": "clé", "r": "", "b": "clé", "g": "", "c": false, "fn": false, "t0": 396.75, "t1": 397.23, "content": true}, {"s": "et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 397.23, "t1": 397.55, "content": true}, {"s": "voilà", "r": "", "b": "voilà", "g": "", "c": false, "fn": false, "t0": 397.55, "t1": 398.34, "content": true}, {"s": "pour", "r": "", "b": "pour", "g": "", "c": false, "fn": false, "t0": 398.34, "t1": 398.97, "content": true}, {"s": "aujourd'hui", "r": "", "b": "aujourd'hui", "g": "", "c": false, "fn": false, "t0": 398.97, "t1": 400.72, "content": true}, {"s": "nous", "r": "", "b": "nous", "g": "", "c": false, "fn": true, "t0": 400.72, "t1": 401.36, "content": true}, {"s": "avons", "r": "", "b": "avons", "g": "", "c": false, "fn": false, "t0": 401.36, "t1": 402.15, "content": true}, {"s": "parlé", "r": "", "b": "parlé", "g": "", "c": false, "fn": false, "t0": 402.15, "t1": 402.94, "content": true}, {"s": "du", "r": "", "b": "du", "g": "", "c": false, "fn": true, "t0": 402.94, "t1": 403.26, "content": true}, {"s": "travail", "r": "", "b": "travail", "g": "工作", "c": true, "fn": false, "t0": 403.26, "t1": 404.37, "content": true}, {"s": "nous", "r": "", "b": "nous", "g": "", "c": false, "fn": true, "t0": 404.37, "t1": 405.01, "content": true}, {"s": "avons", "r": "", "b": "avons", "g": "", "c": false, "fn": false, "t0": 405.01, "t1": 405.8, "content": true}], "zh": "這就是鑰匙，今天我們就聊到這裡。我們談了工作，還"}, {"t0": 405.8, "t1": 415.08, "text": "appris les professions professeur graphiste docteur boulangère les lieux", "words": [{"w": "appris", "t0": 405.8, "t1": 406.3}, {"w": "les", "t0": 406.3, "t1": 407.28}, {"w": "professions", "t0": 407.28, "t1": 407.74}, {"w": "professeur", "t0": 407.74, "t1": 409.26}, {"w": "graphiste", "t0": 409.26, "t1": 410.56}, {"w": "docteur", "t0": 410.56, "t1": 412.02}, {"w": "boulangère", "t0": 412.02, "t1": 413.32}, {"w": "les", "t0": 413.32, "t1": 414.78}, {"w": "lieux", "t0": 414.78, "t1": 415.08}], "tokens": [{"s": "appris", "r": "", "b": "appris", "g": "", "c": false, "fn": false, "t0": 405.8, "t1": 406.67, "content": true}, {"s": "les", "r": "", "b": "les", "g": "", "c": false, "fn": true, "t0": 406.67, "t1": 407.11, "content": true}, {"s": "professions", "r": "", "b": "professions", "g": "", "c": false, "fn": false, "t0": 407.11, "t1": 408.7, "content": true}, {"s": "professeur", "r": "", "b": "professeur", "g": "老師、教授", "c": true, "fn": false, "t0": 408.7, "t1": 410.15, "content": true}, {"s": "graphiste", "r": "", "b": "graphiste", "g": "平面設計師", "c": true, "fn": false, "t0": 410.15, "t1": 411.45, "content": true}, {"s": "docteur", "r": "", "b": "docteur", "g": "", "c": false, "fn": false, "t0": 411.45, "t1": 412.47, "content": true}, {"s": "boulangère", "r": "", "b": "boulangère", "g": "", "c": false, "fn": false, "t0": 412.47, "t1": 413.92, "content": true}, {"s": "les", "r": "", "b": "les", "g": "", "c": false, "fn": true, "t0": 413.92, "t1": 414.35, "content": true}, {"s": "lieux", "r": "", "b": "lieux", "g": "", "c": false, "fn": false, "t0": 414.35, "t1": 415.08, "content": true}], "zh": "學習了各種職業：老師、平面設計師、醫生、麵包師，以及相關場所，"}, {"t0": 415.08, "t1": 425.84, "text": "école, bureau, hôpital, boulangerie. Et comment dire si on aime son travail ? C'est intéressant,", "words": [{"w": "école,", "t0": 415.08, "t1": 416.28}, {"w": "bureau,", "t0": 416.44, "t1": 417.3}, {"w": "hôpital,", "t0": 417.56, "t1": 418.88}, {"w": "boulangerie.", "t0": 419.06, "t1": 420.38}, {"w": "Et", "t0": 420.92, "t1": 421.56}, {"w": "comment", "t0": 421.56, "t1": 421.94}, {"w": "dire", "t0": 421.94, "t1": 422.28}, {"w": "si", "t0": 422.28, "t1": 423.04}, {"w": "on", "t0": 423.04, "t1": 423.24}, {"w": "aime", "t0": 423.24, "t1": 423.5}, {"w": "son", "t0": 423.5, "t1": 423.74}, {"w": "travail", "t0": 423.74, "t1": 424.12}, {"w": "?", "t0": 424.12, "t1": 424.54}, {"w": "C", "t0": 424.54, "t1": 425.28}, {"w": "'est", "t0": 425.28, "t1": 425.38}, {"w": "intéressant,", "t0": 425.38, "t1": 425.84}], "tokens": [{"s": "école", "r": "", "b": "école", "g": "學校", "c": true, "fn": false, "t0": 415.08, "t1": 415.74, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 415.74, "t1": 415.87, "content": false}, {"s": "bureau", "r": "", "b": "bureau", "g": "辦公室", "c": true, "fn": false, "t0": 415.87, "t1": 416.65, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 416.65, "t1": 416.79, "content": false}, {"s": "hôpital", "r": "", "b": "hôpital", "g": "醫院", "c": true, "fn": false, "t0": 416.79, "t1": 417.7, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 417.7, "t1": 417.84, "content": false}, {"s": "boulangerie", "r": "", "b": "boulangerie", "g": "麵包店", "c": true, "fn": false, "t0": 417.84, "t1": 419.28, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 419.28, "t1": 419.41, "content": false}, {"s": "Et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 419.41, "t1": 419.67, "content": true}, {"s": "comment", "r": "", "b": "comment", "g": "", "c": false, "fn": false, "t0": 419.67, "t1": 420.59, "content": true}, {"s": "dire", "r": "", "b": "dire", "g": "", "c": false, "fn": false, "t0": 420.59, "t1": 421.12, "content": true}, {"s": "si", "r": "", "b": "si", "g": "", "c": false, "fn": false, "t0": 421.12, "t1": 421.38, "content": true}, {"s": "on", "r": "", "b": "on", "g": "", "c": false, "fn": true, "t0": 421.38, "t1": 421.64, "content": true}, {"s": "aime", "r": "", "b": "aime", "g": "", "c": false, "fn": false, "t0": 421.64, "t1": 422.17, "content": true}, {"s": "son", "r": "", "b": "son", "g": "", "c": false, "fn": false, "t0": 422.17, "t1": 422.56, "content": true}, {"s": "travail", "r": "", "b": "travail", "g": "工作", "c": true, "fn": false, "t0": 422.56, "t1": 423.48, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 423.48, "t1": 423.61, "content": false}, {"s": "C'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 423.61, "t1": 424.27, "content": true}, {"s": "intéressant", "r": "", "b": "intéressant", "g": "有趣的", "c": true, "fn": false, "t0": 424.27, "t1": 425.71, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 425.71, "t1": 425.84, "content": false}], "zh": "像是學校、辦公室、醫院、麵包店。那麼，該怎麼說自己喜歡自己的工作呢？是有趣、"}, {"t0": 427.98, "t1": 438.33, "text": "amusant, difficile, agréable. Maintenant, c'est à vous ! Dites-nous dans les commentaires qu'est-ce", "words": [{"w": "amusant,", "t0": 427.98, "t1": 428.62}, {"w": "difficile,", "t0": 428.62, "t1": 429.26}, {"w": "agréable.", "t0": 429.8, "t1": 431.32}, {"w": "Maintenant,", "t0": 433.61, "t1": 434.25}, {"w": "c", "t0": 434.25, "t1": 434.81}, {"w": "'est", "t0": 434.81, "t1": 434.91}, {"w": "à", "t0": 434.91, "t1": 435.03}, {"w": "vous", "t0": 435.03, "t1": 435.19}, {"w": "!", "t0": 435.19, "t1": 435.37}, {"w": "Dites", "t0": 435.37, "t1": 436.39}, {"w": "-nous", "t0": 436.39, "t1": 436.55}, {"w": "dans", "t0": 436.55, "t1": 436.71}, {"w": "les", "t0": 436.71, "t1": 436.81}, {"w": "commentaires", "t0": 436.81, "t1": 437.19}, {"w": "qu", "t0": 437.19, "t1": 437.93}, {"w": "'est", "t0": 437.93, "t1": 438.33}, {"w": "-ce", "t0": 438.33, "t1": 438.33}], "tokens": [{"s": "amusant", "r": "", "b": "amusant", "g": "", "c": false, "fn": false, "t0": 427.98, "t1": 428.81, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 428.81, "t1": 428.93, "content": false}, {"s": "difficile", "r": "", "b": "difficile", "g": "難的", "c": true, "fn": false, "t0": 428.93, "t1": 430.0, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 430.0, "t1": 430.12, "content": false}, {"s": "agréable", "r": "", "b": "agréable", "g": "", "c": false, "fn": false, "t0": 430.12, "t1": 431.07, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 431.07, "t1": 431.19, "content": false}, {"s": "Maintenant", "r": "", "b": "maintenant", "g": "", "c": false, "fn": false, "t0": 431.19, "t1": 432.38, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 432.38, "t1": 432.5, "content": false}, {"s": "c'est", "r": "", "b": "c'est", "g": "", "c": false, "fn": false, "t0": 432.5, "t1": 433.1, "content": true}, {"s": "à", "r": "", "b": "à", "g": "", "c": false, "fn": false, "t0": 433.1, "t1": 433.21, "content": true}, {"s": "vous", "r": "", "b": "vous", "g": "", "c": false, "fn": true, "t0": 433.21, "t1": 433.69, "content": true}, {"s": "!", "r": "", "b": "!", "g": "", "c": false, "fn": true, "t0": 433.69, "t1": 433.81, "content": false}, {"s": "Dites-nous", "r": "", "b": "dites-nous", "g": "", "c": false, "fn": false, "t0": 433.81, "t1": 435.0, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 435.0, "t1": 435.47, "content": true}, {"s": "les", "r": "", "b": "les", "g": "", "c": false, "fn": true, "t0": 435.47, "t1": 435.83, "content": true}, {"s": "commentaires", "r": "", "b": "commentaires", "g": "", "c": false, "fn": false, "t0": 435.83, "t1": 437.26, "content": true}, {"s": "qu'est-ce", "r": "", "b": "qu'est-ce", "g": "", "c": false, "fn": false, "t0": 437.26, "t1": 438.33, "content": true}], "zh": "好玩、困難，還是令人愉快？現在輪到你們了！在留言區告訴我們，"}, {"t0": 438.33, "t1": 444.97, "text": "que vous faites dans la vie et où est-ce que vous travaillez ? On veut savoir ! Oui,", "words": [{"w": "que", "t0": 438.33, "t1": 438.49}, {"w": "vous", "t0": 438.49, "t1": 438.65}, {"w": "faites", "t0": 438.65, "t1": 438.93}, {"w": "dans", "t0": 438.93, "t1": 439.23}, {"w": "la", "t0": 439.23, "t1": 439.37}, {"w": "vie", "t0": 439.37, "t1": 439.59}, {"w": "et", "t0": 439.59, "t1": 440.39}, {"w": "où", "t0": 440.39, "t1": 440.89}, {"w": "est", "t0": 440.89, "t1": 441.09}, {"w": "-ce", "t0": 441.09, "t1": 441.19}, {"w": "que", "t0": 441.19, "t1": 441.35}, {"w": "vous", "t0": 441.35, "t1": 441.51}, {"w": "travaillez", "t0": 441.51, "t1": 442.09}, {"w": "?", "t0": 442.09, "t1": 442.19}, {"w": "On", "t0": 442.19, "t1": 443.45}, {"w": "veut", "t0": 443.45, "t1": 443.57}, {"w": "savoir", "t0": 443.57, "t1": 443.83}, {"w": "!", "t0": 443.83, "t1": 444.23}, {"w": "Oui,", "t0": 444.23, "t1": 444.97}], "tokens": [{"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 438.33, "t1": 438.63, "content": true}, {"s": "vous", "r": "", "b": "vous", "g": "", "c": false, "fn": true, "t0": 438.63, "t1": 439.02, "content": true}, {"s": "faites", "r": "", "b": "faites", "g": "", "c": false, "fn": false, "t0": 439.02, "t1": 439.62, "content": true}, {"s": "dans", "r": "", "b": "dans", "g": "", "c": false, "fn": false, "t0": 439.62, "t1": 440.01, "content": true}, {"s": "la", "r": "", "b": "la", "g": "", "c": false, "fn": true, "t0": 440.01, "t1": 440.21, "content": true}, {"s": "vie", "r": "", "b": "vie", "g": "生活、人生", "c": true, "fn": false, "t0": 440.21, "t1": 440.51, "content": true}, {"s": "et", "r": "", "b": "et", "g": "", "c": false, "fn": true, "t0": 440.51, "t1": 440.71, "content": true}, {"s": "où", "r": "", "b": "où", "g": "", "c": false, "fn": false, "t0": 440.71, "t1": 440.91, "content": true}, {"s": "est-ce", "r": "", "b": "est-ce", "g": "", "c": false, "fn": false, "t0": 440.91, "t1": 441.5, "content": true}, {"s": "que", "r": "", "b": "que", "g": "", "c": false, "fn": true, "t0": 441.5, "t1": 441.8, "content": true}, {"s": "vous", "r": "", "b": "vous", "g": "", "c": false, "fn": true, "t0": 441.8, "t1": 442.2, "content": true}, {"s": "travaillez", "r": "", "b": "travaillez", "g": "", "c": false, "fn": false, "t0": 442.2, "t1": 443.19, "content": true}, {"s": "?", "r": "", "b": "?", "g": "", "c": false, "fn": true, "t0": 443.19, "t1": 443.29, "content": false}, {"s": "On", "r": "", "b": "on", "g": "", "c": false, "fn": true, "t0": 443.29, "t1": 443.48, "content": true}, {"s": "veut", "r": "", "b": "veut", "g": "", "c": false, "fn": false, "t0": 443.48, "t1": 443.88, "content": true}, {"s": "savoir", "r": "", "b": "savoir", "g": "", "c": false, "fn": false, "t0": 443.88, "t1": 444.47, "content": true}, {"s": "!", "r": "", "b": "!", "g": "", "c": false, "fn": true, "t0": 444.47, "t1": 444.57, "content": false}, {"s": "Oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 444.57, "t1": 444.87, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 444.87, "t1": 444.97, "content": false}], "zh": "你們從事什麼職業，又在哪裡工作？我們很想知道！對，"}, {"t0": 444.97, "t1": 452.77, "text": "Oui, merci de nous avoir écoutés. C'était un long épisode, mais nous espérons qu'il était utile. Au revoir.", "words": [{"w": "Oui,", "t0": 444.97, "t1": 445.07}, {"w": "merci", "t0": 445.07, "t1": 445.93}, {"w": "de", "t0": 445.93, "t1": 446.15}, {"w": "nous", "t0": 446.15, "t1": 446.25}, {"w": "avoir", "t0": 446.25, "t1": 446.45}, {"w": "écoutés.", "t0": 446.45, "t1": 446.91}, {"w": "C", "t0": 447.41, "t1": 447.85}, {"w": "'était", "t0": 447.85, "t1": 447.97}, {"w": "un", "t0": 447.97, "t1": 448.23}, {"w": "long", "t0": 448.23, "t1": 448.45}, {"w": "épisode,", "t0": 448.45, "t1": 448.85}, {"w": "mais", "t0": 449.07, "t1": 449.59}, {"w": "nous", "t0": 449.59, "t1": 449.87}, {"w": "espérons", "t0": 449.87, "t1": 450.47}, {"w": "qu", "t0": 450.47, "t1": 450.67}, {"w": "'il", "t0": 450.67, "t1": 450.73}, {"w": "était", "t0": 450.73, "t1": 450.87}, {"w": "utile.", "t0": 450.87, "t1": 451.57}, {"w": "Au", "t0": 451.99, "t1": 452.43}, {"w": "revoir.", "t0": 452.43, "t1": 452.77}], "tokens": [{"s": "Oui", "r": "", "b": "oui", "g": "", "c": false, "fn": false, "t0": 444.97, "t1": 445.23, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 445.23, "t1": 445.32, "content": false}, {"s": "merci", "r": "", "b": "merci", "g": "", "c": false, "fn": false, "t0": 445.32, "t1": 445.75, "content": true}, {"s": "de", "r": "", "b": "de", "g": "", "c": false, "fn": true, "t0": 445.75, "t1": 445.92, "content": true}, {"s": "nous", "r": "", "b": "nous", "g": "", "c": false, "fn": true, "t0": 445.92, "t1": 446.27, "content": true}, {"s": "avoir", "r": "", "b": "avoir", "g": "", "c": false, "fn": false, "t0": 446.27, "t1": 446.7, "content": true}, {"s": "écoutés", "r": "", "b": "écoutés", "g": "", "c": false, "fn": false, "t0": 446.7, "t1": 447.31, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 447.31, "t1": 447.4, "content": false}, {"s": "C'était", "r": "", "b": "c'était", "g": "", "c": false, "fn": false, "t0": 447.4, "t1": 448.0, "content": true}, {"s": "un", "r": "", "b": "un", "g": "", "c": false, "fn": true, "t0": 448.0, "t1": 448.18, "content": true}, {"s": "long", "r": "", "b": "long", "g": "", "c": false, "fn": false, "t0": 448.18, "t1": 448.52, "content": true}, {"s": "épisode", "r": "", "b": "épisode", "g": "", "c": false, "fn": false, "t0": 448.52, "t1": 449.13, "content": true}, {"s": ",", "r": "", "b": ",", "g": "", "c": false, "fn": true, "t0": 449.13, "t1": 449.22, "content": false}, {"s": "mais", "r": "", "b": "mais", "g": "", "c": false, "fn": true, "t0": 449.22, "t1": 449.56, "content": true}, {"s": "nous", "r": "", "b": "nous", "g": "", "c": false, "fn": true, "t0": 449.56, "t1": 449.91, "content": true}, {"s": "espérons", "r": "", "b": "espérons", "g": "", "c": false, "fn": false, "t0": 449.91, "t1": 450.6, "content": true}, {"s": "qu'il", "r": "", "b": "qu'il", "g": "", "c": false, "fn": false, "t0": 450.6, "t1": 451.04, "content": true}, {"s": "était", "r": "", "b": "était", "g": "", "c": false, "fn": false, "t0": 451.04, "t1": 451.47, "content": true}, {"s": "utile", "r": "", "b": "utile", "g": "", "c": false, "fn": false, "t0": 451.47, "t1": 451.9, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 451.9, "t1": 451.99, "content": false}, {"s": "Au", "r": "", "b": "au", "g": "", "c": false, "fn": true, "t0": 451.99, "t1": 452.16, "content": true}, {"s": "revoir", "r": "", "b": "revoir", "g": "", "c": false, "fn": false, "t0": 452.16, "t1": 452.68, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 452.68, "t1": 452.77, "content": false}], "zh": "對，謝謝你們聆聽。這集有點長，但我們希望對大家有幫助。再見。"}, {"t0": 453.47, "t1": 454.63, "text": "Au revoir tout le monde.", "words": [{"w": "Au", "t0": 453.47, "t1": 453.91}, {"w": "revoir", "t0": 453.91, "t1": 454.21}, {"w": "tout", "t0": 454.21, "t1": 454.29}, {"w": "le", "t0": 454.29, "t1": 454.41}, {"w": "monde.", "t0": 454.41, "t1": 454.63}], "tokens": [{"s": "Au", "r": "", "b": "au", "g": "", "c": false, "fn": true, "t0": 453.47, "t1": 453.59, "content": true}, {"s": "revoir", "r": "", "b": "revoir", "g": "", "c": false, "fn": false, "t0": 453.59, "t1": 453.93, "content": true}, {"s": "tout", "r": "", "b": "tout", "g": "", "c": false, "fn": false, "t0": 453.93, "t1": 454.17, "content": true}, {"s": "le", "r": "", "b": "le", "g": "", "c": false, "fn": true, "t0": 454.17, "t1": 454.28, "content": true}, {"s": "monde", "r": "", "b": "monde", "g": "", "c": false, "fn": false, "t0": 454.28, "t1": 454.57, "content": true}, {"s": ".", "r": "", "b": ".", "g": "", "c": false, "fn": true, "t0": 454.57, "t1": 454.63, "content": false}], "zh": "再見，各位。"}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const SEGS = D.segments, VID = D.vid;
+// 生詞本與統計「按語言分開存」：日文、法文絕不混在同一個抽屜
+const LANG = D.lang || 'ja';
+const LANGNAME = {ja:'日本語', fr:'Français', en:'English'}[LANG] || LANG;
+const WB_KEY = 'lk.wb.v2.' + LANG;
+const ST_KEY = 'lk.stv.v2.' + LANG;
+const MEM = {};
+
+/* 一次性搬遷：舊版把所有語言塞進同一個 lk.wordbook.v1，靠文字腳本分流 */
+(function migrateV1(){
+  try{
+    if(typeof localStorage === 'undefined') return;
+    const raw = localStorage.getItem('lk.wordbook.v1');
+    if(raw){
+      const old = JSON.parse(raw) || {};
+      const ja = {}, fr = {};
+      for(const w of Object.keys(old)){
+        const isJa = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff]/.test(w);
+        (isJa ? ja : fr)[w] = old[w];
+      }
+      // 合併、不是「新 key 不存在才寫」：她可能先用過新版（新 key 只有一兩個詞），
+      // 舊抽屜裡還有其他詞 —— 用存在就跳過會直接丟資料
+      const mergeInto = (key, obj)=>{
+        if(!Object.keys(obj).length) return;
+        let cur = null;
+        try{ cur = JSON.parse(localStorage.getItem(key) || 'null'); }catch(e){}
+        const out = Object.assign({}, obj, cur || {});   // 兩邊都有時以新資料為準
+        localStorage.setItem(key, JSON.stringify(out));
+      };
+      mergeInto('lk.wb.v2.ja', ja);
+      mergeInto('lk.wb.v2.fr', fr);
+      localStorage.removeItem('lk.wordbook.v1');
+    }
+    const oldSt = localStorage.getItem('lk.stats.v1');
+    if(oldSt && !localStorage.getItem('lk.stv.v2.' + LANG)){
+      localStorage.setItem('lk.stv.v2.' + LANG, oldSt);
+      localStorage.removeItem('lk.stats.v1');
+    }
+  }catch(e){}
+})();
+
+/* @@SHARE-BEGIN */
+/* ---------- 儲存（跨課共用；無痕/沙箱退回記憶體） ----------
+   ⚠ 這一段由 make_deck.py 原樣複製到每日練習頁：排程規則只能有一份，改這裡就好 */
+function readLS(k, def){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; }catch(e){ return MEM[k] || def; } }
+function writeLS(k, v){ MEM[k] = v; try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+let WB = readLS(WB_KEY, {});
+let ST = readLS(ST_KEY, {days:{}, streak:0, last:''});
+
+// 一律用「本地日」字串，不要用 toISOString()：UTC+8/9 會把日期算成前一天
+const isoLocal = d => d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') +
+                       '-' + String(d.getDate()).padStart(2,'0');
+const todayISO = () => isoLocal(new Date());
+function addDays(iso, n){
+  const [y,m,dd] = iso.split('-').map(Number);
+  const d = new Date(y, m-1, dd); d.setDate(d.getDate() + n);
+  return isoLocal(d);
+}
+
+/* ---------- 間隔重複（SM-2 簡化版） ---------- */
+// x＝出現的句子（跨課複習時拿來出克漏字）；last＝最後一次作答日（算「今天練了幾個詞」）
+function newRec(t){
+  return {s:t.s, r:t.r||'', g:t.g||'', b:t.b||t.s, x:t.x||'', first:todayISO(),
+          seen:0, ok:0, ng:0, ivl:0, ef:2.5, reps:0, lapses:0, due:todayISO(), last:''};
+}
+function grade(rec, correct){
+  const today = todayISO();
+  rec.seen++;
+  if(correct){
+    rec.ok++;
+    rec.reps++;
+    rec.ivl = rec.reps === 1 ? 1 : rec.reps === 2 ? 3 : Math.max(4, Math.round(rec.ivl * rec.ef));
+    rec.ef = Math.min(2.8, rec.ef + 0.1);
+  } else {
+    rec.ng++; rec.lapses++; rec.reps = 0; rec.ivl = 1;
+    rec.ef = Math.max(1.3, rec.ef - 0.2);
+  }
+  rec.due = addDays(today, rec.ivl);
+  rec.last = today;
+  WB[rec.s] = rec; writeLS(WB_KEY, WB);
+  return rec;
+}
+const isMastered = r => r.ivl >= 21;
+const isDue = r => (r.due || todayISO()) <= todayISO();
+function bumpStats(correct){
+  const t = todayISO();
+  ST.days[t] = ST.days[t] || {q:0, ok:0};
+  ST.days[t].q++; if(correct) ST.days[t].ok++;
+  if(ST.last !== t){ ST.streak = (ST.last === addDays(t,-1)) ? (ST.streak||0)+1 : 1; ST.last = t; }
+  writeLS(ST_KEY, ST);
+}
+
+/* 發音（瀏覽器內建日語語音，離線可用、不呼叫任何服務）
+   沒有日語語音時 ttsOK=false → 聽力題不出、🔊 按鈕隱藏，不可變成無聲死題 */
+let JA_VOICE = null, ttsOK = false;
+function pickVoice(){
+  try{
+    const vs = speechSynthesis.getVoices() || [];
+    JA_VOICE = vs.find(v=>/^ja/i.test(v.lang)) || null;
+    ttsOK = !!JA_VOICE;
+    if(typeof onTTSReady === 'function') onTTSReady();
+  }catch(e){ ttsOK = false; }
+}
+if(typeof speechSynthesis !== 'undefined' && LANG === 'ja'){
+  pickVoice();
+  try{ speechSynthesis.addEventListener('voiceschanged', pickVoice); }catch(e){}
+}
+// iOS 規定：第一次發音必須在使用者點擊的同一個事件裡呼叫（不要包在 setTimeout 裡）
+function say(text, slow){
+  if(!ttsOK || !text) return false;
+  try{
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP'; u.voice = JA_VOICE; u.rate = slow ? 0.7 : 0.9;
+    speechSynthesis.speak(u);
+    return true;
+  }catch(e){ return false; }
+}
+/* @@SHARE-END */
+
+/* ---------- 播放器 ---------- */
+let yt = null, media = null, playing = false, curSeg = -1, curTok = -1;
+// 播放器不可用時（禁止嵌入／載入失敗）不能再出聽力題，否則會是無聲死題
+let audioOK = (D.kind !== 'youtube');
+const stage = document.getElementById('stage');
+if(D.kind === 'youtube'){
+  const d = document.createElement('div'); d.id = 'ytp'; stage.appendChild(d);
+  const tag = document.createElement('script'); tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+  // 嵌入失敗（禁止嵌入／origin 不符／地區限制）→ 換成連結，其他功能照用
+  function embedFallback(code){
+    const el = document.getElementById('ytp');
+    if(!el || el.dataset.done) return;
+    el.dataset.done = '1';
+    audioOK = false;
+    const n = document.createElement('div');
+    n.className = 'fb';
+    n.innerHTML = '<b>這部影片不能在這裡播放</b>' +
+      '（YouTube 錯誤 ' + (code || '未知') + '）<br>' +
+      '<a target="_blank" href="https://youtu.be/' + D.vid + '">在 YouTube 打開 ↗</a><br>' +
+      '<span style="font-size:12px;opacity:.8">逐句、測驗、生詞都可以照用，聽力題會自動換成別的題型</span>';
+    el.replaceWith(n);
+  }
+  window.onYouTubeIframeAPIReady = function(){
+    yt = new YT.Player('ytp', { videoId: D.vid,
+      playerVars:{rel:0, modestbranding:1, playsinline:1},
+      events:{
+        onReady:()=>{ audioOK = true; setInterval(tick,180); },
+        onStateChange:e=>{ playing = (e.data===1); },
+        onError:e=>embedFallback(e && e.data)      // 100/101/150/153 都走這裡
+      } });
+  };
+  window.addEventListener('error', ()=>embedFallback(null), {once:true});
+  setTimeout(()=>{ if(!yt && !document.getElementById('ytp')?.dataset.done) embedFallback('載入逾時'); }, 6000);
+} else {
+  media = document.createElement('video');
+  media.src = D.media; media.controls = true; media.playsInline = true;
+  stage.appendChild(media);
+  media.addEventListener('timeupdate', tick);
+  media.addEventListener('play', ()=>playing = true);
+  media.addEventListener('pause', ()=>playing = false);
+}
+const now = () => (yt && yt.getCurrentTime) ? yt.getCurrentTime() : (media ? media.currentTime : 0);
+function seek(t){ if(yt && yt.seekTo) yt.seekTo(t, true); else if(media) media.currentTime = t; }
+let curRate = 1;
+function playTo(t0, t1){
+  seek(Math.max(t0 - 0.35, 0));
+  // 慢速播放時音訊實際會拉長 → 停止時間必須按倍率換算，否則 0.75× 會被提早切掉
+  const ms = Math.max(((t1 - t0 + 0.5) / curRate) * 1000, 900);
+  if(yt && yt.playVideo){ yt.playVideo(); setTimeout(()=>{ if(yt && yt.pauseVideo) yt.pauseVideo(); }, ms); }
+  else if(media){ media.play(); setTimeout(()=>media.pause(), ms); }
+  return ms;
+}
+function rate(r){ curRate = r; if(yt && yt.setPlaybackRate) yt.setPlaybackRate(r); else if(media) media.playbackRate = r; }
+
+/* ---------- 逐句 ---------- */
+const segEls = [], tokEls = [];
+// 拉丁語系（法／英）單詞之間一定要有空白；日文不加空白才是對的。
+// 少了這個，法語課會渲染成 "BienvenueàSimplyFrenchPodcast."（實測線上就是這樣）
+const LATIN = !['ja', 'zh'].includes((typeof D !== 'undefined' && D && D.lang) || 'ja');
+function appendToks(container, si, toks){
+  const out = [];
+  toks.forEach((tk, j)=>{
+    const sp = tokSpan(si, j, tk);
+    container.appendChild(sp); out.push(sp);
+    // 只在「下一個是實詞」時補空白：標點前不加（→ "Podcast." "va ?" 而不是 "Podcast ."）
+    const nxt = toks[j + 1];
+    if(LATIN && nxt && nxt.content) container.appendChild(document.createTextNode(' '));
+  });
+  return out;
+}
+
+// 詞元素（逐句頁與導讀頁共用一份，避免兩邊樣式走鐘）
+function tokSpan(si, j, tk){
+  const sp = document.createElement('span');
+  sp.className = 'tok' + (tk.c ? ' course' : '') + (WB[tk.s] ? ' saved' : '');
+  if(tk.r){
+    // 原生 <ruby>：baseline 與換行交給瀏覽器，自己用 flex 疊字會歪掉並撐破版面
+    const rb = document.createElement('ruby'); rb.textContent = tk.s;
+    const rt = document.createElement('rt'); rt.textContent = tk.r;
+    rb.appendChild(rt); sp.appendChild(rb);
+  } else sp.textContent = tk.s;
+  sp.onclick = ev=>{ ev.stopPropagation(); openSheet(si, j); };
+  return sp;
+}
+
+function renderTranscript(){
+  const tx = document.getElementById('viewT');
+  SEGS.forEach((s,i)=>{
+    const div = document.createElement('div'); div.className = 'seg';
+    const tm = document.createElement('span'); tm.className = 'time'; tm.textContent = fmt(s.t0);
+    tm.onclick = ()=>seek(Math.max(s.t0 - 0.15, 0));
+    div.appendChild(tm); div.appendChild(document.createTextNode(' '));
+    const toks = appendToks(div, i, s.tokens);
+    if(s.zh){
+      const z = document.createElement('span');
+      z.className = 'segzh'; z.textContent = s.zh;
+      div.appendChild(z);
+    }
+    tx.appendChild(div); segEls.push(div); tokEls.push(toks);
+  });
+  revealList(segEls);
+}
+let userScroll = 0;
+['touchstart','wheel'].forEach(e=>document.getElementById('viewT')
+  .addEventListener(e, ()=>userScroll = Date.now(), {passive:true}));
+function tick(){
+  const t = now();
+  let si = -1;
+  for(let i=0;i<SEGS.length;i++){ if(t >= SEGS[i].t0 && t < SEGS[i].t1 + 0.25){ si = i; break; } }
+  if(si !== curSeg){
+    if(curSeg >= 0 && segEls[curSeg]) segEls[curSeg].classList.remove('active');
+    if(si >= 0){
+      segEls[si].classList.add('active');
+      if(playing && Date.now() - userScroll > 2500) segEls[si].scrollIntoView({block:'center', behavior:'smooth'});
+    }
+    curSeg = si; curTok = -1;
+  }
+  if(si < 0) return;
+  const toks = SEGS[si].tokens;
+  let tj = -1;
+  for(let j=0;j<toks.length;j++){ if(t >= toks[j].t0 && t < toks[j].t1){ tj = j; break; } }
+  if(tj !== curTok){
+    if(curTok >= 0 && tokEls[si][curTok]) tokEls[si][curTok].classList.remove('hot');
+    if(tj >= 0 && tokEls[si][tj] && toks[tj].content) tokEls[si][tj].classList.add('hot');
+    curTok = tj;
+  }
+}
+
+/* ---------- 詞卡 ---------- */
+let pick = null;
+function openSheet(i,j){
+  const tk = SEGS[i].tokens[j];
+  if(!tk.content) return;
+  pick = {i,j,tk};
+  document.getElementById('sw').textContent = tk.s;
+  document.getElementById('srd').textContent = tk.r || '';
+  document.getElementById('sgl').textContent = tk.g || '';
+  document.getElementById('sctx').textContent = SEGS[i].text;
+  const sb = document.getElementById('save');
+  sb.textContent = WB[tk.s] ? '已在生詞本' : '加入生詞';
+  document.getElementById('sheet').classList.add('open');
+  document.getElementById('dict').onclick = () =>
+    window.open(D.dict.replace('{w}', encodeURIComponent(tk.s.replace(/[。、！？「」…]/g,''))), '_blank');
+  // 存原句：之後在「每日練習」跨課複習時，才出得了這個詞的克漏字
+  sb.onclick = ()=>{ addWord(Object.assign({}, tk, {x:SEGS[i].text})); sb.textContent = '已在生詞本'; };
+  const sy = document.getElementById('say');
+  sy.style.display = ttsOK ? '' : 'none';
+  sy.onclick = ()=>say(tk.r || tk.s);
+}
+document.getElementById('close').onclick = ()=>document.getElementById('sheet').classList.remove('open');
+
+function addWord(tk){
+  if(WB[tk.s]) return;
+  WB[tk.s] = newRec(tk);
+  writeLS(WB_KEY, WB);
+  renderWordbook(); updateDuePill();
+}
+function delWord(w){
+  delete WB[w]; writeLS(WB_KEY, WB);
+  renderWordbook(); updateDuePill();
+}
+
+
+/* ---------- 動態層：粒子背景 + 進場動效 ---------- */
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// 進場用 Web Animations API，且刻意「無延遲、不填滿」：
+// 一旦用 delay + fill:'backwards'，動畫被暫停（切背景、省電、截圖）時元素會停在 opacity:0
+// → 內容明明在 DOM 裡卻看不見。寧可效果樸素，也不要畫面空白。
+function reveal(el){
+  if(!el || RM || !el.animate) return;
+  // 只做位移、完全不動 opacity：不論動畫是否被暫停，內容都一定看得見
+  el.animate([{transform:'translateY(9px)'}, {transform:'none'}],
+             {duration:300, easing:'cubic-bezier(.2,.8,.25,1)'});
+}
+function revealList(nodes){
+  if(RM) return;
+  nodes.forEach(n=>reveal(n));
+}
+
+/* 粒子：只在酷炫主題跑，切回柔和就停；分頁隱藏時暫停（省電） */
+let fxRun = null;
+function startFX(){
+  if(RM) return;
+  const c = document.getElementById('fx');
+  if(!c || fxRun) return;
+  const ctx = c.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let w = 0, h = 0, pts = [], raf = 0;
+  const ACC = '0,229,160', ACC2 = '34,211,238';
+  function size(){
+    w = c.clientWidth; h = c.clientHeight;
+    c.width = Math.floor(w * dpr); c.height = Math.floor(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function seed(){
+    const n = Math.max(18, Math.min(38, Math.round(w / 22)));
+    pts = Array.from({length:n}, ()=>({
+      x: Math.random()*w, y: Math.random()*h,
+      vx: (Math.random()-.5)*.24, vy: (Math.random()-.5)*.24,
+      r: Math.random()*1.7 + .7
+    }));
+  }
+  function frame(){
+    if(!fxRun) return;
+    ctx.clearRect(0, 0, w, h);
+    for(const p of pts){
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < -20) p.x = w + 20; if(p.x > w + 20) p.x = -20;
+      if(p.y < -20) p.y = h + 20; if(p.y > h + 20) p.y = -20;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+      ctx.fillStyle = 'rgba(' + ACC + ',.55)'; ctx.fill();
+    }
+    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+      const a = pts[i], b = pts[j];
+      const d = Math.hypot(a.x-b.x, a.y-b.y);
+      if(d < 118){
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = 'rgba(' + ACC2 + ',' + (0.16 * (1 - d/118)).toFixed(3) + ')';
+        ctx.lineWidth = .6; ctx.stroke();
+      }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  const onResize = ()=>{ size(); seed(); };
+  const onVis = ()=>{ if(document.hidden){ cancelAnimationFrame(raf); } else if(fxRun){ frame(); } };
+  window.addEventListener('resize', onResize);
+  document.addEventListener('visibilitychange', onVis);
+  fxRun = ()=>{ fxRun = null; cancelAnimationFrame(raf);
+                window.removeEventListener('resize', onResize);
+                document.removeEventListener('visibilitychange', onVis); };
+  size(); seed(); frame();
+}
+function stopFX(){ if(fxRun){ const f = fxRun; f(); } }
+
+/* ---------- 導讀 ---------- */
+let gIdx = 0, gAuto = false, gSlow = false, gTimer = null;
+const G = id => document.getElementById(id);
+
+let SHOWZH = true;
+try{ SHOWZH = localStorage.getItem('lk.showzh') !== '0'; }catch(e){}
+function paintZhBtn(){
+  const b = G('gzhBtn');
+  if(!b) return;
+  b.textContent = SHOWZH ? '中文 ON' : '中文 OFF';
+  b.classList.toggle('on', SHOWZH);
+  document.body.classList.toggle('nozh', !SHOWZH);
+}
+if(typeof document !== 'undefined' && document.readyState !== 'loading') paintZhBtn();
+else if(typeof document !== 'undefined') document.addEventListener('DOMContentLoaded', paintZhBtn);
+function renderGuide(){
+  const s = SEGS[gIdx];
+  if(!s) return;
+  const gz = G('gzh');
+  if(gz){
+    gz.textContent = s.zh || '';
+    gz.title = s.zh ? '' : '這句還沒有中文翻譯（可跑 make_trans.py 補）';
+  }
+  G('gidx').textContent = (gIdx + 1) + ' / ' + SEGS.length;
+  G('gtime').textContent = fmt(s.t0) + ' – ' + fmt(s.t1);
+  const tx = G('gtext'); tx.innerHTML = '';
+  appendToks(tx, gIdx, s.tokens);
+  // 這句的重點詞：本課生詞或已有中文釋義的詞
+  const ws = G('gwords'); ws.innerHTML = '';
+  const seen = new Set();
+  s.tokens.forEach((tk, j)=>{
+    if(!tk.content || tk.s.length < 2 || seen.has(tk.s)) return;
+    if(!(tk.c || tk.g)) return;
+    seen.add(tk.s);
+    const chip = document.createElement('span');
+    chip.className = 'gw';
+    chip.innerHTML = '<b>' + tk.s + '</b>' + (tk.r ? '<small>' + tk.r + '</small>' : '') +
+                     (tk.g ? '<i>' + tk.g + '</i>' : '');
+    chip.onclick = ()=>openSheet(gIdx, j);
+    ws.appendChild(chip);
+  });
+  if(!ws.children.length) ws.innerHTML = '<span class="gw" style="opacity:.55">這句沒有列在生詞表裡的詞</span>';
+  if(tx.animate && !RM){
+    tx.animate([{transform:'translateX(-10px)'}, {transform:'none'}],
+               {duration:280, easing:'cubic-bezier(.2,.8,.25,1)'});
+  }
+  revealList(Array.from(ws.children));
+  const js = document.getElementById('gjump'); if(js) js.value = String(gIdx);
+  G('gprog').style.width = ((gIdx + 1) / SEGS.length * 100) + '%';
+  // 逐句頁同步標亮
+  if(curSeg >= 0 && segEls[curSeg]) segEls[curSeg].classList.remove('active');
+  curSeg = gIdx;
+  if(segEls[gIdx]) segEls[gIdx].classList.add('active');
+}
+function gPlay(){
+  const s = SEGS[gIdx];
+  if(!s) return;
+  const ms = playTo(s.t0, s.t1);
+  clearTimeout(gTimer);
+  if(gAuto){
+    gTimer = setTimeout(()=>{
+      if(!gAuto) return;
+      if(gIdx < SEGS.length - 1){ gIdx++; renderGuide(); gPlay(); }
+      else { gAuto = false; G('gauto').classList.remove('on'); }
+    }, ms + 700);
+  }
+}
+function gGo(d){
+  clearTimeout(gTimer);
+  gIdx = Math.max(0, Math.min(SEGS.length - 1, gIdx + d));
+  renderGuide();
+  if(gAuto) gPlay();
+}
+G('gplay').onclick = gPlay;
+G('gnext').onclick = ()=>{ gAuto = false; G('gauto').classList.remove('on'); gGo(1); };
+G('gprev').onclick = ()=>{ gAuto = false; G('gauto').classList.remove('on'); gGo(-1); };
+G('gauto').onclick = e=>{
+  gAuto = !gAuto;
+  e.target.classList.toggle('on', gAuto);
+  if(gAuto) gPlay(); else clearTimeout(gTimer);
+};
+G('gzhBtn').onclick = ()=>{
+  SHOWZH = !SHOWZH;
+  try{ localStorage.setItem('lk.showzh', SHOWZH ? '1' : '0'); }catch(e){}
+  paintZhBtn();
+};
+G('gspeed').onclick = e=>{
+  gSlow = !gSlow;
+  rate(gSlow ? 0.75 : 1);
+  e.target.classList.toggle('on', gSlow);
+  G('slow').classList.toggle('on', gSlow);   // 與逐句頁的慢速鈕同步
+};
+
+/* 跳到某一句：下拉選單一次列出全部句子（長清單靠系統選單捲動，比分頁好按） */
+(function buildJump(){
+  const sel = document.getElementById('gjump');
+  if(!sel) return;
+  SEGS.forEach((s, i)=>{
+    const o = document.createElement('option');
+    o.value = String(i);
+    const t = String(s.text || '').replace(/\s+/g, ' ').trim();
+    o.textContent = (i + 1) + '. ' + (t.length > 16 ? t.slice(0, 16) + '…' : t);
+    sel.appendChild(o);
+  });
+  sel.addEventListener('change', ()=>{
+    clearTimeout(gTimer);
+    gAuto = false; G('gauto').classList.remove('on');
+    gIdx = Math.max(0, Math.min(SEGS.length - 1, parseInt(sel.value, 10) || 0));
+    renderGuide();
+  });
+})();
+
+/* ---------- 生詞本 ---------- */
+function lessonWords(){
+  // 題庫只收「該考的詞」：排除助詞／助動詞／數詞等功能詞（建置期已標 fn），
+  // 否則選項會出現「した」「2016」這種噪音。
+  const map = new Map();
+  SEGS.forEach((s,si)=>s.tokens.forEach(tk=>{
+    if(!tk.content || tk.fn || tk.s.length < 2) return;
+    if(/^[\d\s.,:;!?·\-—…]+$/.test(tk.s)) return;
+    if(!map.has(tk.s)) map.set(tk.s, {s:tk.s, r:tk.r||'', g:tk.g||'', b:tk.b||tk.s, si, t0:tk.t0, t1:tk.t1});
+  }));
+  return [...map.values()];
+}
+/* 生詞本顯示設定：篩選 + 搜尋（WB 本身已按語言分開存） */
+const WCFG = {f:'all', q:''};
+bindChips('wfilter', d=>{ WCFG.f = d.f || 'all'; renderWordbook(); });
+(function(){
+  const el = document.getElementById('wsearch');
+  if(el) el.addEventListener('input', ()=>{ WCFG.q = el.value.trim().toLowerCase(); renderWordbook(); });
+})();
+
+function renderWordbook(){
+  const wl = document.getElementById('wlang'); if(wl) wl.textContent = LANGNAME;
+  const all = Object.entries(WB);
+  const due = all.filter(([w,r])=>isDue(r));
+  const mast = all.filter(([w,r])=>isMastered(r));
+  const today = ST.days[todayISO()] || {q:0, ok:0};
+  document.getElementById('wstat').innerHTML =
+    '<div><b>'+all.length+'</b><span>收集詞數</span></div>' +
+    '<div><b style="color:var(--rose-d)">'+due.length+'</b><span>今日待複習</span></div>' +
+    '<div><b style="color:var(--rose)">'+mast.length+'</b><span>已掌握</span></div>' +
+    '<div><b>'+today.q+'</b><span>今日答題</span></div>' +
+    '<div><b>'+((today.q ? Math.round(today.ok/today.q*100) : 0))+'%</b><span>今日正確率</span></div>' +
+    '<div><b>'+(ST.streak||0)+'</b><span>連續天數</span></div>';
+  const box = document.getElementById('vlist');
+  if(!all.length){
+    box.innerHTML = '<div class="empty">這個語言（' + LANGNAME + '）還沒有生詞。<br>點逐句頁的任一個詞 → 加入生詞。</div>';
+    refreshPoolLabel(); return;
+  }
+  // 篩選 + 搜尋
+  let view = all;
+  if(WCFG.f === 'due')  view = all.filter(([w,r])=>isDue(r));
+  if(WCFG.f === 'new')  view = all.filter(([w,r])=>!r.seen);
+  if(WCFG.f === 'mast') view = all.filter(([w,r])=>isMastered(r));
+  if(WCFG.q) view = view.filter(([w,r])=> (w + ' ' + (r.g||'') + ' ' + (r.r||'')).toLowerCase().includes(WCFG.q));
+  if(!view.length){
+    box.innerHTML = '<div class="empty">這個條件下沒有詞。<br>換個篩選或清掉搜尋字。</div>';
+    refreshPoolLabel(); return;
+  }
+  box.innerHTML = '';
+  view.sort((a,b)=> (a[1].due||'').localeCompare(b[1].due||''));
+  view.forEach(([w,r])=>{
+    const d = document.createElement('div'); d.className = 'vitem';
+    const cls = isMastered(r) ? 'd3' : r.reps >= 2 ? 'd2' : r.reps >= 1 ? 'd1' : 'd0';
+    const left = document.createElement('div');
+    left.innerHTML = '<span class="dot '+cls+'"></span><span class="vt">'+w+
+      (r.r ? '<small>'+r.r+'</small>' : '')+'</span>' +
+      (r.g ? '<span class="vg">'+r.g+'</span>' : '') +
+      '<span class="vg">複習 '+r.seen+' 次 · 對 '+r.ok+' 錯 '+r.ng+' · 下次 '+(r.due||'今天')+'</span>';
+    const del = document.createElement('div'); del.className = 'del'; del.textContent = '刪';
+    del.onclick = ()=>delWord(w);
+    d.appendChild(left); d.appendChild(del); box.appendChild(d);
+  });
+  revealList(Array.from(box.children));
+  updateDuePill();
+  refreshPoolLabel();
+}
+function updateDuePill(){
+  const due = Object.values(WB).filter(r=>isDue(r)).length;
+  document.getElementById('duepill').textContent = '待複習 ' + due;
+}
+
+/* ---------- 彙出 ---------- */
+document.getElementById('csv').onclick = ()=>{
+  const rows = [['word','reading','meaning','seen','ok','ng','interval_days','due','lapses']];
+  Object.entries(WB).forEach(([w,r])=>rows.push([w, r.r||'', r.g||'', r.seen, r.ok, r.ng, r.ivl, r.due||'', r.lapses]));
+  if(rows.length === 1) return;
+  const csv = '\ufeff' + rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+  a.download = 'wordbook_' + todayISO() + '.csv'; a.click();
+};
+document.getElementById('json').onclick = ()=>{
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify({wb:WB, st:ST}, null, 1)], {type:'application/json'}));
+  a.download = 'langkit_backup_' + todayISO() + '.json'; a.click();
+};
+document.getElementById('clr').onclick = ()=>{
+  if(confirm('清空「' + LANGNAME + '」全部生詞與紀錄？（其他語言不受影響）')){ WB = {}; writeLS(WB_KEY, WB); renderWordbook(); }
+};
+
+/* ---------- 測驗 ---------- */
+let queue = [], qi = 0, cur = null, answered = false, pool = [];
+/* @@SHARE-BEGIN */
+const shuffle = a => a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+/* @@SHARE-END */
+
+/* 測驗設定：題型 / 範圍 / 題數都讓使用者自己選（預設全部・本課・10 題） */
+const QCFG = {kind:'all', scope:'lesson', n:10};
+
+function quizWords(){
+  const all = lessonWords();
+  if(QCFG.scope === 'saved') return all.filter(w=>WB[w.s]);
+  if(QCFG.scope === 'due')   return all.filter(w=>WB[w.s] && isDue(WB[w.s]));
+  return all;
+}
+function canKind(w, k){
+  if(k === 'mean')   return !!w.g;
+  if(k === 'listen') return audioOK;
+  if(k === 'read')   return !!w.r;
+  return true;                                  // cloze 由 buildQ 再判斷
+}
+function refreshPoolLabel(){
+  const n = quizWords().length;
+  const b = document.getElementById('qstart');
+  if(b && b.style.display !== 'none') b.innerHTML = '開始練習 · <b id="qpool">' + n + '</b> 個詞';
+  const hint = document.getElementById('qhint');
+  if(hint){
+    let msg = '';
+    if(!n) msg = QCFG.scope === 'due'   ? '今天沒有到期的詞 —— 改選「本課全部」或「我收藏的」'
+             : QCFG.scope === 'saved' ? '生詞本還是空的 —— 先在逐句頁點單字加入生詞'
+             : '';
+    hint.textContent = msg;
+    hint.style.display = msg ? 'block' : 'none';
+  }
+}
+function bindChips(id, cb){
+  const box = document.getElementById(id);
+  if(!box) return;
+  box.addEventListener('click', ev=>{
+    const b = ev.target.closest ? ev.target.closest('.chip') : null;
+    if(!b) return;
+    Array.from(box.querySelectorAll('.chip')).forEach(c=>c.classList.toggle('on', c === b));
+    cb(b.dataset || {});
+  });
+}
+bindChips('ckind',  d=>{ QCFG.kind  = d.k || 'all'; });
+bindChips('cscope', d=>{ QCFG.scope = d.s || 'lesson'; refreshPoolLabel(); });
+bindChips('cnum',   d=>{ QCFG.n     = parseInt(d.n || '10', 10); });
+
+function startQuiz(){
+  pool = lessonWords();
+  let words = quizWords();
+  if(QCFG.kind !== 'all') words = words.filter(w=>canKind(w, QCFG.kind));
+  if(!words.length){ showEmpty(); return; }
+  queue = shuffle(words);
+  if(QCFG.n > 0) queue = queue.slice(0, QCFG.n);
+  qi = 0;
+  const cfg = document.getElementById('qcfg'); if(cfg) cfg.style.display = 'none';
+  document.getElementById('qstart').style.display = 'none';
+  document.getElementById('qempty').style.display = 'none';
+  nextQ();
+}
+function showEmpty(){
+  const cfg = document.getElementById('qcfg'); if(cfg) cfg.style.display = 'flex';
+  refreshPoolLabel();
+  document.getElementById('qstem').textContent = '';
+  document.getElementById('opts').innerHTML = '';
+  document.getElementById('qempty').style.display = 'block';
+  document.getElementById('qnext').style.display = 'none';
+}
+function nextQ(){
+  answered = false; cur = null;
+  document.getElementById('qfeed').textContent = '';
+  document.getElementById('qfeed').className = 'feed';
+  document.getElementById('qnext').style.display = 'none';
+  if(qi >= queue.length){
+    document.getElementById('qtype').textContent = '完成';
+    document.getElementById('qprog').textContent = queue.length + ' / ' + queue.length;
+    document.getElementById('qstem').textContent = '這輪練完了 👏';
+    document.getElementById('opts').innerHTML = '';
+    document.getElementById('qstart').style.display = 'block';
+    const cfg = document.getElementById('qcfg'); if(cfg) cfg.style.display = 'flex';
+    refreshPoolLabel();
+    document.getElementById('qempty').style.display = 'block';
+    document.getElementById('qempty').innerHTML = '答題紀錄已存到這台裝置。<br>生詞頁可看掌握度與下次複習日。';
+    return;
+  }
+  const w = queue[qi];
+  let kinds;
+  if(QCFG.kind !== 'all'){
+    kinds = [QCFG.kind];
+  } else {
+    kinds = ['read','cloze'];
+    if(audioOK) kinds.push('listen');
+    if(w.g) kinds.push('mean');
+  }
+  // 逐一嘗試題型，直到有一型能湊出四個選項（干擾項不夠就換下一型）
+  cur = null;
+  for(const k of shuffle(kinds)){ cur = buildQ(w, k, pool); if(cur) break; }
+  if(!cur) cur = {label:'複習', stem:'<b>'+w.s+'</b>', options:[{text:'看懂 → 下一題', correct:true}]};
+  document.getElementById('qtype').textContent = cur.label;
+  document.getElementById('qprog').textContent = (qi+1) + ' / ' + queue.length;
+  document.getElementById('qstem').innerHTML = cur.stem;
+  const box = document.getElementById('opts'); box.innerHTML = '';
+  const opts = cur.options;
+  opts.forEach(o=>{
+    const b = document.createElement('button'); b.className = 'opt'; b.textContent = o.text;
+    b.onclick = ()=>answer(b, o.correct);
+    box.appendChild(b);
+  });
+  revealList(Array.from(box.children));
+  if(cur.audio) setTimeout(()=>playTo(cur.audio[0], cur.audio[1]), 350);
+}
+/* @@SHARE-BEGIN */
+// 四選項契約：湊不出四個互不重複的選項就回 null，由上層換題型（不可拿掉）
+function q4(label, stem, correctText, wrongTexts, audio){
+  const seen = new Set([correctText]);
+  const opts = [{text:correctText, correct:true}];
+  for(const t of wrongTexts){
+    if(seen.has(t)) continue;
+    seen.add(t);
+    opts.push({text:t, correct:false});
+    if(opts.length === 4) break;
+  }
+  if(opts.length < 4) return null;          // 干擾項不夠 → 交給上層換題型
+  return {label, stem, options:shuffle(opts), audio};
+}
+/* @@SHARE-END */
+function buildQ(w, kind, pool){
+  const others = (pool||[]).filter(x=>x.s !== w.s);
+  const pickWrong = key => shuffle(others.filter(x=>x[key] && x[key] !== w[key]));
+  const fmtW = x => x.s + (x.r ? '（'+x.r+'）' : '');
+
+  if(kind === 'read' && w.r)
+    return q4('讀音', '<b>'+w.s+'</b><small>這個詞怎麼唸？</small>',
+              w.r, pickWrong('r').map(x=>x.r));
+  if(kind === 'mean' && w.g)
+    return q4('詞義', '<b>'+w.s+'</b>' + (w.r ? ' <small style="display:inline;color:var(--lav)">'+w.r+'</small>' : '') +
+              '<small>是什麼意思？</small>', w.g, pickWrong('g').map(x=>x.g));
+  if(kind === 'listen')
+    return q4('聽力', '🔊 <small>聽這個詞，選出你聽到的</small>',
+              fmtW(w), others.map(fmtW), [w.t0, w.t1]);
+  if(kind === 'cloze'){
+    const seg = SEGS[w.si];
+    const masked = seg.text.replace(w.s, '<span class="blank">＿＿＿</span>');
+    if(!masked.includes('blank')) return null;
+    return q4('克漏字', masked + '<small>選出最適合填入的詞</small>',
+              fmtW(w), others.map(fmtW), [seg.t0, seg.t1]);
+  }
+  return null;
+}
+function answer(btn, correct){
+  if(answered) return;
+  answered = true;
+  const w = queue[qi];
+  // 找出正確選項文字（可能與 btn 不同）
+  document.querySelectorAll('.opt').forEach(b=>{
+    if(b === btn){ b.classList.add(correct ? 'correct' : 'wrong'); }
+  });
+  // 標出正解
+  const right = cur.options.find(o=>o.correct);
+  document.querySelectorAll('.opt').forEach(b=>{ if(b.textContent === right.text) b.classList.add('correct'); });
+  const rec = WB[w.s] ? WB[w.s] : newRec(Object.assign({}, w, {x:(SEGS[w.si]||{}).text||''}));
+  grade(rec, correct);
+  bumpStats(correct);
+  const f = document.getElementById('qfeed');
+  f.className = 'feed ' + (correct ? 'ok' : 'ng');
+  f.innerHTML = (correct ? '✔ 正確' : '✘ 答錯了') +
+    '　<b>' + w.s + '</b>' + (w.r ? '（'+w.r+'）' : '') + (w.g ? '　' + w.g : '') +
+    '<br><span style="color:var(--dim);font-size:12px">下次複習：' + rec.due + '</span>';
+  document.getElementById('qnext').style.display = 'block';
+  qi++;
+  renderWordbook();
+}
+document.getElementById('qnext').onclick = nextQ;
+document.getElementById('qstart').onclick = ()=>startQuiz();
+
+/* ---------- 分頁 / 按鈕 ---------- */
+function tab(name){
+  ['G','T','Q','W'].forEach(k=>{
+    document.getElementById('view'+k).classList.toggle('show', k === name);
+    document.getElementById('tab'+k).classList.toggle('on', k === name);
+  });
+  if(name === 'G'){ renderGuide(); paintZhBtn(); }
+  if(name === 'W') renderWordbook();
+  if(name === 'Q'){ refreshPoolLabel(); }
+  const sec = document.getElementById('view' + name);
+  if(sec && sec.animate && !RM){
+    sec.animate([{transform:'translateY(8px)'}, {transform:'none'}],
+                {duration:260, easing:'cubic-bezier(.2,.8,.25,1)'});
+  }
+}
+document.getElementById('tabG').onclick = ()=>tab('G');
+document.getElementById('tabT').onclick = ()=>tab('T');
+document.getElementById('tabQ').onclick = ()=>tab('Q');
+document.getElementById('tabW').onclick = ()=>tab('W');
+
+// 慢速：導讀頁與逐句頁共用同一個狀態
+function setSpeed(v){
+  gSlow = v; rate(v ? 0.75 : 1);
+  document.getElementById('gspeed').classList.toggle('on', v);
+  document.getElementById('slow').classList.toggle('on', v);
+}
+document.getElementById('furi').onclick = e=>{
+  const off = document.body.classList.toggle('nofuri');
+  e.target.classList.toggle('on', !off);
+};
+document.getElementById('slow').onclick = ()=>setSpeed(!gSlow);
+
+// 主題：柔和（預設，適合她）／酷炫（深色 HUD）
+function applyTheme(t){
+  document.documentElement.dataset.theme = t;
+  try{ localStorage.setItem('lk.theme', t); }catch(e){}
+  document.getElementById('theme').textContent = (t === 'cool') ? '🌸 柔和版' : '🎨 酷炫版';
+  if(t === 'cool') startFX(); else stopFX();
+}
+document.getElementById('theme').onclick =
+  ()=>applyTheme(document.documentElement.dataset.theme === 'cool' ? 'soft' : 'cool');
+applyTheme(document.documentElement.dataset.theme || 'soft');
+document.getElementById('rep').onclick = ()=>{
+  if(curSeg < 0) return; const s = SEGS[curSeg];
+  seek(Math.max(s.t0 - 0.2, 0)); if(yt && yt.playVideo) yt.playVideo();
+};
+function fmt(t){ const m = Math.floor(t/60), s = Math.floor(t%60); return m + ':' + String(s).padStart(2,'0'); }
+
+renderTranscript(); renderGuide(); renderWordbook();
+</script>
+</body>
+</html>

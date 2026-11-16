@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="我的語言課">
+<meta name="theme-color" content="#FFF8F4">
+<title>情境對話 — 日語情境</title>
+<style>
+:root{--bg:#FFF8F4;--card:#FFFFFF;--line:#F5E1E8;--fg:#432F37;--dim:#957D86;
+  --rose:#EF6A8B;--rose-d:#D94F72;--lav:#9B6BD6;--mint:#43BE9B;--bad:#D9737A;--sky:#6AA6E0}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Hiragino Maru Gothic ProN","Yuanti TC","PingFang TC",-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;padding:0 0 calc(28px + env(safe-area-inset-bottom));-webkit-text-size-adjust:100%}
+header{padding:16px 16px 4px}
+.crumb{display:inline-block;font-size:13px;color:var(--dim);text-decoration:none;margin-right:10px}
+h1{font-size:19px;margin:6px 0 8px;font-weight:800}
+h1 span{color:var(--rose-d)}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11.5px;padding:3px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);
+  color:var(--dim);font-weight:600}
+.pill b{color:var(--fg)}
+.wrap{padding:0 16px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;padding:4px 0 10px}
+.chip{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);
+  color:var(--fg);font-size:13.5px;font-weight:700;cursor:pointer;min-height:38px}
+.chip.on{background:var(--rose);border-color:var(--rose);color:#fff}
+.scene{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px 14px 16px;
+  box-shadow:0 4px 18px rgba(214,124,147,.10);margin-bottom:14px}
+.snote{font-size:12.5px;color:var(--dim);margin:-2px 0 10px}
+.bubble{max-width:88%;padding:11px 14px;border-radius:18px;margin:9px 0;font-size:17px;font-weight:700;
+  line-height:1.6;position:relative}
+.bubble .zh{display:block;font-size:12.5px;font-weight:500;color:var(--dim);margin-top:3px}
+.bubble.p{background:#F4F8FF;border:1px solid #DCE8F8;border-bottom-left-radius:6px}
+.bubble.a{background:rgba(67,190,155,.13);border:1px solid #BFE8DC;margin-left:auto;border-bottom-right-radius:6px}
+.bubble ruby rt{font-size:.42em;color:var(--lav);font-weight:600}
+.opts{display:grid;gap:9px;margin-top:10px}
+.opt{width:100%;text-align:left;padding:13px 15px;border-radius:16px;border:1px solid var(--line);
+  background:var(--bg);color:var(--fg);font-size:16px;font-weight:700;cursor:pointer;min-height:50px;font-family:inherit}
+.opt small{display:block;font-size:12px;font-weight:500;color:var(--dim);margin-top:2px}
+.opt.correct{background:rgba(67,190,155,.16);border-color:var(--mint)}
+.opt.wrong{background:rgba(217,115,122,.12);border-color:var(--bad);opacity:.75}
+.opt:active{transform:scale(.99)}
+.act{padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);
+  font-size:14.5px;font-weight:700;cursor:pointer;min-height:44px;font-family:inherit}
+.act.primary{background:linear-gradient(135deg,#FF9DB4,#EF6A8B);color:#fff;border-color:transparent}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.feed{margin-top:10px;font-size:13.5px;font-weight:700;min-height:20px}
+.feed.ok{color:#26755F}.feed.ng{color:#A24B52}
+.hint{font-size:12.5px;color:var(--dim);margin-top:8px}
+.done{text-align:center;padding:22px 10px}
+.done b{font-size:20px}
+.bar{height:8px;border-radius:999px;background:#FBE7EE;overflow:hidden;margin:8px 0 2px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FFB3C4,#EF6A8B);transition:width .3s}
+.hide{display:none}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<header>
+  <a class="crumb" href="../index.html">← 課程列表</a>
+  <a class="crumb" href="../speak/index.html">🎧 聽說起步</a>
+  <a class="crumb" href="../study/index.html">📅 每日練習</a>
+  <h1>情境對話 <span>· 日語情境</span></h1>
+  <div class="hint" id="ttsNote" style="margin:0 0 6px"></div>
+  <div class="pills">
+    <span class="pill">🔥 連續 <b id="streak">0</b> 天</span>
+    <span class="pill">🎭 完成情境 <b id="doneN">0</b></span>
+    <span class="pill">⭐ <b id="xp">0</b> XP</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="chips" id="scenes"></div>
+  <div class="scene" id="card">
+    <div class="snote" id="note"></div>
+    <div id="talk"></div>
+    <div id="askWrap" class="hide">
+      <div class="hint" id="askHint">選一句回話</div>
+      <div class="opts" id="opts"></div>
+      <div class="feed" id="feed"></div>
+    </div>
+    <div id="doneWrap" class="hide done">
+      <b>👏 這個情境講完了</b>
+      <p class="hint" id="doneMsg"></p>
+      <button class="act primary" id="again">再走一次</button>
+    </div>
+  </div>
+  <p class="hint">玩法：對方說一句 → 你選一句回話 → 選對才會往下走。<br>
+  三個選項都「文法正確」，只有一個「這個場合該這樣說」——所以要先聽懂對方問什麼。</p>
+</div>
+
+<script id="data" type="application/json">{"lang":"ja","course":"日語情境","scenes":[{"id":"1","title":"便利商店結帳","note":"第一次自己買東西","turns":[{"p":{"ja":"いらっしゃいませ。","zh":"歡迎光臨。","rt":"いらっしゃいませ。"},"opts":[{"ja":"これ、ください。","zh":"這個，麻煩你（我要這個）。","rt":"これ、ください。","ok":true},{"ja":"これを食べます。","zh":"我要吃這個。","rt":"これを<ruby>食べます<rt>たべます</rt></ruby>。","ok":false},{"ja":"これは高いです。","zh":"這個很貴。","rt":"これは<ruby>高いです<rt>たかいです</rt></ruby>。","ok":false}]},{"p":{"ja":"袋はご利用ですか。","zh":"需要袋子嗎？","rt":"<ruby>袋<rt>ふくろ</rt></ruby>はご<ruby>利用<rt>りよう</rt></ruby>ですか。"},"opts":[{"ja":"いいえ、大丈夫です。","zh":"不用，沒關係。","rt":"いいえ、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。","ok":true},{"ja":"いいえ、元気です。","zh":"不，我很好。","rt":"いいえ、<ruby>元気<rt>げんき</rt></ruby>です。","ok":false},{"ja":"はい、いただきます。","zh":"好，我開動了。","rt":"はい、いただきます。","ok":false}]},{"p":{"ja":"お支払いは現金ですか。","zh":"付現金嗎？","rt":"お<ruby>支払い<rt>しはらい</rt></ruby>は<ruby>現金<rt>げんきん</rt></ruby>ですか。"},"opts":[{"ja":"カードでお願いします。","zh":"請刷卡。","rt":"カードで<ruby>お願い<rt>おねがい</rt></ruby>します。","ok":true},{"ja":"カードがあります。","zh":"我有卡片。","rt":"カードがあります。","ok":false},{"ja":"現金をください。","zh":"請給我現金。","rt":"<ruby>現金<rt>げんきん</rt></ruby>をください。","ok":false}]},{"p":{"ja":"レシートはよろしいですか。","zh":"需要收據嗎？","rt":"レシートはよろしいですか。"},"opts":[{"ja":"はい、お願いします。","zh":"好，麻煩你。","rt":"はい、<ruby>お願い<rt>おねがい</rt></ruby>します。","ok":true},{"ja":"いいえ、現金です。","zh":"不，是現金。","rt":"いいえ、<ruby>現金<rt>げんきん</rt></ruby>です。","ok":false},{"ja":"はい、レシートです。","zh":"好，這是收據。","rt":"はい、レシートです。","ok":false}]},{"p":{"ja":"ありがとうございました。","zh":"謝謝光臨。","rt":"ありがとうございました。"},"opts":[{"ja":"ありがとうございました。","zh":"謝謝（你）。","rt":"ありがとうございました。","ok":true},{"ja":"いってきます。","zh":"我出門了。","rt":"いってきます。","ok":false},{"ja":"いただきます。","zh":"我開動了。","rt":"いただきます。","ok":false}]}]},{"id":"2","title":"教室裡","note":"上課時老師問你","turns":[{"p":{"ja":"これは何ですか。","zh":"這是什麼？","rt":"これは<ruby>何<rt>なに</rt></ruby>ですか。"},"opts":[{"ja":"それは辞書です。","zh":"那是字典。","rt":"それは<ruby>辞書<rt>じしょ</rt></ruby>です。","ok":true},{"ja":"これは辞書ですか。","zh":"這是字典嗎？","rt":"これは<ruby>辞書<rt>じしょ</rt></ruby>ですか。","ok":false},{"ja":"私は辞書です。","zh":"我是字典。","rt":"<ruby>私<rt>わたし</rt></ruby>は<ruby>辞書<rt>じしょ</rt></ruby>です。","ok":false}]},{"p":{"ja":"辞書を貸してくれますか。","zh":"可以借我字典嗎？","rt":"<ruby>辞書<rt>じしょ</rt></ruby>を<ruby>貸し<rt>かし</rt></ruby>てくれますか。"},"opts":[{"ja":"はい、どうぞ。","zh":"好，請用。","rt":"はい、どうぞ。","ok":true},{"ja":"はい、ください。","zh":"好，請給我。","rt":"はい、ください。","ok":false},{"ja":"いいえ、どうぞ。","zh":"不，請用。","rt":"いいえ、どうぞ。","ok":false}]},{"p":{"ja":"日本語は難しいですか。","zh":"日語難嗎？","rt":"<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>難しいです<rt>むずかしいです</rt></ruby>か。"},"opts":[{"ja":"少し難しいですが、面白いです。","zh":"有一點難，但很有趣。","rt":"<ruby>少し<rt>すこし</rt></ruby><ruby>難しいです<rt>むずかしいです</rt></ruby>が、<ruby>面白いです<rt>おもしろいです</rt></ruby>。","ok":true},{"ja":"少し美味しいです。","zh":"有一點好吃。","rt":"<ruby>少し<rt>すこし</rt></ruby><ruby>美味しいです<rt>おいしいです</rt></ruby>。","ok":false},{"ja":"はい、日本語です。","zh":"是，是日語。","rt":"はい、<ruby>日本語<rt>にほんご</rt></ruby>です。","ok":false}]},{"p":{"ja":"トイレはどこですか。","zh":"廁所在哪裡？","rt":"トイレはどこですか。"},"opts":[{"ja":"あそこです。ドアのそばです。","zh":"在那邊。門旁邊。","rt":"あそこです。ドアのそばです。","ok":true},{"ja":"トイレはきれいです。","zh":"廁所很乾淨。","rt":"トイレはきれいです。","ok":false},{"ja":"私はトイレです。","zh":"我是廁所。","rt":"<ruby>私<rt>わたし</rt></ruby>はトイレです。","ok":false}]},{"p":{"ja":"ありがとう。じゃあ、また明日。","zh":"謝謝，那就明天見。","rt":"ありがとう。じゃあ、また<ruby>明日<rt>あした</rt></ruby>。"},"opts":[{"ja":"はい、また明日。","zh":"好，明天見。","rt":"はい、また<ruby>明日<rt>あした</rt></ruby>。","ok":true},{"ja":"こんにちは。","zh":"你好。","rt":"こんにちは。","ok":false},{"ja":"おやすみなさい。","zh":"晚安。","rt":"おやすみなさい。","ok":false}]}]},{"id":"3","title":"問路","note":"在車站附近找不到路","turns":[{"p":{"ja":"すみません、何かお探しですか。","zh":"不好意思，你在找東西嗎？","rt":"すみません、<ruby>何<rt>なに</rt></ruby>かお<ruby>探しです<rt>さがしです</rt></ruby>か。"},"opts":[{"ja":"はい、駅を探しています。","zh":"是，我在找車站。","rt":"はい、<ruby>駅<rt>えき</rt></ruby>を<ruby>探し<rt>さがし</rt></ruby>ています。","ok":true},{"ja":"はい、駅が好きです。","zh":"是，我喜歡車站。","rt":"はい、<ruby>駅<rt>えき</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。","ok":false},{"ja":"いいえ、駅です。","zh":"不，是車站。","rt":"いいえ、<ruby>駅<rt>えき</rt></ruby>です。","ok":false}]},{"p":{"ja":"駅ですか。まっすぐ行って、右ですよ。","zh":"車站嗎？直走然後右轉喔。","rt":"<ruby>駅<rt>えき</rt></ruby>ですか。まっすぐ<ruby>行っ<rt>いっ</rt></ruby>て、<ruby>右<rt>みぎ</rt></ruby>ですよ。"},"opts":[{"ja":"まっすぐ行って、右ですね。わかりました。","zh":"直走然後右轉，我知道了。","rt":"まっすぐ<ruby>行っ<rt>いっ</rt></ruby>て、<ruby>右<rt>みぎ</rt></ruby>ですね。わかりました。","ok":true},{"ja":"まっすぐ食べて、右ですね。","zh":"直走然後吃，我知道了。","rt":"まっすぐ<ruby>食べ<rt>たべ</rt></ruby>て、<ruby>右<rt>みぎ</rt></ruby>ですね。","ok":false},{"ja":"右をください。","zh":"請給我右邊。","rt":"<ruby>右<rt>みぎ</rt></ruby>をください。","ok":false}]},{"p":{"ja":"どこまで行きますか。","zh":"你要去哪裡（到哪一站）？","rt":"どこまで<ruby>行きます<rt>いきます</rt></ruby>か。"},"opts":[{"ja":"学校まで行きます。","zh":"我要去學校。","rt":"<ruby>学校<rt>がっこう</rt></ruby>まで<ruby>行きます<rt>いきます</rt></ruby>。","ok":true},{"ja":"学校が好きです。","zh":"我喜歡學校。","rt":"<ruby>学校<rt>がっこう</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。","ok":false},{"ja":"学校をください。","zh":"請給我學校。","rt":"<ruby>学校<rt>がっこう</rt></ruby>をください。","ok":false}]},{"p":{"ja":"ここから歩いて五分ですよ。","zh":"從這裡走路五分鐘喔。","rt":"ここから<ruby>歩い<rt>あるい</rt></ruby>て<ruby>五<rt>ご</rt></ruby><ruby>分<rt>ふん</rt></ruby>ですよ。"},"opts":[{"ja":"そうですか。ありがとうございます。","zh":"是這樣啊。謝謝你。","rt":"そうですか。ありがとうございます。","ok":true},{"ja":"そうですか。いただきます。","zh":"是這樣啊。我開動了。","rt":"そうですか。いただきます。","ok":false},{"ja":"五分をください。","zh":"請給我五分鐘。","rt":"<ruby>五<rt>ご</rt></ruby><ruby>分<rt>ふん</rt></ruby>をください。","ok":false}]},{"p":{"ja":"気をつけて行ってくださいね。","zh":"路上小心喔。","rt":"<ruby>気<rt>き</rt></ruby>をつけて<ruby>行っ<rt>いっ</rt></ruby>てくださいね。"},"opts":[{"ja":"はい、気をつけます。","zh":"好，我會小心。","rt":"はい、<ruby>気<rt>き</rt></ruby>をつけます。","ok":true},{"ja":"はい、行ってきます。","zh":"好，我出門了。","rt":"はい、<ruby>行っ<rt>おこなっ</rt></ruby>てきます。","ok":false},{"ja":"はい、気をつけました。","zh":"好，我小心過了。","rt":"はい、<ruby>気<rt>き</rt></ruby>をつけました。","ok":false}]}]},{"id":"4","title":"自我介紹","note":"轉學生第一次站起來說話","turns":[{"p":{"ja":"お名前は何ですか。","zh":"你叫什麼名字？","rt":"お<ruby>名前<rt>なまえ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>ですか。"},"opts":[{"ja":"王です。","zh":"我姓王。","rt":"<ruby>王<rt>おう</rt></ruby>です。","ok":true},{"ja":"名前をください。","zh":"請給我名字。","rt":"<ruby>名前<rt>なまえ</rt></ruby>をください。","ok":false},{"ja":"王さんです。","zh":"是王先生。","rt":"<ruby>王<rt>おう</rt></ruby>さんです。","ok":false}]},{"p":{"ja":"どこから来ましたか。","zh":"你從哪裡來的？","rt":"どこから<ruby>来ました<rt>きました</rt></ruby>か。"},"opts":[{"ja":"台湾から来ました。","zh":"我從台灣來的。","rt":"<ruby>台湾<rt>たいわん</rt></ruby>から<ruby>来ました<rt>きました</rt></ruby>。","ok":true},{"ja":"台湾へ行きます。","zh":"我要去台灣。","rt":"<ruby>台湾<rt>たいわん</rt></ruby>へ<ruby>行きます<rt>いきます</rt></ruby>。","ok":false},{"ja":"台湾が好きです。","zh":"我喜歡台灣。","rt":"<ruby>台湾<rt>たいわん</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。","ok":false}]},{"p":{"ja":"日本の学校はどうですか。","zh":"日本的學校怎麼樣？","rt":"<ruby>日本<rt>にほん</rt></ruby>の<ruby>学校<rt>がっこう</rt></ruby>はどうですか。"},"opts":[{"ja":"楽しいですが、少し大変です。","zh":"很開心，但有一點辛苦。","rt":"<ruby>楽しいです<rt>たのしいです</rt></ruby>が、<ruby>少し<rt>すこし</rt></ruby><ruby>大変<rt>たいへん</rt></ruby>です。","ok":true},{"ja":"日本は美味しいです。","zh":"日本很好吃。","rt":"<ruby>日本<rt>にほん</rt></ruby>は<ruby>美味しいです<rt>おいしいです</rt></ruby>。","ok":false},{"ja":"学校はどこですか。","zh":"學校在哪裡？","rt":"<ruby>学校<rt>がっこう</rt></ruby>はどこですか。","ok":false}]},{"p":{"ja":"趣味は何ですか。","zh":"你的興趣是什麼？","rt":"<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>ですか。"},"opts":[{"ja":"音楽を聞くことです。","zh":"聽音樂。","rt":"<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞く<rt>きく</rt></ruby>ことです。","ok":true},{"ja":"音楽を聞きますか。","zh":"你聽音樂嗎？","rt":"<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞きます<rt>ききます</rt></ruby>か。","ok":false},{"ja":"趣味はありませんか。","zh":"沒有興趣嗎？","rt":"<ruby>趣味<rt>しゅみ</rt></ruby>はありませんか。","ok":false}]},{"p":{"ja":"そうですか。これからよろしくお願いします。","zh":"這樣啊。今後請多指教。","rt":"そうですか。これからよろしく<ruby>お願い<rt>おねがい</rt></ruby>します。"},"opts":[{"ja":"よろしくお願いします。","zh":"請多指教。","rt":"よろしく<ruby>お願い<rt>おねがい</rt></ruby>します。","ok":true},{"ja":"いただきます。","zh":"我開動了。","rt":"いただきます。","ok":false},{"ja":"ごめんなさい。","zh":"對不起。","rt":"ごめんなさい。","ok":false}]}]},{"id":"5","title":"學生食堂","note":"午餐點餐","turns":[{"p":{"ja":"ご注文はお決まりですか。","zh":"要點餐了嗎？","rt":"ご<ruby>注文<rt>ちゅうもん</rt></ruby>は<ruby>お決まり<rt>おきまり</rt></ruby>ですか。"},"opts":[{"ja":"ラーメンを一つお願いします。","zh":"請給我一份拉麵。","rt":"ラーメンを<ruby>一つ<rt>ひとつ</rt></ruby><ruby>お願い<rt>おねがい</rt></ruby>します。","ok":true},{"ja":"ラーメンが好きです。","zh":"我喜歡拉麵。","rt":"ラーメンが<ruby>好き<rt>すき</rt></ruby>です。","ok":false},{"ja":"ラーメンはどこですか。","zh":"拉麵在哪裡？","rt":"ラーメンはどこですか。","ok":false}]},{"p":{"ja":"飲み物はいかがですか。","zh":"飲料要嗎？","rt":"<ruby>飲み物<rt>のみもの</rt></ruby>はいかがですか。"},"opts":[{"ja":"お水をください。","zh":"請給我水。","rt":"お<ruby>水<rt>みず</rt></ruby>をください。","ok":true},{"ja":"水を飲みますか。","zh":"你喝水嗎？","rt":"<ruby>水<rt>みず</rt></ruby>を<ruby>飲みます<rt>のみます</rt></ruby>か。","ok":false},{"ja":"飲み物は美味しいです。","zh":"飲料很好喝。","rt":"<ruby>飲み物<rt>のみもの</rt></ruby>は<ruby>美味しいです<rt>おいしいです</rt></ruby>。","ok":false}]},{"p":{"ja":"こちらでお召し上がりですか。","zh":"要在這裡吃嗎？","rt":"こちらでお<ruby>召し上がりです<rt>めしあがりです</rt></ruby>か。"},"opts":[{"ja":"はい、ここで食べます。","zh":"是，在這裡吃。","rt":"はい、ここで<ruby>食べます<rt>たべます</rt></ruby>。","ok":true},{"ja":"いいえ、飲み物です。","zh":"不，是飲料。","rt":"いいえ、<ruby>飲み物<rt>のみもの</rt></ruby>です。","ok":false},{"ja":"はい、家に帰ります。","zh":"是，我要回家。","rt":"はい、<ruby>家<rt>いえ</rt></ruby>に<ruby>帰ります<rt>かえります</rt></ruby>。","ok":false}]},{"p":{"ja":"少々お待ちください。","zh":"請稍等一下。","rt":"<ruby>少々<rt>しょうしょう</rt></ruby><ruby>お待ち<rt>おまち</rt></ruby>ください。"},"opts":[{"ja":"はい、お願いします。","zh":"好，麻煩你。","rt":"はい、<ruby>お願い<rt>おねがい</rt></ruby>します。","ok":true},{"ja":"いいえ、待ちません。","zh":"不，我不等。","rt":"いいえ、<ruby>待ちません<rt>まちません</rt></ruby>。","ok":false},{"ja":"少々です。","zh":"是少許。","rt":"<ruby>少々<rt>しょうしょう</rt></ruby>です。","ok":false}]},{"p":{"ja":"お待たせしました。どうぞ。","zh":"久等了，請用。","rt":"お<ruby>待た<rt>また</rt></ruby>せしました。どうぞ。"},"opts":[{"ja":"ありがとうございます。","zh":"謝謝。","rt":"ありがとうございます。","ok":true},{"ja":"お待たせしました。","zh":"久等了。","rt":"お<ruby>待た<rt>また</rt></ruby>せしました。","ok":false},{"ja":"いただきません。","zh":"我不吃。","rt":"いただきません。","ok":false}]}]},{"id":"6","title":"邀約","note":"同學約你週末看電影","turns":[{"p":{"ja":"週末、ひまですか。","zh":"週末有空嗎？","rt":"<ruby>週末<rt>しゅうまつ</rt></ruby>、ひまですか。"},"opts":[{"ja":"はい、ひまです。","zh":"是，我有空。","rt":"はい、ひまです。","ok":true},{"ja":"はい、週末です。","zh":"是，是週末。","rt":"はい、<ruby>週末<rt>しゅうまつ</rt></ruby>です。","ok":false},{"ja":"いいえ、週末です。","zh":"不，是週末。","rt":"いいえ、<ruby>週末<rt>しゅうまつ</rt></ruby>です。","ok":false}]},{"p":{"ja":"一緒に映画を見ませんか。","zh":"要不要一起看電影？","rt":"<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>映画<rt>えいが</rt></ruby>を<ruby>見ません<rt>みません</rt></ruby>か。"},"opts":[{"ja":"いいですね。行きましょう。","zh":"好啊，走吧。","rt":"いいですね。<ruby>行きましょう<rt>いきましょう</rt></ruby>。","ok":true},{"ja":"映画はどこですか。","zh":"電影在哪裡？","rt":"<ruby>映画<rt>えいが</rt></ruby>はどこですか。","ok":false},{"ja":"いいえ、見ませんでした。","zh":"不，我沒看。","rt":"いいえ、<ruby>見ませんでした<rt>みませんでした</rt></ruby>。","ok":false}]},{"p":{"ja":"何時に会いましょうか。","zh":"幾點見面呢？","rt":"<ruby>何<rt>なん</rt></ruby><ruby>時<rt>じ</rt></ruby>に<ruby>会いましょう<rt>あいましょう</rt></ruby>か。"},"opts":[{"ja":"三時に会いましょう。","zh":"三點見面吧。","rt":"<ruby>三<rt>さん</rt></ruby><ruby>時<rt>じ</rt></ruby>に<ruby>会いましょう<rt>あいましょう</rt></ruby>。","ok":true},{"ja":"三時をください。","zh":"請給我三點。","rt":"<ruby>三<rt>さん</rt></ruby><ruby>時<rt>じ</rt></ruby>をください。","ok":false},{"ja":"三時が好きです。","zh":"我喜歡三點。","rt":"<ruby>三時<rt>さんじ</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。","ok":false}]},{"p":{"ja":"駅の前でいいですか。","zh":"在車站前面可以嗎？","rt":"<ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>でいいですか。"},"opts":[{"ja":"はい、大丈夫です。","zh":"好，可以。","rt":"はい、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。","ok":true},{"ja":"いいえ、前です。","zh":"不，是前面。","rt":"いいえ、<ruby>前<rt>まえ</rt></ruby>です。","ok":false},{"ja":"はい、駅です。","zh":"是，是車站。","rt":"はい、<ruby>駅<rt>えき</rt></ruby>です。","ok":false}]},{"p":{"ja":"じゃあ、土曜日に。楽しみにしています。","zh":"那就星期六。我很期待。","rt":"じゃあ、<ruby>土曜日<rt>どようび</rt></ruby>に。<ruby>楽しみ<rt>たのしみ</rt></ruby>にしています。"},"opts":[{"ja":"私も楽しみにしています。","zh":"我也很期待。","rt":"<ruby>私<rt>わたし</rt></ruby>も<ruby>楽しみ<rt>たのしみ</rt></ruby>にしています。","ok":true},{"ja":"私も土曜日です。","zh":"我也是星期六。","rt":"<ruby>私<rt>わたし</rt></ruby>も<ruby>土曜日<rt>どようび</rt></ruby>です。","ok":false},{"ja":"楽しみをください。","zh":"請給我期待。","rt":"<ruby>楽しみ<rt>たのしみ</rt></ruby>をください。","ok":false}]}]},{"id":"7","title":"公車上","note":"第一次自己搭公車","turns":[{"p":{"ja":"ご乗車ありがとうございます。整理券をお取りください。","zh":"感謝搭乘。請抽整理券（號碼牌）。","rt":"ご<ruby>乗車<rt>じょうしゃ</rt></ruby>ありがとうございます。<ruby>整理<rt>せいり</rt></ruby><ruby>券<rt>けん</rt></ruby>をお<ruby>取り<rt>とり</rt></ruby>ください。"},"opts":[{"ja":"はい、わかりました。","zh":"好，我知道了。","rt":"はい、わかりました。","ok":true},{"ja":"はい、いただきます。","zh":"好，我開動了。","rt":"はい、いただきます。","ok":false},{"ja":"いいえ、結構です。","zh":"不用了，不必。","rt":"いいえ、<ruby>結構<rt>けっこう</rt></ruby>です。","ok":false}]},{"p":{"ja":"はい、どうされましたか。","zh":"好的，怎麼了嗎？","rt":"はい、どうされましたか。"},"opts":[{"ja":"このバスは駅前に行きますか。","zh":"這輛公車有到車站前嗎？","rt":"このバスは<ruby>駅前<rt>えきまえ</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>か。","ok":true},{"ja":"このバスに乗りました。","zh":"我搭了這輛公車。","rt":"このバスに<ruby>乗りました<rt>のりました</rt></ruby>。","ok":false},{"ja":"駅前はどこですか。","zh":"車站前在哪裡？","rt":"<ruby>駅前<rt>えきまえ</rt></ruby>はどこですか。","ok":false}]},{"p":{"ja":"運賃は降りるときに払います。","zh":"車資是下車時付。","rt":"<ruby>運賃<rt>うんちん</rt></ruby>は<ruby>降りる<rt>おりる</rt></ruby>ときに<ruby>払います<rt>はらいます</rt></ruby>。"},"opts":[{"ja":"わかりました。いくらですか。","zh":"我知道了。要多少錢？","rt":"わかりました。いくらですか。","ok":true},{"ja":"わかりました。いくつですか。","zh":"我知道了。有幾個？","rt":"わかりました。いくつですか。","ok":false},{"ja":"わかりました。いただきます。","zh":"我知道了。我開動了。","rt":"わかりました。いただきます。","ok":false}]},{"p":{"ja":"次は駅前、駅前です。","zh":"下一站是車站前，車站前。","rt":"<ruby>次<rt>つぎ</rt></ruby>は<ruby>駅前<rt>えきまえ</rt></ruby>、<ruby>駅前<rt>えきまえ</rt></ruby>です。"},"opts":[{"ja":"すみません、次で降ります。","zh":"不好意思，我下一站下車。","rt":"すみません、<ruby>次<rt>つぎ</rt></ruby>で<ruby>降ります<rt>おります</rt></ruby>。","ok":true},{"ja":"すみません、次で乗ります。","zh":"不好意思，我下一站上車。","rt":"すみません、<ruby>次<rt>つぎ</rt></ruby>で<ruby>乗ります<rt>のります</rt></ruby>。","ok":false},{"ja":"すみません、また明日。","zh":"不好意思，明天見。","rt":"すみません、また<ruby>明日<rt>あした</rt></ruby>。","ok":false}]},{"p":{"ja":"二百三十円です。","zh":"兩百三十日圓。","rt":"<ruby>二<rt>に</rt></ruby><ruby>百<rt>ひゃく</rt></ruby><ruby>三<rt>さん</rt></ruby><ruby>十<rt>じゅう</rt></ruby><ruby>円<rt>えん</rt></ruby>です。"},"opts":[{"ja":"はい、これでお願いします。","zh":"好，麻煩用這個（付款）。","rt":"はい、これで<ruby>お願い<rt>おねがい</rt></ruby>します。","ok":true},{"ja":"はい、これをください。","zh":"好，請給我這個。","rt":"はい、これをください。","ok":false},{"ja":"はい、お釣りです。","zh":"好，這是找的零錢。","rt":"はい、<ruby>お釣り<rt>おつり</rt></ruby>です。","ok":false}]},{"p":{"ja":"ありがとうございました。お気をつけて。","zh":"謝謝搭乘。路上小心。","rt":"ありがとうございました。<ruby>お気<rt>おき</rt></ruby>をつけて。"},"opts":[{"ja":"ありがとうございました。","zh":"謝謝（你）。","rt":"ありがとうございました。","ok":true},{"ja":"いらっしゃいませ。","zh":"歡迎光臨。","rt":"いらっしゃいませ。","ok":false},{"ja":"おやすみなさい。","zh":"晚安。","rt":"おやすみなさい。","ok":false}]}]}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const SCENES = D.scenes || [];
+const $ = id => document.getElementById(id);
+
+/* 語音：瀏覽器內建日語（離線可用）；第一次發音必須在使用者點擊事件裡 */
+let VOICE = null, ttsOK = false;
+function pickVoice(){
+  try{
+    const vs = speechSynthesis.getVoices() || [];
+    VOICE = vs.find(v => /^ja/i.test(v.lang)) || null;
+    ttsOK = !!VOICE;
+  }catch(e){ ttsOK = false; }
+}
+if(typeof speechSynthesis !== 'undefined'){
+  pickVoice();
+  try{ speechSynthesis.addEventListener('voiceschanged', pickVoice); }catch(e){}
+}
+function say(text, slow){
+  if(!text) return;
+  if(!ttsOK){ noteTTS(); return; }
+  try{
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP'; u.voice = VOICE; u.rate = slow ? 0.7 : 0.95;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+/* 紀錄（獨立 key，不污染單字排程） */
+const KEY = 'lk.dlg.v1.ja';
+const isoLocal = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const todayISO = () => isoLocal(new Date());
+function addDays(iso,n){ const [y,m,d]=iso.split('-').map(Number); const dt=new Date(y,m-1,d); dt.setDate(dt.getDate()+n); return isoLocal(dt); }
+let S = {days:{}, streak:0, last:'', xp:0, scenes:{}};
+try{ const r = localStorage.getItem(KEY); if(r) S = Object.assign(S, JSON.parse(r)); }catch(e){}
+const save = ()=>{ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} };
+function bump(correct){
+  const t = todayISO();
+  S.days[t] = S.days[t] || {q:0, ok:0};
+  S.days[t].q++; if(correct){ S.days[t].ok++; S.xp = (S.xp||0) + 1; }
+  if(S.last !== t){ S.streak = (S.last === addDays(t,-1)) ? (S.streak||0)+1 : 1; S.last = t; }
+  save(); paint();
+}
+function paint(){
+  $('streak').textContent = S.streak || 0;
+  $('xp').textContent = S.xp || 0;
+  $('doneN').textContent = Object.keys(S.scenes || {}).length;
+}
+
+/* 狀態 */
+let si = 0, ti = 0, locked = false;
+function feed(msg, ok){ const f = $('feed'); f.textContent = msg || ''; f.className = 'feed' + (msg ? (ok ? ' ok' : ' ng') : ''); }
+function setFeed(msg, ok){ feed(msg, ok); }
+let ttsNoted = false;
+function noteTTS(){
+  if(ttsNoted) return;
+  ttsNoted = true;
+  const el = $('ttsNote');
+  if(el){ el.textContent = 'ℹ️ 這台還沒裝日語語音：設定 → 輔助使用 → 朗讀內容 → 聲音 → 日文（下載一個即可，之後離線也能用）'; el.style.color = '#8A5327'; }
+}
+
+function paintScenes(){
+  const box = $('scenes'); box.innerHTML = '';
+  SCENES.forEach((sc, i)=>{
+    const b = document.createElement('button');
+    b.className = 'chip' + (i === si ? ' on' : '');
+    b.textContent = (S.scenes && S.scenes[sc.id] ? '✓ ' : '') + (i+1) + '. ' + sc.title;
+    b.onclick = ()=>openScene(i);
+    box.appendChild(b);
+  });
+}
+function bubble(who, ja, zh, rt){
+  const d = document.createElement('div');
+  d.className = 'bubble ' + who;
+  d.innerHTML = (rt || ja) + (zh ? '<span class="zh">' + zh + '</span>' : '');
+  return d;
+}
+function openScene(i){
+  si = i; ti = 0; locked = false;
+  paintScenes();
+  const sc = SCENES[si];
+  $('note').textContent = sc.note || '';
+  $('talk').innerHTML = '';
+  $('doneWrap').classList.add('hide');
+  $('askWrap').classList.remove('hide');
+  feed('');
+  nextTurn();
+}
+function nextTurn(){
+  const sc = SCENES[si];
+  if(ti >= sc.turns.length){ finish(sc); return; }
+  const t = sc.turns[ti];
+  $('talk').appendChild(bubble('p', t.p.ja, t.p.zh, t.p.rt));
+  // 對方說完，換你（自動播一次）
+  setTimeout(()=>say(t.p.ja, false), 220);
+  const box = $('opts'); box.innerHTML = '';
+  const opts = shuffle(t.opts.slice());
+  opts.forEach(o=>{
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.innerHTML = o.ja + (o.zh ? '<small>' + o.zh + '</small>' : '');
+    b.onclick = ()=>choose(b, o);
+    box.appendChild(b);
+  });
+  $('askHint').textContent = '選一句回話（對方剛說了什麼？）';
+  feed('');
+  $('talk').scrollIntoView({block:'end', behavior:'smooth'});
+}
+function choose(btn, o){
+  if(locked) return;
+  const t = SCENES[si].turns[ti];
+  if(o.ok){
+    locked = true;
+    btn.classList.add('correct');
+    Array.from(document.querySelectorAll('.opt')).forEach(b=>{ if(b !== btn) b.classList.add('wrong'); });
+    $('talk').appendChild(bubble('a', o.ja, o.zh, o.rt));
+    feed('✔ 就是這句', true);
+    bump(true);
+    say(o.ja, false);
+    setTimeout(()=>{ ti++; locked = false; nextTurn(); }, 1500);
+  } else {
+    btn.classList.add('wrong');
+    btn.disabled = true;
+    feed('再聽一次對方的話，想想他問的是什麼', false);
+    bump(false);
+    say(t.p.ja, true);
+  }
+}
+function finish(sc){
+  $('askWrap').classList.add('hide');
+  $('doneWrap').classList.remove('hide');
+  if(!(S.scenes && S.scenes[sc.id])){
+    S.scenes = S.scenes || {}; S.scenes[sc.id] = todayISO(); save(); paint(); paintScenes();
+  }
+  $('doneMsg').textContent = '這個情境的 ' + sc.turns.length + ' 句你都會了。換一個情境，或再走一次練速度。';
+}
+const shuffle = a => a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+
+$('again').onclick = ()=>openScene(si);
+paint(); paintScenes();
+if(SCENES.length) openScene(0);
+else { $('note').textContent = '沒有情境資料，先跑 python3 make_dialog.py'; }
+</script>
+</body>
+</html>

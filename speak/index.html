@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="soft">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="icon" href="../assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="我的語言課">
+<meta name="theme-color" content="#FFF8F4">
+<title>聽說起步 — 日語起步</title>
+<style>
+:root{
+  --bg:#FFF8F4; --card:#FFFFFF; --line:#F5E1E8; --fg:#432F37; --dim:#957D86;
+  --rose:#EF6A8B; --rose-d:#D94F72; --lav:#9B6BD6; --peach:#FF9466; --mint:#43BE9B; --bad:#D9737A;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:"Hiragino Maru Gothic ProN","Yuanti TC","PingFang TC",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:16px;line-height:1.7;padding:0 0 calc(96px + env(safe-area-inset-bottom));-webkit-text-size-adjust:100%}
+header{padding:16px 16px 6px}
+.crumb{display:inline-block;font-size:13px;color:var(--dim);text-decoration:none}
+h1{font-size:19px;margin:6px 0 10px;font-weight:800}
+h1 span{color:var(--rose-d)}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.pill{font-size:11.5px;padding:3px 10px;border-radius:999px;background:var(--card);
+  border:1px solid var(--line);color:var(--dim);font-weight:600}
+.pill b{color:var(--fg)}
+.wrap{padding:0 16px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:4px 0 14px}
+.chip{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);
+  color:var(--fg);font-size:13.5px;font-weight:700;cursor:pointer;min-height:38px}
+.chip.on{background:var(--rose);border-color:var(--rose);color:#fff;box-shadow:0 4px 12px rgba(239,106,139,.28)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;
+  box-shadow:0 4px 18px rgba(214,124,147,.10);margin-bottom:14px}
+.ask{font-size:13px;color:var(--dim);font-weight:700;letter-spacing:.04em;margin-bottom:6px}
+.big{font-size:26px;line-height:1.6;font-weight:800;margin:6px 0 14px;min-height:44px}
+.big ruby rt{font-size:.42em;color:var(--lav);font-weight:600}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap}
+button.act{padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);
+  color:var(--fg);font-size:15px;font-weight:700;cursor:pointer;min-height:46px;font-family:inherit}
+button.act.primary{background:linear-gradient(135deg,#FF9DB4,#EF6A8B);color:#fff;border-color:transparent;
+  box-shadow:0 5px 16px rgba(239,106,139,.32)}
+button.act:active{transform:scale(.97)}
+button.act[disabled]{opacity:.45}
+.opts{display:grid;gap:9px;margin-top:6px}
+.opt{width:100%;text-align:left;padding:14px 16px;border-radius:16px;border:1px solid var(--line);
+  background:var(--bg);color:var(--fg);font-size:16px;font-weight:700;cursor:pointer;min-height:52px;font-family:inherit}
+.opt:active{transform:scale(.99)}
+.opt.correct{background:rgba(67,190,155,.16);border-color:var(--mint);color:#26755F}
+.opt.wrong{background:rgba(217,115,122,.14);border-color:var(--bad);color:#A24B52}
+.feed{margin-top:12px;font-size:14px;min-height:22px;font-weight:700}
+.feed.ok{color:#26755F}.feed.ng{color:#A24B52}
+.tip{color:var(--dim);font-size:12.5px;line-height:1.9}
+.warn{background:#FFF4E8;border:1px solid #FFD9B8;color:#8A5327;border-radius:14px;
+  padding:11px 13px;font-size:13px;line-height:1.75;margin-top:10px}
+.bar{height:9px;border-radius:999px;background:#FBE7EE;overflow:hidden;margin:10px 0 4px}
+.bar i{display:block;height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,#FFB3C4,#EF6A8B);transition:width .3s}
+.rec{display:flex;align-items:center;gap:10px;margin-top:12px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--bad)}
+.dot.live{animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.25}}
+audio{width:100%;margin-top:10px}
+.empty{color:var(--dim);font-size:14px;text-align:center;padding:18px 6px}
+/* 還沒開始時只留一顆大按鈕，不要一開始就丟三顆讓人猜 */
+body:not(.inq) #playBtn,body:not(.inq) #slowBtn{display:none}
+body:not(.inq) #startBtn{width:100%;min-height:56px;font-size:17px}
+body.inq #startBtn{display:none}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<header>
+  <a class="crumb" href="../index.html">← 課程列表</a>
+  <a class="crumb" href="../dialog/index.html" style="margin-left:10px">🎭 情境對話</a>
+  <h1>聽說起步 <span>· 日語起步</span></h1>
+  <div class="pills">
+    <span class="pill">🔥 連續 <b id="streak">0</b> 天</span>
+    <span class="pill">今天 <b id="todayN">0</b> 題</span>
+    <span class="pill">⭐ <b id="xp">0</b> XP</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="warn" id="ttsNote" style="display:none;margin:0 0 10px"></div>
+  <div class="chips" id="modes">
+    <button class="chip on" data-m="listen">① 聽音選詞</button>
+    <button class="chip" data-m="mean">② 聽句選意</button>
+    <button class="chip" data-m="shadow">③ 跟讀錄音</button>
+    <button class="chip" data-m="ladder">④ 聽力階梯</button>
+  </div>
+
+  <section id="play">
+    <div class="card">
+      <div class="ask" id="askLabel">聽，然後選出你聽到的詞</div>
+      <div class="big" id="stem">按下面的按鈕開始</div>
+      <div class="btnrow">
+        <button class="act primary" id="playBtn">🔊 播放</button>
+        <button class="act" id="slowBtn">🐢 慢速</button>
+        <button class="act" id="startBtn">開始練習</button>
+      </div>
+      <div class="bar"><i id="prog"></i></div>
+      <div class="opts" id="opts"></div>
+      <div class="feed" id="feed"></div>
+    </div>
+    <div class="card" id="shadowCard" style="display:none">
+      <div class="ask">跟讀：先聽一次 → 按錄音念一次 → 回放自己聽</div>
+      <div class="big" id="sStem"></div>
+      <div id="sMeaning" class="tip"></div>
+      <div class="btnrow" style="margin-top:12px">
+        <button class="act primary" id="sPlay">🔊 聽一次</button>
+        <button class="act" id="sRec">🎙 錄音</button>
+        <button class="act" id="sNext">下一句 →</button>
+      </div>
+      <div class="rec" id="recRow" style="display:none"><span class="dot live" id="recDot"></span><span class="tip">錄音中…再按一次停止</span></div>
+      <audio id="sAudio" controls style="display:none"></audio>
+      <div class="warn" id="micWarn" style="display:none"></div>
+    </div>
+  </section>
+</div>
+
+<script id="data" type="application/json">{"lang":"ja","course":"日語起步","items":[{"w":"おはよう","r":"","g":"早安","u":"打招呼・教室用語","x":"おはよう、田中さん。","xcn":"早安，田中同學。","rt":"おはよう、<ruby>田中<rt>たなか</rt></ruby>さん。"},{"w":"こんにちは","r":"","g":"你好（白天）","u":"打招呼・教室用語","x":"こんにちは、先生。","xcn":"老師好。","rt":"こんにちは、<ruby>先生<rt>せんせい</rt></ruby>。"},{"w":"こんばんは","r":"","g":"晚上好","u":"打招呼・教室用語","x":"こんばんは、山田さん。","xcn":"山田先生晚上好。","rt":"こんばんは、<ruby>山田<rt>やまだ</rt></ruby>さん。"},{"w":"さようなら","r":"","g":"再見","u":"打招呼・教室用語","x":"先生、さようなら。","xcn":"老師再見。","rt":"<ruby>先生<rt>せんせい</rt></ruby>、さようなら。"},{"w":"ありがとう","r":"","g":"謝謝","u":"打招呼・教室用語","x":"手伝ってくれて、ありがとう。","xcn":"謝謝你幫我。","rt":"<ruby>手伝っ<rt>てつだっ</rt></ruby>てくれて、ありがとう。"},{"w":"すみません","r":"","g":"不好意思、對不起","u":"打招呼・教室用語","x":"すみません、もう一度お願いします。","xcn":"不好意思，請再說一次。","rt":"すみません、<ruby>もう一度<rt>もういちど</rt></ruby><ruby>お願い<rt>おねがい</rt></ruby>します。"},{"w":"ごめんなさい","r":"","g":"對不起","u":"打招呼・教室用語","x":"遅れて、ごめんなさい。","xcn":"遲到了，對不起。","rt":"<ruby>遅れ<rt>おくれ</rt></ruby>て、ごめんなさい。"},{"w":"お願いします","r":"おねがいします","g":"拜託、麻煩你","u":"打招呼・教室用語","x":"ゆっくりお願いします。","xcn":"請說慢一點。","rt":"ゆっくり<ruby>お願い<rt>おねがい</rt></ruby>します。"},{"w":"いただきます","r":"","g":"開動了（吃飯前說）","u":"打招呼・教室用語","x":"みんなで「いただきます」と言います。","xcn":"大家一起說「開動了」。","rt":"みんなで「いただきます」と<ruby>言います<rt>いいます</rt></ruby>。"},{"w":"ごちそうさま","r":"","g":"我吃飽了（吃完說）","u":"打招呼・教室用語","x":"ごちそうさまでした。","xcn":"我吃飽了，謝謝招待。","rt":"ごちそうさまでした。"},{"w":"はじめまして","r":"","g":"初次見面","u":"打招呼・教室用語","x":"はじめまして、リンです。","xcn":"初次見面，我是琳。","rt":"はじめまして、リンです。"},{"w":"よろしく","r":"","g":"請多指教","u":"打招呼・教室用語","x":"どうぞよろしくお願いします。","xcn":"請多多指教。","rt":"どうぞよろしく<ruby>お願い<rt>おねがい</rt></ruby>します。"},{"w":"分かる","r":"わかる","g":"懂、明白","u":"打招呼・教室用語","x":"先生の話が分かります。","xcn":"聽得懂老師說的話。","rt":"<ruby>先生<rt>せんせい</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>が<ruby>分かります<rt>わかります</rt></ruby>。"},{"w":"質問","r":"しつもん","g":"問題、提問","u":"打招呼・教室用語","x":"質問があります。","xcn":"我有問題。","rt":"<ruby>質問<rt>しつもん</rt></ruby>があります。"},{"w":"答え","r":"こたえ","g":"答案","u":"打招呼・教室用語","x":"答えを書いてください。","xcn":"請寫答案。","rt":"<ruby>答え<rt>こたえ</rt></ruby>を<ruby>書い<rt>かい</rt></ruby>てください。"},{"w":"意味","r":"いみ","g":"意思","u":"打招呼・教室用語","x":"この言葉の意味は何ですか。","xcn":"這個詞是什麼意思？","rt":"この<ruby>言葉<rt>ことば</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>ですか。"},{"w":"言葉","r":"ことば","g":"話語、詞","u":"打招呼・教室用語","x":"新しい言葉を覚えます。","xcn":"記住新的詞。","rt":"<ruby>新しい<rt>あたらしい</rt></ruby><ruby>言葉<rt>ことば</rt></ruby>を<ruby>覚えます<rt>おぼえます</rt></ruby>。"},{"w":"学校","r":"がっこう","g":"學校","u":"學校","x":"毎日学校に行きます。","xcn":"每天去學校。","rt":"<ruby>毎日<rt>まいにち</rt></ruby><ruby>学校<rt>がっこう</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"先生","r":"せんせい","g":"老師","u":"學校","x":"先生に質問します。","xcn":"向老師提問。","rt":"<ruby>先生<rt>せんせい</rt></ruby>に<ruby>質問<rt>しつもん</rt></ruby>します。"},{"w":"中学生","r":"ちゅうがくせい","g":"國中生","u":"學校","x":"私は中学生です。","xcn":"我是國中生。","rt":"<ruby>私<rt>わたし</rt></ruby>は<ruby>中学生<rt>ちゅうがくせい</rt></ruby>です。"},{"w":"友達","r":"ともだち","g":"朋友","u":"學校","x":"友達と一緒に帰ります。","xcn":"和朋友一起回家。","rt":"<ruby>友達<rt>ともだち</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>帰ります<rt>かえります</rt></ruby>。"},{"w":"教室","r":"きょうしつ","g":"教室","u":"學校","x":"教室はどこですか。","xcn":"教室在哪裡？","rt":"<ruby>教室<rt>きょうしつ</rt></ruby>はどこですか。"},{"w":"授業","r":"じゅぎょう","g":"上課、課堂","u":"學校","x":"一時間目の授業は数学です。","xcn":"第一節課是數學。","rt":"<ruby>一<rt>いち</rt></ruby><ruby>時間<rt>じかん</rt></ruby><ruby>目<rt>め</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>は<ruby>数学<rt>すうがく</rt></ruby>です。"},{"w":"宿題","r":"しゅくだい","g":"作業","u":"學校","x":"宿題を忘れました。","xcn":"忘了帶作業。","rt":"<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>忘れました<rt>わすれました</rt></ruby>。"},{"w":"試験","r":"しけん","g":"考試（正式）","u":"學校","x":"来週、試験があります。","xcn":"下週有考試。","rt":"<ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>試験<rt>しけん</rt></ruby>があります。"},{"w":"テスト","r":"","g":"小考、測驗","u":"學校","x":"明日は漢字のテストです。","xcn":"明天有漢字小考。","rt":"<ruby>明日<rt>あした</rt></ruby>は<ruby>漢字<rt>かんじ</rt></ruby>のテストです。"},{"w":"勉強","r":"べんきょう","g":"讀書、學習","u":"學校","x":"図書館で勉強します。","xcn":"在圖書館讀書。","rt":"<ruby>図書館<rt>としょかん</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>します。"},{"w":"教科書","r":"きょうかしょ","g":"課本","u":"學校","x":"教科書を開いてください。","xcn":"請翻開課本。","rt":"<ruby>教科書<rt>きょうかしょ</rt></ruby>を<ruby>開い<rt>ひらい</rt></ruby>てください。"},{"w":"ノート","r":"","g":"筆記本","u":"學校","x":"ノートに書きます。","xcn":"寫在筆記本上。","rt":"ノートに<ruby>書きます<rt>かきます</rt></ruby>。"},{"w":"鉛筆","r":"えんぴつ","g":"鉛筆","u":"學校","x":"鉛筆を貸してください。","xcn":"請借我鉛筆。","rt":"<ruby>鉛筆<rt>えんぴつ</rt></ruby>を<ruby>貸し<rt>かし</rt></ruby>てください。"},{"w":"消しゴム","r":"けしごむ","g":"橡皮擦","u":"學校","x":"消しゴムを忘れました。","xcn":"忘了帶橡皮擦。","rt":"<ruby>消しゴム<rt>けしごむ</rt></ruby>を<ruby>忘れました<rt>わすれました</rt></ruby>。"},{"w":"国語","r":"こくご","g":"國語（日語課）","u":"學校","x":"国語の授業は難しいです。","xcn":"國語課很難。","rt":"<ruby>国語<rt>こくご</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>は<ruby>難しいです<rt>むずかしいです</rt></ruby>。"},{"w":"数学","r":"すうがく","g":"數學","u":"學校","x":"数学が好きです。","xcn":"我喜歡數學。","rt":"<ruby>数学<rt>すうがく</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。"},{"w":"英語","r":"えいご","g":"英語","u":"學校","x":"英語は少し分かります。","xcn":"英語我懂一點。","rt":"<ruby>英語<rt>えいご</rt></ruby>は<ruby>少し<rt>すこし</rt></ruby><ruby>分かります<rt>わかります</rt></ruby>。"},{"w":"理科","r":"りか","g":"自然科學","u":"學校","x":"理科の実験は楽しいです。","xcn":"自然課的實驗很好玩。","rt":"<ruby>理科<rt>りか</rt></ruby>の<ruby>実験<rt>じっけん</rt></ruby>は<ruby>楽しいです<rt>たのしいです</rt></ruby>。"},{"w":"社会","r":"しゃかい","g":"社會科","u":"學校","x":"社会のテストは明日です。","xcn":"社會科考試是明天。","rt":"<ruby>社会<rt>しゃかい</rt></ruby>のテストは<ruby>明日<rt>あした</rt></ruby>です。"},{"w":"体育","r":"たいいく","g":"體育","u":"學校","x":"体育の時間にサッカーをします。","xcn":"體育課踢足球。","rt":"<ruby>体育<rt>たいいく</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>にサッカーをします。"},{"w":"部活","r":"ぶかつ","g":"社團活動","u":"學校","x":"放課後、部活があります。","xcn":"放學後有社團活動。","rt":"<ruby>放課後<rt>ほうかご</rt></ruby>、<ruby>部活<rt>ぶかつ</rt></ruby>があります。"},{"w":"放課後","r":"ほうかご","g":"放學後","u":"學校","x":"放課後、友達と遊びます。","xcn":"放學後和朋友玩。","rt":"<ruby>放課後<rt>ほうかご</rt></ruby>、<ruby>友達<rt>ともだち</rt></ruby>と<ruby>遊びます<rt>あそびます</rt></ruby>。"},{"w":"制服","r":"せいふく","g":"制服","u":"學校","x":"学校の制服はかわいいです。","xcn":"學校的制服很可愛。","rt":"<ruby>学校<rt>がっこう</rt></ruby>の<ruby>制服<rt>せいふく</rt></ruby>はかわいいです。"},{"w":"給食","r":"きゅうしょく","g":"學校營養午餐","u":"學校","x":"今日の給食はカレーです。","xcn":"今天的營養午餐是咖哩。","rt":"<ruby>今日<rt>きょう</rt></ruby>の<ruby>給食<rt>きゅうしょく</rt></ruby>はカレーです。"},{"w":"私","r":"わたし","g":"我","u":"家人・人","x":"私は台湾人です。","xcn":"我是台灣人。","rt":"<ruby>私<rt>わたし</rt></ruby>は<ruby>台湾<rt>たいわん</rt></ruby><ruby>人<rt>じん</rt></ruby>です。"},{"w":"家族","r":"かぞく","g":"家人","u":"家人・人","x":"私の家族は四人です。","xcn":"我家有四個人。","rt":"<ruby>私<rt>わたし</rt></ruby>の<ruby>家族<rt>かぞく</rt></ruby>は<ruby>四人<rt>よにん</rt></ruby>です。"},{"w":"父","r":"ちち","g":"（我的）爸爸","u":"家人・人","x":"父は会社員です。","xcn":"我爸爸是上班族。","rt":"<ruby>父<rt>ちち</rt></ruby>は<ruby>会社<rt>かいしゃ</rt></ruby><ruby>員<rt>いん</rt></ruby>です。"},{"w":"母","r":"はは","g":"（我的）媽媽","u":"家人・人","x":"母は料理が上手です。","xcn":"我媽媽很會做菜。","rt":"<ruby>母<rt>はは</rt></ruby>は<ruby>料理<rt>りょうり</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>です。"},{"w":"お父さん","r":"おとうさん","g":"爸爸（稱呼或別人的）","u":"家人・人","x":"お父さんはお元気ですか。","xcn":"你爸爸好嗎？","rt":"<ruby>お父さん<rt>おとうさん</rt></ruby>はお<ruby>元気<rt>げんき</rt></ruby>ですか。"},{"w":"お母さん","r":"おかあさん","g":"媽媽（稱呼或別人的）","u":"家人・人","x":"お母さん、ただいま。","xcn":"媽，我回來了。","rt":"<ruby>お母さん<rt>おかあさん</rt></ruby>、ただいま。"},{"w":"兄","r":"あに","g":"（我的）哥哥","u":"家人・人","x":"兄は高校生です。","xcn":"我哥哥是高中生。","rt":"<ruby>兄<rt>あに</rt></ruby>は<ruby>高校生<rt>こうこうせい</rt></ruby>です。"},{"w":"姉","r":"あね","g":"（我的）姊姊","u":"家人・人","x":"姉は大学で勉強しています。","xcn":"我姊姊在大學讀書。","rt":"<ruby>姉<rt>あね</rt></ruby>は<ruby>大学<rt>だいがく</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>しています。"},{"w":"弟","r":"おとうと","g":"弟弟","u":"家人・人","x":"弟はまだ小学生です。","xcn":"弟弟還是小學生。","rt":"<ruby>弟<rt>おとうと</rt></ruby>はまだ<ruby>小学生<rt>しょうがくせい</rt></ruby>です。"},{"w":"妹","r":"いもうと","g":"妹妹","u":"家人・人","x":"妹と公園に行きました。","xcn":"和妹妹去了公園。","rt":"<ruby>妹<rt>いもうと</rt></ruby>と<ruby>公園<rt>こうえん</rt></ruby>に<ruby>行きました<rt>いきました</rt></ruby>。"},{"w":"子ども","r":"こども","g":"小孩","u":"家人・人","x":"公園に子どもがたくさんいます。","xcn":"公園裡有很多小孩。","rt":"<ruby>公園<rt>こうえん</rt></ruby>に<ruby>子ども<rt>こども</rt></ruby>がたくさんいます。"},{"w":"人","r":"ひと","g":"人","u":"家人・人","x":"あの人は先生です。","xcn":"那個人是老師。","rt":"あの<ruby>人<rt>ひと</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>です。"},{"w":"男の子","r":"おとこのこ","g":"男孩","u":"家人・人","x":"男の子がサッカーをしています。","xcn":"男孩在踢足球。","rt":"<ruby>男の子<rt>おとこのこ</rt></ruby>がサッカーをしています。"},{"w":"女の子","r":"おんなのこ","g":"女孩","u":"家人・人","x":"女の子が歌っています。","xcn":"女孩在唱歌。","rt":"<ruby>女の子<rt>おんなのこ</rt></ruby>が<ruby>歌っ<rt>うたっ</rt></ruby>ています。"},{"w":"名前","r":"なまえ","g":"名字","u":"家人・人","x":"お名前は何ですか。","xcn":"你叫什麼名字？","rt":"お<ruby>名前<rt>なまえ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>ですか。"},{"w":"自分","r":"じぶん","g":"自己","u":"家人・人","x":"自分で考えます。","xcn":"自己想。","rt":"<ruby>自分<rt>じぶん</rt></ruby>で<ruby>考えます<rt>かんがえます</rt></ruby>。"},{"w":"みんな","r":"","g":"大家","u":"家人・人","x":"みんなで写真を撮りましょう。","xcn":"大家一起拍照吧。","rt":"みんなで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮りましょう<rt>とりましょう</rt></ruby>。"},{"w":"今日","r":"きょう","g":"今天","u":"時間・日期","x":"今日は月曜日です。","xcn":"今天是星期一。","rt":"<ruby>今日<rt>きょう</rt></ruby>は<ruby>月曜日<rt>げつようび</rt></ruby>です。"},{"w":"明日","r":"あした","g":"明天","u":"時間・日期","x":"明日は雨です。","xcn":"明天會下雨。","rt":"<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>です。"},{"w":"昨日","r":"きのう","g":"昨天","u":"時間・日期","x":"昨日は日曜日でした。","xcn":"昨天是星期日。","rt":"<ruby>昨日<rt>きのう</rt></ruby>は<ruby>日曜日<rt>にちようび</rt></ruby>でした。"},{"w":"毎日","r":"まいにち","g":"每天","u":"時間・日期","x":"毎日漢字を練習します。","xcn":"每天練習漢字。","rt":"<ruby>毎日<rt>まいにち</rt></ruby><ruby>漢字<rt>かんじ</rt></ruby>を<ruby>練習<rt>れんしゅう</rt></ruby>します。"},{"w":"毎朝","r":"まいあさ","g":"每天早上","u":"時間・日期","x":"毎朝牛乳を飲みます。","xcn":"每天早上喝牛奶。","rt":"<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>を<ruby>飲みます<rt>のみます</rt></ruby>。"},{"w":"朝","r":"あさ","g":"早上","u":"時間・日期","x":"朝は忙しいです。","xcn":"早上很忙。","rt":"<ruby>朝<rt>あさ</rt></ruby>は<ruby>忙しいです<rt>いそがしいです</rt></ruby>。"},{"w":"昼","r":"ひる","g":"中午","u":"時間・日期","x":"昼は学校で食べます。","xcn":"中午在學校吃。","rt":"<ruby>昼<rt>ひる</rt></ruby>は<ruby>学校<rt>がっこう</rt></ruby>で<ruby>食べます<rt>たべます</rt></ruby>。"},{"w":"夜","r":"よる","g":"晚上","u":"時間・日期","x":"夜は早く寝ます。","xcn":"晚上早點睡。","rt":"<ruby>夜<rt>よる</rt></ruby>は<ruby>早く<rt>はやく</rt></ruby><ruby>寝ます<rt>ねます</rt></ruby>。"},{"w":"今","r":"いま","g":"現在","u":"時間・日期","x":"今、何時ですか。","xcn":"現在幾點？","rt":"<ruby>今<rt>いま</rt></ruby>、<ruby>何<rt>なん</rt></ruby><ruby>時<rt>じ</rt></ruby>ですか。"},{"w":"時間","r":"じかん","g":"時間","u":"時間・日期","x":"時間がありません。","xcn":"沒有時間。","rt":"<ruby>時間<rt>じかん</rt></ruby>がありません。"},{"w":"何時","r":"なんじ","g":"幾點","u":"時間・日期","x":"何時に寝ますか。","xcn":"你幾點睡？","rt":"<ruby>何<rt>なん</rt></ruby><ruby>時<rt>じ</rt></ruby>に<ruby>寝ます<rt>ねます</rt></ruby>か。"},{"w":"週末","r":"しゅうまつ","g":"週末","u":"時間・日期","x":"週末は何をしますか。","xcn":"週末做什麼？","rt":"<ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をしますか。"},{"w":"来週","r":"らいしゅう","g":"下週","u":"時間・日期","x":"来週から夏休みです。","xcn":"下週開始放暑假。","rt":"<ruby>来週<rt>らいしゅう</rt></ruby>から<ruby>夏休み<rt>なつやすみ</rt></ruby>です。"},{"w":"先週","r":"せんしゅう","g":"上週","u":"時間・日期","x":"先週、京都に行きました。","xcn":"上週去了京都。","rt":"<ruby>先週<rt>せんしゅう</rt></ruby>、<ruby>京都<rt>きょうと</rt></ruby>に<ruby>行きました<rt>いきました</rt></ruby>。"},{"w":"月曜日","r":"げつようび","g":"星期一","u":"時間・日期","x":"月曜日は体育があります。","xcn":"星期一有體育課。","rt":"<ruby>月曜日<rt>げつようび</rt></ruby>は<ruby>体育<rt>たいいく</rt></ruby>があります。"},{"w":"金曜日","r":"きんようび","g":"星期五","u":"時間・日期","x":"金曜日が好きです。","xcn":"我喜歡星期五。","rt":"<ruby>金曜日<rt>きんようび</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。"},{"w":"土曜日","r":"どようび","g":"星期六","u":"時間・日期","x":"土曜日に買い物に行きます。","xcn":"星期六去買東西。","rt":"<ruby>土曜日<rt>どようび</rt></ruby>に<ruby>買い物<rt>かいもの</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"日曜日","r":"にちようび","g":"星期日","u":"時間・日期","x":"日曜日は家で休みます。","xcn":"星期日在家休息。","rt":"<ruby>日曜日<rt>にちようび</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>で<ruby>休みます<rt>やすみます</rt></ruby>。"},{"w":"休み","r":"やすみ","g":"假日、休息","u":"時間・日期","x":"明日は学校が休みです。","xcn":"明天學校放假。","rt":"<ruby>明日<rt>あした</rt></ruby>は<ruby>学校<rt>がっこう</rt></ruby>が<ruby>休み<rt>やすみ</rt></ruby>です。"},{"w":"夏休み","r":"なつやすみ","g":"暑假","u":"時間・日期","x":"夏休みに海へ行きたいです。","xcn":"暑假想去海邊。","rt":"<ruby>夏休み<rt>なつやすみ</rt></ruby>に<ruby>海<rt>うみ</rt></ruby>へ<ruby>行きたいです<rt>いきたいです</rt></ruby>。"},{"w":"ご飯","r":"ごはん","g":"飯、一餐","u":"食物・飲料","x":"ご飯を食べましょう。","xcn":"來吃飯吧。","rt":"<ruby>ご飯<rt>ごはん</rt></ruby>を<ruby>食べましょう<rt>たべましょう</rt></ruby>。"},{"w":"朝ご飯","r":"あさごはん","g":"早餐","u":"食物・飲料","x":"朝ご飯はパンです。","xcn":"早餐吃麵包。","rt":"<ruby>朝<rt>あさ</rt></ruby><ruby>ご飯<rt>ごはん</rt></ruby>はパンです。"},{"w":"昼ご飯","r":"ひるごはん","g":"午餐","u":"食物・飲料","x":"昼ご飯は何を食べましたか。","xcn":"午餐吃了什麼？","rt":"<ruby>昼<rt>ひる</rt></ruby><ruby>ご飯<rt>ごはん</rt></ruby>は<ruby>何<rt>なに</rt></ruby>を<ruby>食べました<rt>たべました</rt></ruby>か。"},{"w":"晩ご飯","r":"ばんごはん","g":"晚餐","u":"食物・飲料","x":"晩ご飯を作ります。","xcn":"做晚餐。","rt":"<ruby>晩<rt>ばん</rt></ruby><ruby>ご飯<rt>ごはん</rt></ruby>を<ruby>作ります<rt>つくります</rt></ruby>。"},{"w":"パン","r":"","g":"麵包","u":"食物・飲料","x":"パンと牛乳を買いました。","xcn":"買了麵包和牛奶。","rt":"パンと<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>を<ruby>買いました<rt>かいました</rt></ruby>。"},{"w":"牛乳","r":"ぎゅうにゅう","g":"牛奶","u":"食物・飲料","x":"冷たい牛乳が好きです。","xcn":"我喜歡冰牛奶。","rt":"<ruby>冷たい<rt>つめたい</rt></ruby><ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。"},{"w":"水","r":"みず","g":"水","u":"食物・飲料","x":"水をください。","xcn":"請給我水。","rt":"<ruby>水<rt>みず</rt></ruby>をください。"},{"w":"お茶","r":"おちゃ","g":"茶","u":"食物・飲料","x":"お茶を一杯ください。","xcn":"請給我一杯茶。","rt":"<ruby>お茶<rt>おちゃ</rt></ruby>を<ruby>一杯<rt>いっぱい</rt></ruby>ください。"},{"w":"肉","r":"にく","g":"肉","u":"食物・飲料","x":"肉と野菜を食べます。","xcn":"吃肉和蔬菜。","rt":"<ruby>肉<rt>にく</rt></ruby>と<ruby>野菜<rt>やさい</rt></ruby>を<ruby>食べます<rt>たべます</rt></ruby>。"},{"w":"魚","r":"さかな","g":"魚","u":"食物・飲料","x":"魚はあまり好きじゃないです。","xcn":"不太喜歡吃魚。","rt":"<ruby>魚<rt>さかな</rt></ruby>はあまり<ruby>好き<rt>すき</rt></ruby>じゃないです。"},{"w":"野菜","r":"やさい","g":"蔬菜","u":"食物・飲料","x":"野菜も食べてください。","xcn":"蔬菜也要吃。","rt":"<ruby>野菜<rt>やさい</rt></ruby>も<ruby>食べ<rt>たべ</rt></ruby>てください。"},{"w":"果物","r":"くだもの","g":"水果","u":"食物・飲料","x":"果物の中でりんごが一番好きです。","xcn":"水果中最喜歡蘋果。","rt":"<ruby>果物<rt>くだもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でりんごが<ruby>一番<rt>いちばん</rt></ruby><ruby>好き<rt>すき</rt></ruby>です。"},{"w":"卵","r":"たまご","g":"蛋","u":"食物・飲料","x":"卵を二つ使います。","xcn":"用兩顆蛋。","rt":"<ruby>卵<rt>たまご</rt></ruby>を<ruby>二つ<rt>ふたつ</rt></ruby><ruby>使います<rt>つかいます</rt></ruby>。"},{"w":"お弁当","r":"おべんとう","g":"便當","u":"食物・飲料","x":"お弁当を持って行きます。","xcn":"帶便當去。","rt":"お<ruby>弁当<rt>べんとう</rt></ruby>を<ruby>持っ<rt>もっ</rt></ruby>て<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"おいしい","r":"","g":"好吃","u":"食物・飲料","x":"このラーメンはおいしいです。","xcn":"這碗拉麵很好吃。","rt":"このラーメンはおいしいです。"},{"w":"お腹","r":"おなか","g":"肚子","u":"食物・飲料","x":"お腹がすきました。","xcn":"肚子餓了。","rt":"<ruby>お腹<rt>おなか</rt></ruby>がすきました。"},{"w":"食べ物","r":"たべもの","g":"食物","u":"食物・飲料","x":"好きな食べ物は何ですか。","xcn":"你喜歡什麼食物？","rt":"<ruby>好き<rt>すき</rt></ruby>な<ruby>食べ物<rt>たべもの</rt></ruby>は<ruby>何<rt>なに</rt></ruby>ですか。"},{"w":"飲み物","r":"のみもの","g":"飲料","u":"食物・飲料","x":"飲み物は何にしますか。","xcn":"要喝什麼飲料？","rt":"<ruby>飲み物<rt>のみもの</rt></ruby>は<ruby>何<rt>なに</rt></ruby>にしますか。"},{"w":"家","r":"いえ","g":"家","u":"地點・方向・交通","x":"家に帰ります。","xcn":"回家。","rt":"<ruby>家<rt>いえ</rt></ruby>に<ruby>帰ります<rt>かえります</rt></ruby>。"},{"w":"部屋","r":"へや","g":"房間","u":"地點・方向・交通","x":"私の部屋は二階です。","xcn":"我的房間在二樓。","rt":"<ruby>私<rt>わたし</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>は<ruby>二<rt>に</rt></ruby><ruby>階<rt>かい</rt></ruby>です。"},{"w":"駅","r":"えき","g":"車站","u":"地點・方向・交通","x":"駅の前で会いましょう。","xcn":"在車站前面見吧。","rt":"<ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>で<ruby>会いましょう<rt>あいましょう</rt></ruby>。"},{"w":"電車","r":"でんしゃ","g":"電車","u":"地點・方向・交通","x":"電車で学校に行きます。","xcn":"搭電車去學校。","rt":"<ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>学校<rt>がっこう</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"バス","r":"","g":"公車","u":"地點・方向・交通","x":"バスが来ました。","xcn":"公車來了。","rt":"バスが<ruby>来ました<rt>きました</rt></ruby>。"},{"w":"自転車","r":"じてんしゃ","g":"腳踏車","u":"地點・方向・交通","x":"自転車で駅まで行きます。","xcn":"騎腳踏車到車站。","rt":"<ruby>自転車<rt>じてんしゃ</rt></ruby>で<ruby>駅<rt>えき</rt></ruby>まで<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"道","r":"みち","g":"路","u":"地點・方向・交通","x":"この道をまっすぐ行ってください。","xcn":"這條路直走。","rt":"この<ruby>道<rt>みち</rt></ruby>をまっすぐ<ruby>行っ<rt>いっ</rt></ruby>てください。"},{"w":"店","r":"みせ","g":"商店","u":"地點・方向・交通","x":"あの店は安いです。","xcn":"那家店很便宜。","rt":"あの<ruby>店<rt>みせ</rt></ruby>は<ruby>安いです<rt>やすいです</rt></ruby>。"},{"w":"コンビニ","r":"","g":"便利商店","u":"地點・方向・交通","x":"コンビニでおにぎりを買います。","xcn":"在便利商店買飯糰。","rt":"コンビニでおにぎりを<ruby>買います<rt>かいます</rt></ruby>。"},{"w":"図書館","r":"としょかん","g":"圖書館","u":"地點・方向・交通","x":"図書館で本を借ります。","xcn":"在圖書館借書。","rt":"<ruby>図書館<rt>としょかん</rt></ruby>で<ruby>本<rt>ほん</rt></ruby>を<ruby>借ります<rt>かります</rt></ruby>。"},{"w":"病院","r":"びょういん","g":"醫院","u":"地點・方向・交通","x":"病院に行きました。","xcn":"去了醫院。","rt":"<ruby>病院<rt>びょういん</rt></ruby>に<ruby>行きました<rt>いきました</rt></ruby>。"},{"w":"公園","r":"こうえん","g":"公園","u":"地點・方向・交通","x":"公園で遊びます。","xcn":"在公園玩。","rt":"<ruby>公園<rt>こうえん</rt></ruby>で<ruby>遊びます<rt>あそびます</rt></ruby>。"},{"w":"近く","r":"ちかく","g":"附近","u":"地點・方向・交通","x":"家の近くに公園があります。","xcn":"家附近有公園。","rt":"<ruby>家<rt>いえ</rt></ruby>の<ruby>近く<rt>ちかく</rt></ruby>に<ruby>公園<rt>こうえん</rt></ruby>があります。"},{"w":"右","r":"みぎ","g":"右邊","u":"地點・方向・交通","x":"右に曲がってください。","xcn":"請右轉。","rt":"<ruby>右<rt>みぎ</rt></ruby>に<ruby>曲がっ<rt>まがっ</rt></ruby>てください。"},{"w":"左","r":"ひだり","g":"左邊","u":"地點・方向・交通","x":"左にコンビニがあります。","xcn":"左邊有便利商店。","rt":"<ruby>左<rt>ひだり</rt></ruby>にコンビニがあります。"},{"w":"前","r":"まえ","g":"前面","u":"地點・方向・交通","x":"前の席に座ります。","xcn":"坐前面的位子。","rt":"<ruby>前<rt>まえ</rt></ruby>の<ruby>席<rt>せき</rt></ruby>に<ruby>座ります<rt>すわります</rt></ruby>。"},{"w":"後ろ","r":"うしろ","g":"後面","u":"地點・方向・交通","x":"後ろを見てください。","xcn":"請看後面。","rt":"<ruby>後ろ<rt>うしろ</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。"},{"w":"上","r":"うえ","g":"上面","u":"地點・方向・交通","x":"机の上に本があります。","xcn":"桌上有書。","rt":"<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります。"},{"w":"下","r":"した","g":"下面","u":"地點・方向・交通","x":"机の下に猫がいます。","xcn":"桌子下有貓。","rt":"<ruby>机<rt>つくえ</rt></ruby>の<ruby>下<rt>した</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。"},{"w":"中","r":"なか","g":"裡面","u":"地點・方向・交通","x":"かばんの中に何がありますか。","xcn":"包包裡有什麼？","rt":"かばんの<ruby>中<rt>なか</rt></ruby>に<ruby>何<rt>なに</rt></ruby>がありますか。"},{"w":"行く","r":"いく","g":"去","u":"常用動詞（一）","x":"一緒に行きます。","xcn":"一起去。","rt":"<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"来る","r":"くる","g":"來","u":"常用動詞（一）","x":"友達が家に来ます。","xcn":"朋友來我家。","rt":"<ruby>友達<rt>ともだち</rt></ruby>が<ruby>家<rt>いえ</rt></ruby>に<ruby>来ます<rt>きます</rt></ruby>。"},{"w":"帰る","r":"かえる","g":"回去、回家","u":"常用動詞（一）","x":"五時に家に帰ります。","xcn":"五點回家。","rt":"<ruby>五<rt>ご</rt></ruby><ruby>時<rt>じ</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>に<ruby>帰ります<rt>かえります</rt></ruby>。"},{"w":"起きる","r":"おきる","g":"起床","u":"常用動詞（一）","x":"六時半に起きます。","xcn":"六點半起床。","rt":"<ruby>六<rt>ろく</rt></ruby><ruby>時半<rt>じはん</rt></ruby>に<ruby>起きます<rt>おきます</rt></ruby>。"},{"w":"寝る","r":"ねる","g":"睡覺","u":"常用動詞（一）","x":"十一時に寝ます。","xcn":"十一點睡覺。","rt":"<ruby>十<rt>じゅう</rt></ruby><ruby>一<rt>いち</rt></ruby><ruby>時<rt>じ</rt></ruby>に<ruby>寝ます<rt>ねます</rt></ruby>。"},{"w":"食べる","r":"たべる","g":"吃","u":"常用動詞（一）","x":"一緒に昼ご飯を食べます。","xcn":"一起吃午餐。","rt":"<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>昼<rt>ひる</rt></ruby><ruby>ご飯<rt>ごはん</rt></ruby>を<ruby>食べます<rt>たべます</rt></ruby>。"},{"w":"飲む","r":"のむ","g":"喝","u":"常用動詞（一）","x":"ジュースを飲みます。","xcn":"喝果汁。","rt":"ジュースを<ruby>飲みます<rt>のみます</rt></ruby>。"},{"w":"見る","r":"みる","g":"看","u":"常用動詞（一）","x":"夜、テレビを見ます。","xcn":"晚上看電視。","rt":"<ruby>夜<rt>よる</rt></ruby>、テレビを<ruby>見ます<rt>みます</rt></ruby>。"},{"w":"聞く","r":"きく","g":"聽、問","u":"常用動詞（一）","x":"音楽を聞きます。","xcn":"聽音樂。","rt":"<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞きます<rt>ききます</rt></ruby>。"},{"w":"読む","r":"よむ","g":"讀、看（書）","u":"常用動詞（一）","x":"漫画を読みます。","xcn":"看漫畫。","rt":"<ruby>漫画<rt>まんが</rt></ruby>を<ruby>読みます<rt>よみます</rt></ruby>。"},{"w":"書く","r":"かく","g":"寫","u":"常用動詞（一）","x":"名前を書きます。","xcn":"寫名字。","rt":"<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書きます<rt>かきます</rt></ruby>。"},{"w":"話す","r":"はなす","g":"說話","u":"常用動詞（一）","x":"日本語で話します。","xcn":"用日語說話。","rt":"<ruby>日本語<rt>にほんご</rt></ruby>で<ruby>話します<rt>はなします</rt></ruby>。"},{"w":"買う","r":"かう","g":"買","u":"常用動詞（一）","x":"新しいペンを買います。","xcn":"買新的筆。","rt":"<ruby>新しい<rt>あたらしい</rt></ruby>ペンを<ruby>買います<rt>かいます</rt></ruby>。"},{"w":"待つ","r":"まつ","g":"等","u":"常用動詞（一）","x":"駅で友達を待ちます。","xcn":"在車站等朋友。","rt":"<ruby>駅<rt>えき</rt></ruby>で<ruby>友達<rt>ともだち</rt></ruby>を<ruby>待ちます<rt>まちます</rt></ruby>。"},{"w":"会う","r":"あう","g":"見面","u":"常用動詞（一）","x":"明日、友達に会います。","xcn":"明天和朋友見面。","rt":"<ruby>明日<rt>あした</rt></ruby>、<ruby>友達<rt>ともだち</rt></ruby>に<ruby>会います<rt>あいます</rt></ruby>。"},{"w":"する","r":"","g":"做","u":"常用動詞（一）","x":"毎日宿題をします。","xcn":"每天寫作業。","rt":"<ruby>毎日<rt>まいにち</rt></ruby><ruby>宿題<rt>しゅくだい</rt></ruby>をします。"},{"w":"覚える","r":"おぼえる","g":"記住","u":"常用動詞（二）","x":"単語を覚えます。","xcn":"記單字。","rt":"<ruby>単語<rt>たんご</rt></ruby>を<ruby>覚えます<rt>おぼえます</rt></ruby>。"},{"w":"忘れる","r":"わすれる","g":"忘記","u":"常用動詞（二）","x":"傘を忘れました。","xcn":"忘了帶傘。","rt":"<ruby>傘<rt>かさ</rt></ruby>を<ruby>忘れました<rt>わすれました</rt></ruby>。"},{"w":"教える","r":"おしえる","g":"教、告訴","u":"常用動詞（二）","x":"道を教えてください。","xcn":"請告訴我怎麼走。","rt":"<ruby>道<rt>みち</rt></ruby>を<ruby>教え<rt>おしえ</rt></ruby>てください。"},{"w":"始まる","r":"はじまる","g":"開始","u":"常用動詞（二）","x":"授業は八時半に始まります。","xcn":"八點半開始上課。","rt":"<ruby>授業<rt>じゅぎょう</rt></ruby>は<ruby>八<rt>はち</rt></ruby><ruby>時半<rt>じはん</rt></ruby>に<ruby>始まります<rt>はじまります</rt></ruby>。"},{"w":"終わる","r":"おわる","g":"結束","u":"常用動詞（二）","x":"テストが終わりました。","xcn":"考試結束了。","rt":"テストが<ruby>終わりました<rt>おわりました</rt></ruby>。"},{"w":"休む","r":"やすむ","g":"休息、請假","u":"常用動詞（二）","x":"今日は学校を休みます。","xcn":"今天跟學校請假。","rt":"<ruby>今日<rt>きょう</rt></ruby>は<ruby>学校<rt>がっこう</rt></ruby>を<ruby>休みます<rt>やすみます</rt></ruby>。"},{"w":"遊ぶ","r":"あそぶ","g":"玩","u":"常用動詞（二）","x":"週末、友達と遊びます。","xcn":"週末和朋友玩。","rt":"<ruby>週末<rt>しゅうまつ</rt></ruby>、<ruby>友達<rt>ともだち</rt></ruby>と<ruby>遊びます<rt>あそびます</rt></ruby>。"},{"w":"使う","r":"つかう","g":"使用","u":"常用動詞（二）","x":"辞書を使います。","xcn":"使用字典。","rt":"<ruby>辞書<rt>じしょ</rt></ruby>を<ruby>使います<rt>つかいます</rt></ruby>。"},{"w":"作る","r":"つくる","g":"做、製作","u":"常用動詞（二）","x":"母とケーキを作ります。","xcn":"和媽媽做蛋糕。","rt":"<ruby>母<rt>はは</rt></ruby>とケーキを<ruby>作ります<rt>つくります</rt></ruby>。"},{"w":"歩く","r":"あるく","g":"走路","u":"常用動詞（二）","x":"毎日たくさん歩きます。","xcn":"每天走很多路。","rt":"<ruby>毎日<rt>まいにち</rt></ruby>たくさん<ruby>歩きます<rt>あるきます</rt></ruby>。"},{"w":"走る","r":"はしる","g":"跑","u":"常用動詞（二）","x":"体育の時間に走ります。","xcn":"體育課跑步。","rt":"<ruby>体育<rt>たいいく</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>に<ruby>走ります<rt>はしります</rt></ruby>。"},{"w":"乗る","r":"のる","g":"搭、騎","u":"常用動詞（二）","x":"電車に乗ります。","xcn":"搭電車。","rt":"<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗ります<rt>のります</rt></ruby>。"},{"w":"着る","r":"きる","g":"穿（上衣）","u":"常用動詞（二）","x":"制服を着ます。","xcn":"穿制服。","rt":"<ruby>制服<rt>せいふく</rt></ruby>を<ruby>着ます<rt>きます</rt></ruby>。"},{"w":"入る","r":"はいる","g":"進入、加入","u":"常用動詞（二）","x":"テニス部に入りました。","xcn":"加入了網球社。","rt":"テニス<ruby>部<rt>ぶ</rt></ruby>に<ruby>入りました<rt>はいりました</rt></ruby>。"},{"w":"出る","r":"でる","g":"出去、離開","u":"常用動詞（二）","x":"八時に家を出ます。","xcn":"八點出門。","rt":"<ruby>八<rt>はち</rt></ruby><ruby>時<rt>じ</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>を<ruby>出ます<rt>でます</rt></ruby>。"},{"w":"住む","r":"すむ","g":"住","u":"常用動詞（二）","x":"東京に住んでいます。","xcn":"住在東京。","rt":"<ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住ん<rt>すん</rt></ruby>でいます。"},{"w":"練習","r":"れんしゅう","g":"練習","u":"常用動詞（二）","x":"毎日ピアノの練習をします。","xcn":"每天練鋼琴。","rt":"<ruby>毎日<rt>まいにち</rt></ruby>ピアノの<ruby>練習<rt>れんしゅう</rt></ruby>をします。"},{"w":"大きい","r":"おおきい","g":"大的","u":"形容詞","x":"大きい犬がいます。","xcn":"有一隻大狗。","rt":"<ruby>大きい<rt>おおきい</rt></ruby><ruby>犬<rt>いぬ</rt></ruby>がいます。"},{"w":"小さい","r":"ちいさい","g":"小的","u":"形容詞","x":"小さいかばんを買いました。","xcn":"買了小包包。","rt":"<ruby>小さい<rt>ちいさい</rt></ruby>かばんを<ruby>買いました<rt>かいました</rt></ruby>。"},{"w":"新しい","r":"あたらしい","g":"新的","u":"形容詞","x":"新しい学校はどうですか。","xcn":"新學校怎麼樣？","rt":"<ruby>新しい<rt>あたらしい</rt></ruby><ruby>学校<rt>がっこう</rt></ruby>はどうですか。"},{"w":"古い","r":"ふるい","g":"舊的","u":"形容詞","x":"この本は古いです。","xcn":"這本書很舊。","rt":"この<ruby>本<rt>ほん</rt></ruby>は<ruby>古いです<rt>ふるいです</rt></ruby>。"},{"w":"高い","r":"たかい","g":"貴的、高的","u":"形容詞","x":"このくつは高いです。","xcn":"這雙鞋很貴。","rt":"このくつは<ruby>高いです<rt>たかいです</rt></ruby>。"},{"w":"安い","r":"やすい","g":"便宜","u":"形容詞","x":"このペンは安いです。","xcn":"這支筆很便宜。","rt":"このペンは<ruby>安いです<rt>やすいです</rt></ruby>。"},{"w":"多い","r":"おおい","g":"多","u":"形容詞","x":"宿題が多いです。","xcn":"作業很多。","rt":"<ruby>宿題<rt>しゅくだい</rt></ruby>が<ruby>多いです<rt>おおいです</rt></ruby>。"},{"w":"少ない","r":"すくない","g":"少","u":"形容詞","x":"時間が少ないです。","xcn":"時間很少。","rt":"<ruby>時間<rt>じかん</rt></ruby>が<ruby>少ないです<rt>すくないです</rt></ruby>。"},{"w":"難しい","r":"むずかしい","g":"難","u":"形容詞","x":"漢字は難しいです。","xcn":"漢字很難。","rt":"<ruby>漢字<rt>かんじ</rt></ruby>は<ruby>難しいです<rt>むずかしいです</rt></ruby>。"},{"w":"簡単","r":"かんたん","g":"簡單","u":"形容詞","x":"この問題は簡単です。","xcn":"這題很簡單。","rt":"この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>簡単<rt>かんたん</rt></ruby>です。"},{"w":"楽しい","r":"たのしい","g":"快樂、好玩","u":"形容詞","x":"部活は楽しいです。","xcn":"社團很好玩。","rt":"<ruby>部活<rt>ぶかつ</rt></ruby>は<ruby>楽しいです<rt>たのしいです</rt></ruby>。"},{"w":"面白い","r":"おもしろい","g":"有趣","u":"形容詞","x":"この漫画は面白いです。","xcn":"這本漫畫很有趣。","rt":"この<ruby>漫画<rt>まんが</rt></ruby>は<ruby>面白いです<rt>おもしろいです</rt></ruby>。"},{"w":"暑い","r":"あつい","g":"（天氣）熱","u":"形容詞","x":"今日はとても暑いです。","xcn":"今天很熱。","rt":"<ruby>今日<rt>きょう</rt></ruby>はとても<ruby>暑いです<rt>あついです</rt></ruby>。"},{"w":"寒い","r":"さむい","g":"冷","u":"形容詞","x":"冬は寒いです。","xcn":"冬天很冷。","rt":"<ruby>冬<rt>ふゆ</rt></ruby>は<ruby>寒いです<rt>さむいです</rt></ruby>。"},{"w":"忙しい","r":"いそがしい","g":"忙","u":"形容詞","x":"試験の前は忙しいです。","xcn":"考試前很忙。","rt":"<ruby>試験<rt>しけん</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は<ruby>忙しいです<rt>いそがしいです</rt></ruby>。"},{"w":"優しい","r":"やさしい","g":"溫柔、親切","u":"形容詞","x":"クラスのみんなは優しいです。","xcn":"班上大家都很親切。","rt":"クラスのみんなは<ruby>優しいです<rt>やさしいです</rt></ruby>。"},{"w":"好き","r":"すき","g":"喜歡","u":"形容詞","x":"音楽が好きです。","xcn":"我喜歡音樂。","rt":"<ruby>音楽<rt>おんがく</rt></ruby>が<ruby>好き<rt>すき</rt></ruby>です。"},{"w":"嫌い","r":"きらい","g":"討厭","u":"形容詞","x":"虫が嫌いです。","xcn":"我討厭蟲。","rt":"<ruby>虫<rt>むし</rt></ruby>が<ruby>嫌い<rt>きらい</rt></ruby>です。"},{"w":"上手","r":"じょうず","g":"擅長、很會","u":"形容詞","x":"彼女は歌が上手です。","xcn":"她很會唱歌。","rt":"<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>歌<rt>うた</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>です。"},{"w":"下手","r":"へた","g":"不擅長","u":"形容詞","x":"私は絵が下手です。","xcn":"我不太會畫畫。","rt":"<ruby>私<rt>わたし</rt></ruby>は<ruby>絵<rt>え</rt></ruby>が<ruby>下手<rt>へた</rt></ruby>です。"},{"w":"元気","r":"げんき","g":"有精神、健康","u":"形容詞","x":"弟はいつも元気です。","xcn":"弟弟總是很有活力。","rt":"<ruby>弟<rt>おとうと</rt></ruby>はいつも<ruby>元気<rt>げんき</rt></ruby>です。"},{"w":"静か","r":"しずか","g":"安靜","u":"形容詞","x":"夜の公園は静かです。","xcn":"晚上的公園很安靜。","rt":"<ruby>夜<rt>よる</rt></ruby>の<ruby>公園<rt>こうえん</rt></ruby>は<ruby>静か<rt>しずか</rt></ruby>です。"},{"w":"大丈夫","r":"だいじょうぶ","g":"沒關係、沒問題","u":"形容詞","x":"大丈夫ですか。","xcn":"你還好嗎？","rt":"<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>ですか。"},{"w":"かわいい","r":"","g":"可愛","u":"形容詞","x":"この猫はかわいいです。","xcn":"這隻貓很可愛。","rt":"この<ruby>猫<rt>ねこ</rt></ruby>はかわいいです。"},{"w":"音楽","r":"おんがく","g":"音樂","u":"興趣・社團","x":"音楽の授業でピアノを弾きます。","xcn":"音樂課彈鋼琴。","rt":"<ruby>音楽<rt>おんがく</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>でピアノを<ruby>弾きます<rt>ひきます</rt></ruby>。"},{"w":"歌","r":"うた","g":"歌","u":"興趣・社團","x":"好きな歌を歌います。","xcn":"唱喜歡的歌。","rt":"<ruby>好き<rt>すき</rt></ruby>な<ruby>歌<rt>うた</rt></ruby>を<ruby>歌います<rt>うたいます</rt></ruby>。"},{"w":"映画","r":"えいが","g":"電影","u":"興趣・社團","x":"週末に映画を見ました。","xcn":"週末看了電影。","rt":"<ruby>週末<rt>しゅうまつ</rt></ruby>に<ruby>映画<rt>えいが</rt></ruby>を<ruby>見ました<rt>みました</rt></ruby>。"},{"w":"漫画","r":"まんが","g":"漫畫","u":"興趣・社團","x":"漫画を読むのが好きです。","xcn":"喜歡看漫畫。","rt":"<ruby>漫画<rt>まんが</rt></ruby>を<ruby>読む<rt>よむ</rt></ruby>のが<ruby>好き<rt>すき</rt></ruby>です。"},{"w":"アニメ","r":"","g":"動畫","u":"興趣・社團","x":"日本のアニメをよく見ます。","xcn":"常看日本動畫。","rt":"<ruby>日本<rt>にほん</rt></ruby>のアニメをよく<ruby>見ます<rt>みます</rt></ruby>。"},{"w":"ゲーム","r":"","g":"電玩、遊戲","u":"興趣・社團","x":"弟とゲームをします。","xcn":"和弟弟打電動。","rt":"<ruby>弟<rt>おとうと</rt></ruby>とゲームをします。"},{"w":"写真","r":"しゃしん","g":"照片","u":"興趣・社團","x":"写真を撮ってもいいですか。","xcn":"可以拍照嗎？","rt":"<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮っ<rt>とっ</rt></ruby>てもいいですか。"},{"w":"絵","r":"え","g":"畫","u":"興趣・社團","x":"絵を描くのが好きです。","xcn":"喜歡畫畫。","rt":"<ruby>絵<rt>え</rt></ruby>を<ruby>描く<rt>かく</rt></ruby>のが<ruby>好き<rt>すき</rt></ruby>です。"},{"w":"本","r":"ほん","g":"書","u":"興趣・社團","x":"本を三冊借りました。","xcn":"借了三本書。","rt":"<ruby>本<rt>ほん</rt></ruby>を<ruby>三<rt>さん</rt></ruby><ruby>冊<rt>さつ</rt></ruby><ruby>借りました<rt>かりました</rt></ruby>。"},{"w":"サッカー","r":"","g":"足球","u":"興趣・社團","x":"放課後にサッカーをします。","xcn":"放學後踢足球。","rt":"<ruby>放課後<rt>ほうかご</rt></ruby>にサッカーをします。"},{"w":"テニス","r":"","g":"網球","u":"興趣・社團","x":"姉とテニスをします。","xcn":"和姊姊打網球。","rt":"<ruby>姉<rt>あね</rt></ruby>とテニスをします。"},{"w":"スポーツ","r":"","g":"運動","u":"興趣・社團","x":"どんなスポーツが好きですか。","xcn":"你喜歡什麼運動？","rt":"どんなスポーツが<ruby>好き<rt>すき</rt></ruby>ですか。"},{"w":"趣味","r":"しゅみ","g":"興趣","u":"興趣・社團","x":"私の趣味は料理です。","xcn":"我的興趣是做菜。","rt":"<ruby>私<rt>わたし</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>料理<rt>りょうり</rt></ruby>です。"},{"w":"料理","r":"りょうり","g":"料理、做菜","u":"興趣・社團","x":"料理を手伝います。","xcn":"幫忙做菜。","rt":"<ruby>料理<rt>りょうり</rt></ruby>を<ruby>手伝います<rt>てつだいます</rt></ruby>。"},{"w":"旅行","r":"りょこう","g":"旅行","u":"興趣・社團","x":"家族で旅行に行きます。","xcn":"和家人去旅行。","rt":"<ruby>家族<rt>かぞく</rt></ruby>で<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"スマホ","r":"","g":"智慧型手機","u":"興趣・社團","x":"スマホを家に忘れました。","xcn":"把手機忘在家裡。","rt":"スマホを<ruby>家<rt>いえ</rt></ruby>に<ruby>忘れました<rt>わすれました</rt></ruby>。"},{"w":"動画","r":"どうが","g":"影片","u":"興趣・社團","x":"面白い動画を見ました。","xcn":"看了有趣的影片。","rt":"<ruby>面白い<rt>おもしろい</rt></ruby><ruby>動画<rt>どうが</rt></ruby>を<ruby>見ました<rt>みました</rt></ruby>。"},{"w":"誕生日","r":"たんじょうび","g":"生日","u":"興趣・社團","x":"誕生日はいつですか。","xcn":"你的生日是什麼時候？","rt":"<ruby>誕生<rt>たんじょう</rt></ruby><ruby>日<rt>び</rt></ruby>はいつですか。"},{"w":"犬","r":"いぬ","g":"狗","u":"興趣・社團","x":"犬と散歩します。","xcn":"和狗散步。","rt":"<ruby>犬<rt>いぬ</rt></ruby>と<ruby>散歩<rt>さんぽ</rt></ruby>します。"},{"w":"猫","r":"ねこ","g":"貓","u":"興趣・社團","x":"うちの猫は白いです。","xcn":"我家的貓是白的。","rt":"うちの<ruby>猫<rt>ねこ</rt></ruby>は<ruby>白いです<rt>しろいです</rt></ruby>。"},{"w":"天気","r":"てんき","g":"天氣","u":"天氣・身體・心情","x":"今日はいい天気ですね。","xcn":"今天天氣真好。","rt":"<ruby>今日<rt>きょう</rt></ruby>はいい<ruby>天気<rt>てんき</rt></ruby>ですね。"},{"w":"雨","r":"あめ","g":"雨","u":"天氣・身體・心情","x":"雨が降っています。","xcn":"正在下雨。","rt":"<ruby>雨<rt>あめ</rt></ruby>が<ruby>降っ<rt>ふっ</rt></ruby>ています。"},{"w":"雪","r":"ゆき","g":"雪","u":"天氣・身體・心情","x":"北海道は雪が多いです。","xcn":"北海道雪很多。","rt":"<ruby>北海道<rt>ほっかいどう</rt></ruby>は<ruby>雪<rt>ゆき</rt></ruby>が<ruby>多いです<rt>おおいです</rt></ruby>。"},{"w":"傘","r":"かさ","g":"傘","u":"天氣・身體・心情","x":"傘を持って行きます。","xcn":"帶傘去。","rt":"<ruby>傘<rt>かさ</rt></ruby>を<ruby>持っ<rt>もっ</rt></ruby>て<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"風邪","r":"かぜ","g":"感冒","u":"天氣・身體・心情","x":"風邪をひきました。","xcn":"感冒了。","rt":"<ruby>風邪<rt>かぜ</rt></ruby>をひきました。"},{"w":"熱","r":"ねつ","g":"發燒","u":"天氣・身體・心情","x":"熱があります。","xcn":"發燒了。","rt":"<ruby>熱<rt>ねつ</rt></ruby>があります。"},{"w":"頭","r":"あたま","g":"頭","u":"天氣・身體・心情","x":"頭が痛いです。","xcn":"頭痛。","rt":"<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛いです<rt>いたいです</rt></ruby>。"},{"w":"痛い","r":"いたい","g":"痛","u":"天氣・身體・心情","x":"お腹が痛いです。","xcn":"肚子痛。","rt":"<ruby>お腹<rt>おなか</rt></ruby>が<ruby>痛いです<rt>いたいです</rt></ruby>。"},{"w":"目","r":"め","g":"眼睛","u":"天氣・身體・心情","x":"目が疲れました。","xcn":"眼睛累了。","rt":"<ruby>目<rt>め</rt></ruby>が<ruby>疲れました<rt>つかれました</rt></ruby>。"},{"w":"手","r":"て","g":"手","u":"天氣・身體・心情","x":"手を洗います。","xcn":"洗手。","rt":"<ruby>手<rt>て</rt></ruby>を<ruby>洗います<rt>あらいます</rt></ruby>。"},{"w":"足","r":"あし","g":"腳","u":"天氣・身體・心情","x":"足が速いです。","xcn":"跑得很快。","rt":"<ruby>足<rt>あし</rt></ruby>が<ruby>速いです<rt>はやいです</rt></ruby>。"},{"w":"体","r":"からだ","g":"身體","u":"天氣・身體・心情","x":"体に気をつけてください。","xcn":"請保重身體。","rt":"<ruby>体<rt>からだ</rt></ruby>に<ruby>気<rt>き</rt></ruby>をつけてください。"},{"w":"疲れる","r":"つかれる","g":"累","u":"天氣・身體・心情","x":"今日はとても疲れました。","xcn":"今天好累。","rt":"<ruby>今日<rt>きょう</rt></ruby>はとても<ruby>疲れました<rt>つかれました</rt></ruby>。"},{"w":"眠い","r":"ねむい","g":"想睡、睏","u":"天氣・身體・心情","x":"朝はいつも眠いです。","xcn":"早上總是很睏。","rt":"<ruby>朝<rt>あさ</rt></ruby>はいつも<ruby>眠いです<rt>ねむいです</rt></ruby>。"},{"w":"気持ち","r":"きもち","g":"心情、感覺","u":"天氣・身體・心情","x":"気持ちがいいです。","xcn":"感覺很舒服。","rt":"<ruby>気持ち<rt>きもち</rt></ruby>がいいです。"},{"w":"心配","r":"しんぱい","g":"擔心","u":"天氣・身體・心情","x":"試験が心配です。","xcn":"擔心考試。","rt":"<ruby>試験<rt>しけん</rt></ruby>が<ruby>心配<rt>しんぱい</rt></ruby>です。"},{"w":"保健室","r":"ほけんしつ","g":"保健室","u":"天氣・身體・心情","x":"気分が悪いので保健室に行きます。","xcn":"不舒服，所以去保健室。","rt":"<ruby>気分<rt>きぶん</rt></ruby>が<ruby>悪い<rt>わるい</rt></ruby>ので<ruby>保健<rt>ほけん</rt></ruby><ruby>室<rt>しつ</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"},{"w":"何","r":"なに","g":"什麼","u":"疑問詞・常用副詞","x":"何を食べますか。","xcn":"要吃什麼？","rt":"<ruby>何<rt>なに</rt></ruby>を<ruby>食べます<rt>たべます</rt></ruby>か。"},{"w":"だれ","r":"","g":"誰","u":"疑問詞・常用副詞","x":"あの人はだれですか。","xcn":"那個人是誰？","rt":"あの<ruby>人<rt>ひと</rt></ruby>はだれですか。"},{"w":"どこ","r":"","g":"哪裡","u":"疑問詞・常用副詞","x":"トイレはどこですか。","xcn":"廁所在哪裡？","rt":"トイレはどこですか。"},{"w":"いつ","r":"","g":"什麼時候","u":"疑問詞・常用副詞","x":"テストはいつですか。","xcn":"考試是什麼時候？","rt":"テストはいつですか。"},{"w":"どうして","r":"","g":"為什麼","u":"疑問詞・常用副詞","x":"どうして遅れたのですか。","xcn":"為什麼遲到了？","rt":"どうして<ruby>遅れた<rt>おくれた</rt></ruby>のですか。"},{"w":"いくら","r":"","g":"多少錢","u":"疑問詞・常用副詞","x":"これはいくらですか。","xcn":"這個多少錢？","rt":"これはいくらですか。"},{"w":"どれ","r":"","g":"哪一個","u":"疑問詞・常用副詞","x":"どれがいいですか。","xcn":"哪一個好？","rt":"どれがいいですか。"},{"w":"一緒に","r":"いっしょに","g":"一起","u":"疑問詞・常用副詞","x":"一緒に帰りましょう。","xcn":"一起回家吧。","rt":"<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>帰りましょう<rt>かえりましょう</rt></ruby>。"},{"w":"とても","r":"","g":"非常","u":"疑問詞・常用副詞","x":"このケーキはとてもおいしいです。","xcn":"這個蛋糕非常好吃。","rt":"このケーキはとてもおいしいです。"},{"w":"少し","r":"すこし","g":"一點點","u":"疑問詞・常用副詞","x":"日本語が少し話せます。","xcn":"會說一點日語。","rt":"<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>少し<rt>すこし</rt></ruby><ruby>話せます<rt>はなせます</rt></ruby>。"},{"w":"もう一度","r":"もういちど","g":"再一次","u":"疑問詞・常用副詞","x":"もう一度言ってください。","xcn":"請再說一次。","rt":"<ruby>もう一度<rt>もういちど</rt></ruby><ruby>言っ<rt>いっ</rt></ruby>てください。"},{"w":"まだ","r":"","g":"還（沒）","u":"疑問詞・常用副詞","x":"まだ宿題が終わっていません。","xcn":"作業還沒寫完。","rt":"まだ<ruby>宿題<rt>しゅくだい</rt></ruby>が<ruby>終わっ<rt>おわっ</rt></ruby>ていません。"},{"w":"いつも","r":"","g":"總是","u":"疑問詞・常用副詞","x":"いつもバスで帰ります。","xcn":"總是搭公車回家。","rt":"いつもバスで<ruby>帰ります<rt>かえります</rt></ruby>。"},{"w":"よく","r":"","g":"常常","u":"疑問詞・常用副詞","x":"よく図書館に行きます。","xcn":"常常去圖書館。","rt":"よく<ruby>図書館<rt>としょかん</rt></ruby>に<ruby>行きます<rt>いきます</rt></ruby>。"}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const ITEMS = D.items || [];
+const $ = id => document.getElementById(id);
+
+/* ---------- 語音（瀏覽器內建，離線可用；iOS 需在使用者點擊事件裡第一次呼叫） ---------- */
+let VOICE = null, ttsOK = false;
+function pickVoice(){
+  try{
+    const vs = speechSynthesis.getVoices() || [];
+    VOICE = vs.find(v => /^ja/i.test(v.lang)) || null;
+    ttsOK = !!VOICE;
+  }catch(e){ ttsOK = false; }
+}
+if(typeof speechSynthesis !== 'undefined'){
+  pickVoice();
+  try{ speechSynthesis.addEventListener('voiceschanged', pickVoice); }catch(e){}
+}
+let ttsNoted = false;
+function noteTTS(){
+  if(ttsNoted) return;
+  ttsNoted = true;
+  const el = $('ttsNote');
+  if(el){ el.style.display = 'block';
+    el.textContent = 'ℹ️ 這台還沒裝日語語音：設定 → 輔助使用 → 朗讀內容 → 聲音 → 日文（下載一個就好，之後離線也能用）'; }
+}
+function say(text, slow){
+  if(!text) return false;
+  if(!ttsOK){ noteTTS(); return false; }
+  try{
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP'; u.voice = VOICE; u.rate = slow ? 0.7 : 0.95;
+    speechSynthesis.speak(u);
+    return true;
+  }catch(e){ return false; }
+}
+
+/* ---------- 紀錄（只存這台裝置；跟影片課的詞庫分開，避免互相汙染） ---------- */
+const KEY = 'lk.spk.v1.ja';
+const isoLocal = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const todayISO = () => isoLocal(new Date());
+function addDays(iso,n){ const [y,m,d]=iso.split('-').map(Number); const dt=new Date(y,m-1,d); dt.setDate(dt.getDate()+n); return isoLocal(dt); }
+let S = {days:{}, streak:0, last:'', xp:0};
+try{ const raw = localStorage.getItem(KEY); if(raw) S = Object.assign(S, JSON.parse(raw)); }catch(e){}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function bump(correct){
+  const t = todayISO();
+  S.days[t] = S.days[t] || {q:0, ok:0};
+  S.days[t].q++; if(correct){ S.days[t].ok++; S.xp = (S.xp||0) + 1; }
+  if(S.last !== t){ S.streak = (S.last === addDays(t,-1)) ? (S.streak||0)+1 : 1; S.last = t; }
+  save(); paintStats();
+}
+function paintStats(){
+  const t = S.days[todayISO()] || {q:0};
+  $('streak').textContent = S.streak || 0;
+  $('todayN').textContent = t.q || 0;
+  $('xp').textContent = S.xp || 0;
+}
+
+/* ---------- 出題（全部在瀏覽器即時組，資料建置期就算好） ---------- */
+const shuffle = a => a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+function pick(arr, n){ return shuffle(arr).slice(0, n); }
+function sameUnit(w, pool, n){
+  const u = pool.filter(x => x.u === w.u && x.w !== w.w);
+  const rest = pool.filter(x => x.u !== w.u && x.w !== w.w);
+  return pick(u, n).concat(pick(rest, n)).slice(0, n);
+}
+
+let mode = 'listen', q = null, answered = false, done = 0, total = 10, si = 0;
+
+/* 聽力階梯：不是單純調速度，而是「句子長度」三階（短 → 中 → 長），
+   全部用正常語速 —— 真實對話不會為她放慢。每階 5 題，答對 4 題才升階。 */
+const LADDER = [
+  {name:'短句（5–10 個字）', pick:x=>x.x.length<=10},
+  {name:'中句（11–16 字）',  pick:x=>x.x.length>10 && x.x.length<=16},
+  {name:'長句（17 字以上）', pick:x=>x.x.length>16},
+];
+let lv = 0, lvScore = 0, lvCount = 0;
+const LADDER_KEY = 'lk.spk.ladder.ja';
+try{ const r = localStorage.getItem(LADDER_KEY); if(r){ const o = JSON.parse(r); lv = o.lv|0; } }catch(e){}
+function saveLadder(){ try{ localStorage.setItem(LADDER_KEY, JSON.stringify({lv:lv})); }catch(e){} }
+function ladderNext(){
+  answered = false; $('feed').textContent = ''; $('feed').className = 'feed';
+  const pool = ITEMS.filter(LADDER[lv].pick);
+  const use = pool.length ? pool : ITEMS;
+  const w = use[Math.floor(Math.random()*use.length)];
+  const others = shuffle(ITEMS.filter(x=>x.x !== w.x)).slice(0,3).map(x=>({t:x.xcn}));
+  const opts = shuffle([{t:w.xcn, ok:true}].concat(others.map(o=>({t:o.t, ok:false}))));
+  q = {kind:'ladder', say:w.x, answer:w.xcn, opts:opts.map(o=>o.t), w:w};
+  $('askLabel').textContent = '第 ' + (lv+1) + ' 關・' + LADDER[lv].name +
+    '（' + (lvCount+1) + '/5，答對 ' + lvScore + '）';
+  $('stem').textContent = '🔊 正常語速，聽一次';
+  renderOpts();
+  $('prog').style.width = (lvCount / 5 * 100) + '%';
+  setTimeout(()=>say(w.x, false), 240);
+}
+function ladderAnswer(correct){
+  lvCount++; if(correct) lvScore++;
+  bump(correct);
+  if(lvCount >= 5){
+    if(lvScore >= 4 && lv < LADDER.length - 1){
+      lv++; lvScore = 0; lvCount = 0; saveLadder();
+      $('feed').className = 'feed ok';
+      $('feed').textContent = '🎉 升到第 ' + (lv+1) + ' 關：' + LADDER[lv].name;
+      setTimeout(ladderNext, 1600);
+    } else if(lvScore >= 4 && lv === LADDER.length - 1){
+      $('feed').className = 'feed ok';
+      $('feed').textContent = '🏆 最高階通過！長句也聽得懂了，去「情境對話」用出來。';
+      lvScore = 0; lvCount = 0;
+      setTimeout(ladderNext, 2000);
+    } else {
+      $('feed').className = 'feed';
+      $('feed').textContent = '這一關答對 ' + lvScore + '/5，再練一次同一個長度（答對 4 題才升階）';
+      lvScore = 0; lvCount = 0;
+      setTimeout(ladderNext, 1800);
+    }
+    return;
+  }
+  setTimeout(ladderNext, 1500);   // 同關卡內繼續下一題
+}
+
+function nextQuestion(){
+  answered = false; $('feed').textContent = ''; $('feed').className = 'feed';
+  if(done >= total){ finish(); return; }
+  const w = ITEMS[(si++ * 7 + Math.floor(Math.random()*ITEMS.length)) % ITEMS.length];
+  if(mode === 'listen'){
+    // 聽音選詞：播詞，四個選項都是同單元的詞（難度相近，考耳朵不是考記憶）
+    const opts = shuffle([w].concat(sameUnit(w, ITEMS, 3).map(x=>({w:x.w}))));
+    q = {kind:'listen', say:w.w, answer:w.w, opts:opts.map(o=>o.w)};
+    $('askLabel').textContent = '聽，然後選出你聽到的詞';
+    $('stem').textContent = '🔊 按播放，仔細聽';
+  } else if(mode === 'mean'){
+    // 聽句選意：播例句，選中文意思（聽懂優先，不看字）
+    const others = sameUnit(w, ITEMS, 3).map(x=>({t:x.xcn}));
+    const opts = shuffle([{t:w.xcn, ok:true}].concat(others.map(o=>({t:o.t, ok:false}))));
+    q = {kind:'mean', say:w.x, answer:w.xcn, opts:opts.map(o=>o.t)};
+    $('askLabel').textContent = '聽一整句，選出它的意思';
+    $('stem').textContent = '🔊 按播放，先不要看字';
+  }
+  renderOpts();
+  $('prog').style.width = (done / total * 100) + '%';
+  if(mode !== 'shadow') setTimeout(()=>say(q.say, false), 260);
+}
+function renderOpts(){
+  const box = $('opts'); box.innerHTML = '';
+  q.opts.forEach(txt=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = txt;
+    b.onclick = ()=>answer(b, txt === q.answer);
+    box.appendChild(b);
+  });
+}
+function answer(btn, correct){
+  if(answered) return;
+  answered = true;
+  document.querySelectorAll('.opt').forEach(b=>{
+    if(b.textContent === q.answer) b.classList.add('correct');
+    else if(b === btn) b.classList.add('wrong');
+  });
+  if(mode === 'ladder'){
+    const w = q.w;
+    $('feed').className = 'feed ' + (correct ? 'ok' : 'ng');
+    $('feed').textContent = (correct ? '✔ 對了' : '✘ 再聽一次') +
+      '　' + w.x + '（' + w.xcn + '）';
+    ladderAnswer(correct);   // 進下一題的排程交給 ladderAnswer，避免重複觸發
+    return;
+  }
+  const item = ITEMS.find(x => x.w === q.answer || x.xcn === q.answer) || {};
+  $('feed').className = 'feed ' + (correct ? 'ok' : 'ng');
+  $('feed').textContent = (correct ? '✔ 對了' : '✘ 再聽一次') +
+    (item.x ? '　' + item.x + (item.xcn ? '（' + item.xcn + '）' : '') : '');
+  bump(correct);
+  done++;
+  setTimeout(nextQuestion, 1400);
+}
+function finish(){
+  $('askLabel').textContent = '這一輪完成';
+  $('stem').textContent = '👏 今天 ' + done + ' 題完成';
+  $('opts').innerHTML = '';
+  const t = S.days[todayISO()] || {q:0, ok:0};
+  $('feed').className = 'feed ok';
+  $('feed').textContent = '今天共 ' + t.q + ' 題，正確率 ' + (t.q ? Math.round(t.ok/t.q*100) : 0) + '%　連續 ' + (S.streak||0) + ' 天';
+  $('prog').style.width = '100%';
+}
+function startRound(){
+  done = 0; total = 10; si = Math.floor(Math.random()*ITEMS.length);
+  document.body.classList.add('inq');
+  $('startBtn').style.display = 'none';
+  $('opts').innerHTML = '';
+  nextQuestion();
+}
+function idle(){
+  document.body.classList.remove('inq');
+  $('startBtn').style.display = 'block';
+  $('startBtn').textContent = '▶ 開始練習（10 題，約 2 分鐘）';
+  $('opts').innerHTML = '';
+  $('feed').textContent = '';
+  $('prog').style.width = '0';
+}
+
+/* ---------- 跟讀（錄音需要 HTTPS 或 localhost，一般 http 區網會被瀏覽器擋） ---------- */
+let rec = null, chunks = [], stream = null;
+function warn(msg, soft){
+  const el = $('micWarn');
+  if(!msg){ el.style.display = 'none'; el.textContent = ''; return; }
+  el.style.display = 'block';
+  el.textContent = msg;
+  el.style.background = soft ? '#EEF6FF' : '#FFF4E8';
+  el.style.borderColor = soft ? '#CBDDF5' : '#FFD9B8';
+  el.style.color = soft ? '#2C5079' : '#8A5327';
+}
+function canRecord(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+async function toggleRec(){
+  if(!canRecord()){
+    $('micWarn').style.display = 'block';
+    $('micWarn').innerHTML = '這台裝置／這個網址不能錄音。瀏覽器規定麥克風只能在 <b>HTTPS</b> 或 <b>localhost</b> 使用，' +
+      '現在是用 http 區網網址開的。<br>要錄音請改走發佈後的 https 網址（或先用「聽一次」跟著念，不錄音也能練）。';
+    return;
+  }
+  if(rec && rec.state === 'recording'){
+    rec.stop();
+    $('recRow').style.display = 'none';
+    return;
+  }
+  // 有些環境（無頭瀏覽器、被擋的權限視窗）getUserMedia 會一直不回應 →
+  // 一定要有超時提示，不能讓她按了錄音鍵卻什麼都沒發生
+  warn('正在等麥克風權限…（瀏覽器通常會跳「允許」視窗）', true);
+  const guard = setTimeout(()=>{
+    if(!rec || rec.state !== 'recording')
+      warn('麥克風沒有回應。常見原因：① 網址不是 https（只有 localhost 或 https 能用麥克風）② 權限視窗被關掉了 ③ 系統設定裡關了 Safari 的麥克風。');
+  }, 2600);
+  try{
+    stream = await navigator.mediaDevices.getUserMedia({audio:true});
+    clearTimeout(guard);
+    chunks = [];
+    const type = MediaRecorder.isTypeSupported('audio/mp4') ? 'audio/mp4' : '';
+    rec = new MediaRecorder(stream, type ? {mimeType:type} : undefined);
+    rec.ondataavailable = e => { if(e.data.size) chunks.push(e.data); };
+    rec.onstop = ()=>{
+      const blob = new Blob(chunks, {type: chunks[0] ? chunks[0].type : 'audio/mp4'});
+      const a = $('sAudio');
+      a.src = URL.createObjectURL(blob); a.style.display = 'block';
+      a.play().catch(()=>{});
+      if(stream) stream.getTracks().forEach(t=>t.stop());
+      $('recDot').classList.remove('live');
+    };
+    rec.start();
+    warn('', false);
+    $('recRow').style.display = 'flex';
+    $('recDot').classList.add('live');
+  }catch(e){
+    warn('麥克風打不開（' + (e && e.name || '未知') + '）。請確認已允許麥克風權限，或改用 https 網址。');
+  }
+}
+function shadowShow(){
+  const w = ITEMS[si % ITEMS.length];
+  $('sStem').innerHTML = w.rt || w.w;
+  $('sMeaning').textContent = (w.w !== w.x ? w.w + (w.r ? '（' + w.r + '）' : '') + '・' : '') +
+    (w.xcn || w.g || '');
+  $('sAudio').style.display = 'none';
+  $('micWarn').style.display = 'none';
+}
+function setMode(m){
+  mode = m;
+  document.querySelectorAll('#modes .chip').forEach(c=>c.classList.toggle('on', c.dataset.m === m));
+  const shadow = m === 'shadow';
+  $('shadowCard').style.display = shadow ? 'block' : 'none';
+  $('opts').style.display = shadow ? 'none' : 'grid';
+  const card = $('play').firstElementChild;
+  card.style.display = shadow ? 'none' : 'block';
+  $('startBtn').style.display = shadow ? 'none' : 'block';
+  if(shadow){ shadowShow(); }
+  else if(m === 'ladder'){
+    idle();
+    document.body.classList.add('inq');
+    $('startBtn').style.display = 'none';
+    lvCount = 0; lvScore = 0;
+    ladderNext();
+  }
+  else { idle(); startRound(); }
+}
+
+/* ---------- 綁定 ---------- */
+document.querySelectorAll('#modes .chip').forEach(c=>c.onclick = ()=>setMode(c.dataset.m));
+$('playBtn').onclick = ()=>{ if(q) say(q.say, false); };
+$('slowBtn').onclick = ()=>{ if(q) say(q.say, true); };
+$('startBtn').onclick = startRound;
+$('sPlay').onclick = ()=>{ const w = ITEMS[si % ITEMS.length]; say(w.x || w.w, false); };
+$('sRec').onclick = toggleRec;
+$('sNext').onclick = ()=>{ si++; shadowShow(); };
+
+paintStats();
+if(!ITEMS.length){
+  $('stem').textContent = '沒有資料，請先跑 python3 make_speak.py';
+}else{
+  $('stem').textContent = ITEMS.length + ' 句可以練';
+  $('askLabel').textContent = '先練耳朵：按開始，聽一句選一個（不用看懂字）';
+  $('startBtn').textContent = '▶ 開始練習（10 題，約 2 分鐘）';
+}
+</script>
+</body>
+</html>

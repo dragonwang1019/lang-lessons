@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="icon" href="assets/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="我的語言課">
+<meta name="theme-color" content="#FFF8F4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FFF8F4">
+<title>我的語言課</title>
+<style>
+:root{--bg:#FFF8F4;--card:#fff;--line:#F5E1E8;--fg:#432F37;--dim:#957D86;
+--rose:#EF6A8B;--rose-d:#D94F72;--lav:#9B6BD6;--peach:#FF9466;--mint:#43BE9B}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--fg);padding:0 0 44px;
+font-family:"Hiragino Maru Gothic ProN","Yuanti TC","PingFang TC",-apple-system,system-ui,sans-serif;
+-webkit-text-size-adjust:100%}
+.hero{background:linear-gradient(160deg,#FFE6EE 0%,#FFF1E2 100%);
+padding:22px 18px 24px;border-radius:0 0 24px 24px;
+box-shadow:0 4px 18px rgba(214,140,160,.14)}
+h1{font-size:21px;margin:0 0 4px;color:#5A3242;letter-spacing:.01em}
+h1 span{opacity:.75}
+.sub{color:#9C6E7E;font-size:12.5px;margin:0;line-height:1.8}
+.wrap{padding:0 16px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 22px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:16px;
+padding:11px 4px;text-align:center;min-width:0;box-shadow:0 2px 9px rgba(214,124,147,.07)}
+.stats b{display:block;font-size:20px;line-height:1.25;color:#4A2F38}
+.stats span{font-size:10px;color:var(--dim)}
+h2{font-size:12px;color:#B08A97;letter-spacing:.14em;margin:0 0 11px;font-weight:700}
+a.item{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;
+padding:15px 16px;margin-bottom:10px;text-decoration:none;color:var(--fg);
+box-shadow:0 3px 12px rgba(214,124,147,.08)}
+a.item b{font-size:15px;font-weight:700;display:block;line-height:1.5;color:#4A2F38}
+a.item .m{color:var(--dim);font-size:11.5px;margin-top:7px;display:block}
+.tag{display:inline-block;background:#FFF0F5;color:var(--rose-d);border-radius:999px;
+padding:1.5px 8px;font-size:10.5px;margin-right:5px;border:1px solid #FBD9E4}
+.tag.co{background:rgba(255,148,102,.14);color:#C4622F;border-color:#FFD8C4}
+.tag.q{background:rgba(155,107,214,.12);color:#7C4FB3;border-color:#E4D3F7}
+.langh{margin:22px 0 11px;font-size:15px;color:#4A2F38;font-weight:800;letter-spacing:.02em;
+display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.langh small{font-size:11px;color:var(--dim);font-weight:600}
+.lsum{margin-left:auto;font-size:11px;color:var(--dim);font-weight:600}
+.langh:first-of-type{margin-top:4px}
+.today{display:block;margin:16px 0 4px;padding:16px 16px 14px;border-radius:20px;text-decoration:none;
+color:#fff;background:linear-gradient(135deg,#FF9DB4,#EF6A8B);box-shadow:0 6px 20px rgba(239,106,139,.32)}
+.today.speak{background:linear-gradient(135deg,#8FD4C4,#43BE9B);box-shadow:0 6px 20px rgba(67,190,155,.30)}
+.today.speak .go{color:#2C7A64}
+.today.dlg{background:linear-gradient(135deg,#8FB4E8,#6AA6E0);box-shadow:0 6px 20px rgba(106,166,224,.28)}
+.today.dlg .go{color:#2C5079}
+.today b{font-size:18px;display:block;margin-bottom:2px}
+.today span{font-size:13px;opacity:.95}
+.today .go{display:inline-block;margin-top:10px;background:#fff;color:var(--rose-d);font-weight:800;
+border-radius:999px;padding:6px 16px;font-size:14px}
+.bars{display:flex;align-items:flex-end;gap:4px;height:46px;margin:12px 0 2px}
+.bars i{flex:1;background:#F3DDE5;border-radius:4px 4px 0 0;position:relative;min-height:2px}
+.bars i u{position:absolute;left:0;right:0;bottom:0;background:var(--rose);border-radius:4px 4px 0 0}
+.bars i.td{outline:2px solid var(--rose-d);outline-offset:1px}
+.blab{display:flex;justify-content:space-between;font-size:10px;color:var(--dim)}
+.tip{color:var(--dim);font-size:11.5px;line-height:2;margin-top:24px;
+border-top:1px dashed #F3D3DE;padding-top:16px}
+</style></head><body>
+<div class="hero">
+  <h1><span>🌸</span> 我的語言課</h1>
+  <p class="sub" id="hello">逐句聽 · 點詞看讀音 · 測驗記憶 · 生詞本自動排下次複習</p>
+</div>
+<div class="wrap">
+<a class="today" href="study/index.html">
+  <b>📅 今天的練習</b>
+  <span id="tline">核心詞庫 224 個詞，從第一個開始</span><br>
+  <span class="go" id="tgo">開始 →</span>
+</a>
+<a class="today speak" href="speak/index.html">
+  <b>🎧 聽說起步</b>
+  <span>零基礎先練耳朵和嘴巴：聽音選詞 · 聽句選意 · 跟讀錄音</span><br>
+  <span class="go">從這裡開始 →</span>
+</a>
+<a class="today dlg" href="dialog/index.html">
+  <b>🎭 情境對話</b>
+  <span>便利商店結帳、教室裡、問路…7個真實情境，選對回話才往下走</span><br>
+  <span class="go">進去講話 →</span>
+</a>
+<div class="bars" id="bars" aria-label="最近 14 天答題"></div>
+<div class="blab"><span>14 天前</span><span>今天</span></div>
+<div class="stats">
+  <div><b id="s1">0</b><span>收集詞數</span></div>
+  <div><b id="s2" style="color:var(--rose-d)">0</b><span>今日待複習</span></div>
+  <div><b id="s3" style="color:var(--mint)">0</b><span>已掌握</span></div>
+  <div><b id="s4">0</b><span>連續天數</span></div>
+</div>
+<h2 style="margin-top:6px">🎬 影片課</h2>
+<h2 class="langh">🇯🇵 日本語<small>8 課</small><span class="lsum" id="sum-ja"></span></h2>
+<a class="item" href="3VkMmj6DOsQ/index.html"><b>どうして眉毛はあるの？｜身近なギモン（日本語版）日本語学習／ Why Do We Have Eyebrows?</b><span class="m"><span class="tag">日語</span>68 句 · 202 個詞<span class="tag co">本課生詞 5</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="JciA1m7ccrU/index.html"><b>各世代別に活躍してたアイドルたち！(G)I-DLEは第4世代？それとも第3世代？【K-POP】</b><span class="m"><span class="tag">日語</span>79 句 · 227 個詞<span class="tag co">本課生詞 8</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="Jh2C7JlWGKU/index.html"><b>Comprehensible Japanese Beginner - My Morning Routine</b><span class="m"><span class="tag">日語</span>69 句 · 116 個詞<span class="tag co">本課生詞 9</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="ZCqxhDDnJcM/index.html"><b>お花見って、なに？｜日本のイベント（日本語版）日本語学習｜ Why do people have cherry blossom viewing?</b><span class="m"><span class="tag">日語</span>76 句 · 234 個詞<span class="tag co">本課生詞 19</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="aONCRvKitrg/index.html"><b>The Mystery of the Moving Dolls🧸😱Learn Japanese through Comprehensible Input🇯🇵Beginner Japanese</b><span class="m"><span class="tag">日語</span>51 句 · 120 個詞<span class="tag co">本課生詞 4</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="dO0rqWQo2Ok/index.html"><b>「はじめまして！今日からともだち（日本語版）」</b><span class="m"><span class="tag">日語</span>74 句 · 241 個詞<span class="tag co">本課生詞 19</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="ezbAxyYIo5U/index.html"><b>プロテインって、なに？｜身近なギモン（日本語版）日本語学習／ What is Protein?</b><span class="m"><span class="tag">日語</span>54 句 · 150 個詞<span class="tag co">本課生詞 2</span><span class="tag q">可考詞義</span></span></a>
+<a class="item" href="yClsMKHTgSo/index.html"><b>【第6回 全日本留学生 日本語スピーチコンテスト】敢闘賞：王　珏さん</b><span class="m"><span class="tag">日語</span>43 句 · 189 個詞<span class="tag co">本課生詞 75</span><span class="tag q">可考詞義</span></span></a>
+<h2 class="langh">🇫🇷 Français<small>1 課</small><span class="lsum" id="sum-fr"></span></h2>
+<a class="item" href="8M__AwkeP3o/index.html"><b>How to Talk About Jobs and Work in French (A1) | Learn French with Podcast | Easy French | Ep. 01</b><span class="m"><span class="tag">法語</span>55 句 · 180 個詞<span class="tag co">本課生詞 81</span><span class="tag q">可考詞義</span></span></a>
+<p class="tip">iPhone／iPad：Safari 開啟後 → 分享 → 加入主畫面，就是一個 App。<br>
+紀錄存在這台裝置的瀏覽器裡，不會上傳。換裝置請在該課「生詞」頁按「備份 JSON」搬過去。</p>
+</div>
+<script>
+function isoLocal(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function greet(){const h=new Date().getHours();
+  return h<5?'夜深了，早點睡 🌙':h<11?'早安，今天也加油 ☀️':h<18?'午安，讀一點點就好 🍵':'晚安，睡前複習五個詞 🌛';}
+function load(k,def){ try{ var v=localStorage.getItem(k); return v?JSON.parse(v):JSON.parse(def); }catch(e){ return JSON.parse(def); } }
+// 舊版把全部語言塞在同一個抽屜（lk.wordbook.v1）→ 依文字腳本分流，只做一次
+try{
+  var old = localStorage.getItem('lk.wordbook.v1');
+  if(old){
+    var o = JSON.parse(old)||{}, ja={}, fr={};
+    Object.keys(o).forEach(function(w){
+      (/[぀-ヿ㐀-䶿一-鿿]/.test(w) ? ja : fr)[w] = o[w];
+    });
+    function mergeInto(key, obj){
+      if(!Object.keys(obj).length) return;
+      var cur=null; try{ cur=JSON.parse(localStorage.getItem(key)||'null'); }catch(e){}
+      localStorage.setItem(key, JSON.stringify(Object.assign({}, obj, cur||{})));
+    }
+    mergeInto('lk.wb.v2.ja', ja);
+    mergeInto('lk.wb.v2.fr', fr);
+    localStorage.removeItem('lk.wordbook.v1');
+  }
+}catch(e){}
+
+try{
+  var today=isoLocal(new Date()), n=0, due=0, mast=0, streak=0, qs=0, oks=0;
+  ['ja','fr','en'].forEach(function(l){
+    var wb=load('lk.wb.v2.'+l,'{}'), st=load('lk.stv.v2.'+l,'{"days":{}}');
+    var all=Object.values(wb);
+    var d=all.filter(function(r){return (r.due||today)<=today;}).length;
+    var m=all.filter(function(r){return (r.ivl||0)>=21;}).length;
+    n+=all.length; due+=d; mast+=m;
+    streak=Math.max(streak, st.streak||0);
+    var t=(st.days||{})[today]; if(t){ qs+=(t.q||0); oks+=(t.ok||0); }
+    var el=document.getElementById('sum-'+l);
+    if(el) el.textContent='生詞 '+all.length+' · 待複習 '+d;
+  });
+  document.getElementById('s1').textContent=n;
+  document.getElementById('s2').textContent=due;
+  document.getElementById('s3').textContent=mast;
+  document.getElementById('s4').textContent=streak;
+  // 今日任務卡：待複習＋今天還能學的新詞；考試倒數
+  var cfg = load('lk.study.v1.ja', '{}'), jwb = load('lk.wb.v2.ja', '{}'), jst = load('lk.stv.v2.ja', '{"days":{}}');
+  var jdue = Object.values(jwb).filter(function(r){return (r.due||today)<=today;}).length;
+  var per = cfg.per || 5, learnedToday = (cfg.newDays||{})[today] || 0;
+  var fresh = Math.max(0, Math.min(per - learnedToday, 224 - Object.keys(jwb).length));
+  var line = (jdue + fresh) ? ('要複習 ' + jdue + ' 個・新詞 ' + fresh + ' 個') : '今天的任務完成了 🎉';
+  if(cfg.exam){
+    var e = cfg.exam.split('-').map(Number), tt = today.split('-').map(Number);
+    var dd = Math.round((new Date(e[0],e[1]-1,e[2]) - new Date(tt[0],tt[1]-1,tt[2]))/86400000);
+    if(dd >= 0) line += '・距離考試 ' + dd + ' 天';
+  }
+  document.getElementById('tline').textContent = line;
+  document.getElementById('tgo').textContent = (jdue + fresh) ? '開始 →' : '再看看進度 →';
+  // 14 天長條：淺色＝答題數、深色＝答對數（日語＋法語合計）
+  var days = [], i, mx = 10;
+  for(i = 13; i >= 0; i--){ var dt = new Date(); dt.setDate(dt.getDate() - i); days.push(isoLocal(dt)); }
+  var sum = days.map(function(d){ var q=0, ok=0; ['ja','fr','en'].forEach(function(l){
+    var x = (load('lk.stv.v2.'+l,'{"days":{}}').days||{})[d]; if(x){ q+=x.q||0; ok+=x.ok||0; } }); return [q, ok]; });
+  sum.forEach(function(v){ mx = Math.max(mx, v[0]); });
+  document.getElementById('bars').innerHTML = sum.map(function(v, k){
+    return '<i class="' + (k===13?'td':'') + '" style="height:' + (v[0]/mx*100) + '%" title="' + days[k] + '：' + v[0] + ' 題">' +
+           '<u style="height:' + (v[0] ? v[1]/v[0]*100 : 0) + '%"></u></i>'; }).join('');
+  document.getElementById('hello').textContent = greet() +
+    (qs ? '　今天已答 '+qs+' 題，正確率 '+Math.round(oks/qs*100)+'%' : '');
+}catch(e){}
+</script>
+</body></html>
